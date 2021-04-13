@@ -16,6 +16,6 @@ if (!\class_exists(App_KernelDevDebugContainer::class, false)) {
 
 return new \ContainerUioTXkg\App_KernelDevDebugContainer([
     'container.build_hash' => 'UioTXkg',
-    'container.build_id' => '45034e99',
-    'container.build_time' => 1618332002,
+    'container.build_id' => '5578ff18',
+    'container.build_time' => 1618332581,
 ], __DIR__.\DIRECTORY_SEPARATOR.'ContainerUioTXkg');
