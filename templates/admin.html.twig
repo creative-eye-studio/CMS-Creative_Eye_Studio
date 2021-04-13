@@ -12,8 +12,9 @@
             {#{{ encore_entry_script_tags('app') }}#}
         {% endblock %}
     </head>
-    <body class="{% if is_granted('ROLE_ADMIN') %}authentified{% endif %}">
+    <body class="{% if app.user %}authentified{% endif %}">
         <header></header>
+         {% if app.user %}
         <nav class="navigation">
             <ul>
                 <li><a href="{{ path('admin') }}">Accueil</a></li>
@@ -23,6 +24,7 @@
                 <li><a href="/logout">Se déconnecter</a></li>
             </ul>
         </nav>
+         {% endif %}
         <main>
             {% block body %}{% endblock %}
         </main>

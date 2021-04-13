@@ -66,37 +66,44 @@ class __TwigTemplate_fbbc316be3b7d905abf4242679fce46da5bc69ce0af051ab5f95988b374
         echo "    </head>
     <body class=\"";
         // line 15
-        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
+        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 15, $this->source); })()), "user", [], "any", false, false, false, 15)) {
             echo "authentified";
         }
         echo "\">
         <header></header>
-        <nav class=\"navigation\">
+         ";
+        // line 17
+        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 17, $this->source); })()), "user", [], "any", false, false, false, 17)) {
+            // line 18
+            echo "        <nav class=\"navigation\">
             <ul>
                 <li><a href=\"";
-        // line 19
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin");
-        echo "\">Accueil</a></li>
+            // line 20
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin");
+            echo "\">Accueil</a></li>
                 <li><a href=\"";
-        // line 20
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("pages_site");
-        echo "\">Pages du site</a></li>
+            // line 21
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("pages_site");
+            echo "\">Pages du site</a></li>
                 <li><a href=\"";
-        // line 21
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("articles_site");
-        echo "\">Articles</a></li>
+            // line 22
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("articles_site");
+            echo "\">Articles</a></li>
                 <li><a href=\"";
-        // line 22
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("users_list");
-        echo "\">Utilisateurs</a></li>
+            // line 23
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("users_list");
+            echo "\">Utilisateurs</a></li>
                 <li><a href=\"/logout\">Se déconnecter</a></li>
             </ul>
         </nav>
-        <main>
-            ";
-        // line 27
-        $this->displayBlock('body', $context, $blocks);
+         ";
+        }
         // line 28
+        echo "        <main>
+            ";
+        // line 29
+        $this->displayBlock('body', $context, $blocks);
+        // line 30
         echo "        </main>
     </body>
 </html>
@@ -168,7 +175,7 @@ class __TwigTemplate_fbbc316be3b7d905abf4242679fce46da5bc69ce0af051ab5f95988b374
 
     }
 
-    // line 27
+    // line 29
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -198,7 +205,7 @@ class __TwigTemplate_fbbc316be3b7d905abf4242679fce46da5bc69ce0af051ab5f95988b374
 
     public function getDebugInfo()
     {
-        return array (  172 => 27,  162 => 13,  160 => 12,  150 => 11,  132 => 8,  113 => 5,  100 => 28,  98 => 27,  90 => 22,  86 => 21,  82 => 20,  78 => 19,  69 => 15,  66 => 14,  64 => 11,  60 => 9,  57 => 8,  53 => 5,  47 => 1,);
+        return array (  179 => 29,  169 => 13,  167 => 12,  157 => 11,  139 => 8,  120 => 5,  107 => 30,  105 => 29,  102 => 28,  94 => 23,  90 => 22,  86 => 21,  82 => 20,  78 => 18,  76 => 17,  69 => 15,  66 => 14,  64 => 11,  60 => 9,  57 => 8,  53 => 5,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -217,8 +224,9 @@ class __TwigTemplate_fbbc316be3b7d905abf4242679fce46da5bc69ce0af051ab5f95988b374
             {#{{ encore_entry_script_tags('app') }}#}
         {% endblock %}
     </head>
-    <body class=\"{% if is_granted('ROLE_ADMIN') %}authentified{% endif %}\">
+    <body class=\"{% if app.user %}authentified{% endif %}\">
         <header></header>
+         {% if app.user %}
         <nav class=\"navigation\">
             <ul>
                 <li><a href=\"{{ path('admin') }}\">Accueil</a></li>
@@ -228,6 +236,7 @@ class __TwigTemplate_fbbc316be3b7d905abf4242679fce46da5bc69ce0af051ab5f95988b374
                 <li><a href=\"/logout\">Se déconnecter</a></li>
             </ul>
         </nav>
+         {% endif %}
         <main>
             {% block body %}{% endblock %}
         </main>
