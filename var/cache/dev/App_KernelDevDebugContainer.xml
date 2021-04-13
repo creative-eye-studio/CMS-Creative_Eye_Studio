@@ -22,6 +22,7 @@
       <parameter key="MakerBundle">Symfony\Bundle\MakerBundle\MakerBundle</parameter>
       <parameter key="SymfonyCastsVerifyEmailBundle">SymfonyCasts\Bundle\VerifyEmail\SymfonyCastsVerifyEmailBundle</parameter>
       <parameter key="FOSCKEditorBundle">FOS\CKEditorBundle\FOSCKEditorBundle</parameter>
+      <parameter key="FMElfinderBundle">FM\ElfinderBundle\FMElfinderBundle</parameter>
     </parameter>
     <parameter key="kernel.bundles_metadata" type="collection">
       <parameter key="FrameworkBundle" type="collection">
@@ -75,6 +76,10 @@
       <parameter key="FOSCKEditorBundle" type="collection">
         <parameter key="path">/Users/kevinrifa/Documents/Creative_Eye_Studio/cms-projects/vendor/friendsofsymfony/ckeditor-bundle/src</parameter>
         <parameter key="namespace">FOS\CKEditorBundle</parameter>
+      </parameter>
+      <parameter key="FMElfinderBundle" type="collection">
+        <parameter key="path">/Users/kevinrifa/Documents/Creative_Eye_Studio/cms-projects/vendor/helios-ag/fm-elfinder-bundle/src</parameter>
+        <parameter key="namespace">FM\ElfinderBundle</parameter>
       </parameter>
     </parameter>
     <parameter key="kernel.charset">UTF-8</parameter>
@@ -222,6 +227,7 @@
     </parameter>
     <parameter key="security.main._indexed_authenticators" type="collection"/>
     <parameter key="twig.form.resources" type="collection">
+      <parameter>@FMElfinder/Form/elfinder_widget.html.twig</parameter>
       <parameter>form_div_layout.html.twig</parameter>
       <parameter>@FOSCKEditor/Form/ckeditor_widget.html.twig</parameter>
     </parameter>
@@ -247,6 +253,158 @@
       </parameter>
     </parameter>
     <parameter key="env(VAR_DUMPER_SERVER)">127.0.0.1:9912</parameter>
+    <parameter key="fm_elfinder.loader">FM\ElfinderBundle\Loader\ElFinderLoader</parameter>
+    <parameter key="fm_elfinder.configurator">FM\ElfinderBundle\Configuration\ElFinderConfigurationReader</parameter>
+    <parameter key="elfinder.form.type.class">FM\ElfinderBundle\Form\Type\ElFinderType</parameter>
+    <parameter key="fm_elfinder" type="collection">
+      <parameter key="assets_path">/assets</parameter>
+      <parameter key="instances" type="collection">
+        <parameter key="default" type="collection">
+          <parameter key="locale">fr</parameter>
+          <parameter key="editor">ckeditor</parameter>
+          <parameter key="fullscreen">true</parameter>
+          <parameter key="theme">smoothness</parameter>
+          <parameter key="connector" type="collection">
+            <parameter key="debug">false</parameter>
+            <parameter key="roots" type="collection">
+              <parameter key="uploads" type="collection">
+                <parameter key="show_hidden">false</parameter>
+                <parameter key="driver">LocalFileSystem</parameter>
+                <parameter key="path">uploads/images</parameter>
+                <parameter key="upload_allow" type="collection">
+                  <parameter>image/png</parameter>
+                  <parameter>image/jpg</parameter>
+                  <parameter>image/jpeg</parameter>
+                </parameter>
+                <parameter key="upload_deny" type="collection">
+                  <parameter>all</parameter>
+                </parameter>
+                <parameter key="upload_max_size">2M</parameter>
+                <parameter key="volume_id">0</parameter>
+                <parameter key="autoload">false</parameter>
+                <parameter key="phash"></parameter>
+                <parameter key="trash_hash"></parameter>
+                <parameter key="locale"></parameter>
+                <parameter key="i18n_folder_name">false</parameter>
+                <parameter key="mime_detect">auto</parameter>
+                <parameter key="mimefile"></parameter>
+                <parameter key="security_voter"></parameter>
+                <parameter key="start_path"></parameter>
+                <parameter key="encoding">UTF-8</parameter>
+                <parameter key="url"></parameter>
+                <parameter key="alias"></parameter>
+                <parameter key="img_lib">auto</parameter>
+                <parameter key="tmb_path">.tmb</parameter>
+                <parameter key="tmb_path_mode">511</parameter>
+                <parameter key="tmb_url"></parameter>
+                <parameter key="tmb_size">48</parameter>
+                <parameter key="tmb_crop">true</parameter>
+                <parameter key="tmb_bg_color">#ffffff</parameter>
+                <parameter key="quarantine">null</parameter>
+                <parameter key="copy_overwrite">true</parameter>
+                <parameter key="copy_join">true</parameter>
+                <parameter key="copy_from">true</parameter>
+                <parameter key="copy_to">true</parameter>
+                <parameter key="upload_overwrite">true</parameter>
+                <parameter key="fileMode">420</parameter>
+                <parameter key="upload_order" type="collection">
+                  <parameter>deny</parameter>
+                  <parameter>allow</parameter>
+                </parameter>
+                <parameter key="upload_max_conn">3</parameter>
+                <parameter key="defaults" type="collection">
+                  <parameter key="read">true</parameter>
+                  <parameter key="write">true</parameter>
+                </parameter>
+                <parameter key="attributes" type="collection"/>
+                <parameter key="accepted_name">/^\w[\w\s\.\%\-]*$/u</parameter>
+                <parameter key="disabled_commands" type="collection"/>
+                <parameter key="tree_deep">0</parameter>
+                <parameter key="check_subfolders">1</parameter>
+                <parameter key="separator">/</parameter>
+                <parameter key="date_format">j M Y H:i</parameter>
+                <parameter key="time_format">H:i</parameter>
+                <parameter key="archive_mimes" type="collection"/>
+                <parameter key="archivers" type="collection">
+                  <parameter key="enabled">false</parameter>
+                  <parameter key="create" type="collection"/>
+                  <parameter key="extract" type="collection"/>
+                </parameter>
+                <parameter key="flysystem" type="collection">
+                  <parameter key="enabled">false</parameter>
+                  <parameter key="filesystem"></parameter>
+                  <parameter key="type"></parameter>
+                  <parameter key="adapter_service"></parameter>
+                </parameter>
+                <parameter key="glide_url"></parameter>
+                <parameter key="glide_key"></parameter>
+                <parameter key="plugins" type="collection"/>
+                <parameter key="driver_options" type="collection"/>
+                <parameter key="dropbox2_settings" type="collection">
+                  <parameter key="enabled">false</parameter>
+                  <parameter key="aliasFormat">%s@Dropbox</parameter>
+                  <parameter key="path">/</parameter>
+                  <parameter key="separator">/</parameter>
+                  <parameter key="acceptedName">%s@Dropbox</parameter>
+                  <parameter key="rootCssClass">elfinder-navbar-root-dropbox</parameter>
+                  <parameter key="getThumbSize">medium</parameter>
+                </parameter>
+                <parameter key="box_settings" type="collection">
+                  <parameter key="enabled">false</parameter>
+                  <parameter key="root">Box.com</parameter>
+                  <parameter key="path">/</parameter>
+                  <parameter key="separator">/</parameter>
+                  <parameter key="tmbPath"></parameter>
+                  <parameter key="tmbURL"></parameter>
+                  <parameter key="tmpPath"></parameter>
+                  <parameter key="acceptedName">#^[^/\?*:|"&lt;&gt;]*[^./\?*:|"&lt;&gt;]$#</parameter>
+                  <parameter key="rootCssClass">elfinder-navbar-root-box</parameter>
+                </parameter>
+                <parameter key="onedrive_settings" type="collection">
+                  <parameter key="enabled">false</parameter>
+                  <parameter key="root">OneDrive.com</parameter>
+                  <parameter key="OneDriveApiClient"></parameter>
+                  <parameter key="path">/</parameter>
+                  <parameter key="separator">/</parameter>
+                  <parameter key="tmbPath"></parameter>
+                  <parameter key="tmbURL"></parameter>
+                  <parameter key="tmpPath"></parameter>
+                  <parameter key="acceptedName">#^[^/\?*:|"&lt;&gt;]*[^./\?*:|"&lt;&gt;]$#</parameter>
+                  <parameter key="rootCssClass">elfinder-navbar-root-onedrive</parameter>
+                  <parameter key="useApiThumbnail">true</parameter>
+                </parameter>
+                <parameter key="ftp_settings" type="collection">
+                  <parameter key="enabled">false</parameter>
+                </parameter>
+                <parameter key="mysql_settings" type="collection">
+                  <parameter key="enabled">false</parameter>
+                  <parameter key="port">null</parameter>
+                  <parameter key="socket">null</parameter>
+                  <parameter key="files_table">elfinder_file</parameter>
+                  <parameter key="tmbPath"></parameter>
+                  <parameter key="tmpPath"></parameter>
+                  <parameter key="rootCssClass">elfinder-navbar-root-sql</parameter>
+                  <parameter key="noSessionCache">hasdirs</parameter>
+                </parameter>
+              </parameter>
+            </parameter>
+            <parameter key="binds" type="collection"/>
+            <parameter key="plugins" type="collection"/>
+          </parameter>
+          <parameter key="cors_support">false</parameter>
+          <parameter key="editor_template">null</parameter>
+          <parameter key="multi_home_folder">false</parameter>
+          <parameter key="folder_separator"></parameter>
+          <parameter key="tinymce_popup_path"></parameter>
+          <parameter key="relative_path">true</parameter>
+          <parameter key="path_prefix">/</parameter>
+          <parameter key="where_is_multi" type="collection"/>
+          <parameter key="visible_mime_types" type="collection"/>
+        </parameter>
+      </parameter>
+      <parameter key="configuration_provider">fm_elfinder.configurator.default</parameter>
+      <parameter key="loader">fm_elfinder.loader.default</parameter>
+    </parameter>
     <parameter key="data_collector.templates" type="collection">
       <parameter key="data_collector.request" type="collection">
         <parameter>request</parameter>
@@ -847,6 +1005,7 @@
         <argument>App\Form</argument>
         <argument>Symfony\Bridge\Doctrine\Form\Type</argument>
         <argument>FOS\CKEditorBundle\Form\Type</argument>
+        <argument></argument>
       </argument>
       <argument type="collection">
         <argument>App\Form\RegistrationFormType</argument>
@@ -856,6 +1015,7 @@
         <argument>Symfony\Component\Form\Extension\Core\Type\ColorType</argument>
         <argument>Symfony\Bridge\Doctrine\Form\Type\EntityType</argument>
         <argument>FOS\CKEditorBundle\Form\Type\CKEditorType</argument>
+        <argument>FM\ElfinderBundle\Form\Type\ElFinderType</argument>
       </argument>
       <argument type="collection">
         <argument>Symfony\Component\Form\Extension\Core\Type\TransformationFailureExtension</argument>
@@ -1208,7 +1368,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension">
-      <argument type="service" id=".service_locator.nBW9blg"/>
+      <argument type="service" id=".service_locator.SK7vBXG"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -1922,6 +2082,7 @@
           <argument>/Users/kevinrifa/Documents/Creative_Eye_Studio/cms-projects/vendor/symfony/debug-bundle/translations</argument>
           <argument>/Users/kevinrifa/Documents/Creative_Eye_Studio/cms-projects/vendor/symfony/maker-bundle/src/translations</argument>
           <argument>/Users/kevinrifa/Documents/Creative_Eye_Studio/cms-projects/vendor/friendsofsymfony/ckeditor-bundle/src/translations</argument>
+          <argument>/Users/kevinrifa/Documents/Creative_Eye_Studio/cms-projects/vendor/helios-ag/fm-elfinder-bundle/src/translations</argument>
         </argument>
         <argument key="cache_vary" type="collection">
           <argument key="scanned_directories" type="collection">
@@ -1942,6 +2103,7 @@
             <argument>vendor/symfony/debug-bundle/translations</argument>
             <argument>vendor/symfony/maker-bundle/src/translations</argument>
             <argument>vendor/friendsofsymfony/ckeditor-bundle/src/translations</argument>
+            <argument>vendor/helios-ag/fm-elfinder-bundle/src/translations</argument>
           </argument>
         </argument>
       </argument>
@@ -4643,6 +4805,9 @@
       <call method="addExtension">
         <argument type="service" id="fos_ck_editor.twig_extension"/>
       </call>
+      <call method="addExtension">
+        <argument type="service" id="twig.extension.fm_elfinder_init"/>
+      </call>
       <call method="addGlobal">
         <argument>app</argument>
         <argument type="service" id="twig.app_variable"/>
@@ -4749,6 +4914,14 @@
       <call method="addPath">
         <argument>/Users/kevinrifa/Documents/Creative_Eye_Studio/cms-projects/vendor/friendsofsymfony/ckeditor-bundle/src/Resources/views</argument>
         <argument>!FOSCKEditor</argument>
+      </call>
+      <call method="addPath">
+        <argument>/Users/kevinrifa/Documents/Creative_Eye_Studio/cms-projects/vendor/helios-ag/fm-elfinder-bundle/src/Resources/views</argument>
+        <argument>FMElfinder</argument>
+      </call>
+      <call method="addPath">
+        <argument>/Users/kevinrifa/Documents/Creative_Eye_Studio/cms-projects/vendor/helios-ag/fm-elfinder-bundle/src/Resources/views</argument>
+        <argument>!FMElfinder</argument>
       </call>
       <call method="addPath">
         <argument>/Users/kevinrifa/Documents/Creative_Eye_Studio/cms-projects/templates</argument>
@@ -5347,6 +5520,8 @@
                 </argument>
               </argument>
             </argument>
+            <argument key="filebrowserBrowseRoute">elfinder</argument>
+            <argument key="filebrowserBrowseRouteParameters" type="collection"/>
           </argument>
         </argument>
         <argument key="enable">true</argument>
@@ -5387,6 +5562,36 @@
     <service id="fos_ck_editor.twig_extension" class="FOS\CKEditorBundle\Twig\CKEditorExtension">
       <tag name="twig.extension"/>
       <argument type="service" id="fos_ck_editor.renderer"/>
+    </service>
+    <service id="fm_elfinder.configurator.default" class="FM\ElfinderBundle\Configuration\ElFinderConfigurationReader">
+      <argument>%fm_elfinder%</argument>
+      <argument type="service" id="request_stack"/>
+      <argument type="service" id="service_container"/>
+    </service>
+    <service id="fm_elfinder.loader.default" class="FM\ElfinderBundle\Loader\ElFinderLoader">
+      <argument type="service" id="fm_elfinder.configurator.default"/>
+    </service>
+    <service id="twig.extension.fm_elfinder_init" class="FM\ElfinderBundle\Twig\Extension\FMElfinderExtension">
+      <tag name="twig.extension" alias="fm_elfinder_init"/>
+      <argument type="service" id="twig"/>
+    </service>
+    <service id="FM\ElfinderBundle\Controller\ElFinderController" class="FM\ElfinderBundle\Controller\ElFinderController" public="true">
+      <tag name="controller.service_arguments"/>
+      <call method="setContainer">
+        <argument type="service" id="service_container"/>
+      </call>
+    </service>
+    <service id="fm_elfinder.form.type" class="FM\ElfinderBundle\Form\Type\ElFinderType">
+      <tag name="form.type"/>
+    </service>
+    <service id="fm_elfinder.command.installer" class="FM\ElfinderBundle\Command\ElFinderInstallerCommand">
+      <tag name="console.command" command="elfinder:install"/>
+      <tag name="container.no_preload"/>
+      <argument type="service" id="filesystem"/>
+      <argument type="service" id="parameter_bag"/>
+      <call method="setName">
+        <argument>elfinder:install</argument>
+      </call>
     </service>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Admin\AdminController" class="App\Controller\Admin\AdminController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Admin\AdminController" class="App\Controller\Admin\AdminController" autowire="true" abstract="true"/>
@@ -5729,7 +5934,14 @@
         <argument key="authenticationUtils" type="service" id="security.authentication_utils"/>
       </argument>
     </service>
-    <service id=".service_locator.JaVOsuH" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.wSTQLB9" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="eventDispatcher" type="service" id="debug.event_dispatcher"/>
+        <argument key="session" type="service" id="session"/>
+      </argument>
+    </service>
+    <service id=".service_locator.2oQQn1f" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\RegistrationController::register" type="service" id=".service_locator.iTWUpOY"/>
@@ -5737,11 +5949,13 @@
         <argument key="App\Kernel::loadRoutes" type="service" id=".service_locator.KfbR3DY"/>
         <argument key="App\Kernel::registerContainerConfiguration" type="service" id=".service_locator.KfbR3DY"/>
         <argument key="App\Kernel::terminate" type="service" id=".service_locator.KfwZsne"/>
+        <argument key="FM\ElfinderBundle\Controller\ElFinderController::load" type="service" id=".service_locator.wSTQLB9"/>
         <argument key="kernel::loadRoutes" type="service" id=".service_locator.KfbR3DY"/>
         <argument key="kernel::registerContainerConfiguration" type="service" id=".service_locator.KfbR3DY"/>
         <argument key="kernel::terminate" type="service" id=".service_locator.KfwZsne"/>
         <argument key="App\Controller\RegistrationController:register" type="service" id=".service_locator.iTWUpOY"/>
         <argument key="App\Controller\SecurityController:login" type="service" id=".service_locator.UDgw6Ol"/>
+        <argument key="FM\ElfinderBundle\Controller\ElFinderController:load" type="service" id=".service_locator.wSTQLB9"/>
         <argument key="kernel:loadRoutes" type="service" id=".service_locator.KfbR3DY"/>
         <argument key="kernel:registerContainerConfiguration" type="service" id=".service_locator.KfbR3DY"/>
         <argument key="kernel:terminate" type="service" id=".service_locator.KfwZsne"/>
@@ -5806,10 +6020,11 @@
       <argument type="service" id="debug.argument_resolver.not_tagged_controller.inner"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.nBW9blg" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.SK7vBXG" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Form\RegistrationFormType" type="service" id="App\Form\RegistrationFormType"/>
+        <argument key="FM\ElfinderBundle\Form\Type\ElFinderType" type="service" id="fm_elfinder.form.type"/>
         <argument key="FOS\CKEditorBundle\Form\Type\CKEditorType" type="service" id="fos_ck_editor.form.type"/>
         <argument key="Symfony\Bridge\Doctrine\Form\Type\EntityType" type="service" id="form.type.entity"/>
         <argument key="Symfony\Component\Form\Extension\Core\Type\ChoiceType" type="service" id="form.type.choice"/>
@@ -6230,12 +6445,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.JaVOsuH"/>
+      <argument type="service" id=".service_locator.2oQQn1f"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.JaVOsuH"/>
+      <argument type="service" id=".service_locator.2oQQn1f"/>
     </service>
     <service id=".debug.http_client.inner" class="Symfony\Contracts\HttpClient\HttpClientInterface">
       <argument type="collection"/>
@@ -6255,7 +6470,7 @@
     <service id=".errored..service_locator.KfbR3DY.Symfony\Component\Config\Loader\LoaderInterface" class="Symfony\Component\Config\Loader\LoaderInterface"/>
     <service id="console.command_loader" class="Symfony\Component\Console\CommandLoader\ContainerCommandLoader" public="true">
       <tag name="container.no_preload"/>
-      <argument type="service" id=".service_locator.kW5VCXZ"/>
+      <argument type="service" id=".service_locator._njS6re"/>
       <argument type="collection">
         <argument key="about">console.command.about</argument>
         <argument key="assets:install">console.command.assets_install</argument>
@@ -6324,6 +6539,7 @@
         <argument key="server:dump">var_dumper.command.server_dump</argument>
         <argument key="server:log">monolog.command.server_log</argument>
         <argument key="ckeditor:install">fos_ck_editor.command.installer</argument>
+        <argument key="elfinder:install">fm_elfinder.command.installer</argument>
         <argument key="make:auth">maker.auto_command.make_auth</argument>
         <argument key="make:command">maker.auto_command.make_command</argument>
         <argument key="make:controller">maker.auto_command.make_controller</argument>
@@ -6349,7 +6565,7 @@
         <argument key="make:migration">maker.auto_command.make_migration</argument>
       </argument>
     </service>
-    <service id=".service_locator.kW5VCXZ" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator._njS6re" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="Doctrine\DBAL\Tools\Console\Command\RunSqlCommand" type="service" id="Doctrine\DBAL\Tools\Console\Command\RunSqlCommand"/>
@@ -6413,6 +6629,7 @@
         <argument key="doctrine_migrations.up_to_date_command" type="service" id="doctrine_migrations.up_to_date_command"/>
         <argument key="doctrine_migrations.version_command" type="service" id="doctrine_migrations.version_command"/>
         <argument key="doctrine_migrations.versions_command" type="service" id="doctrine_migrations.versions_command"/>
+        <argument key="fm_elfinder.command.installer" type="service" id="fm_elfinder.command.installer"/>
         <argument key="fos_ck_editor.command.installer" type="service" id="fos_ck_editor.command.installer"/>
         <argument key="maker.auto_command.make_auth" type="service" id="maker.auto_command.make_auth"/>
         <argument key="maker.auto_command.make_command" type="service" id="maker.auto_command.make_command"/>
@@ -6652,9 +6869,11 @@
     <service id="logger" alias="monolog.logger"/>
     <service id="Psr\Log\LoggerInterface" alias="monolog.logger"/>
     <service id="SymfonyCasts\Bundle\VerifyEmail\VerifyEmailHelperInterface" alias="symfonycasts.verify_email.helper"/>
+    <service id="fm_elfinder.configurator" alias="fm_elfinder.configurator.default"/>
+    <service id="fm_elfinder.loader" alias="fm_elfinder.loader.default" public="true"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.Kbr2i2X" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.JaVOsuH"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.2oQQn1f"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.Hllcktv"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
@@ -6670,6 +6889,7 @@
     <service id="Psr\Log\LoggerInterface $securityLogger" alias="monolog.logger.security"/>
     <service id="Psr\Log\LoggerInterface $debugLogger" alias="monolog.logger.debug"/>
     <service id=".service_locator.wKF4yn1" alias=".service_locator.anofQPJ"/>
+    <service id=".service_locator.R2SDN7I" alias=".service_locator.SK7vBXG"/>
     <service id="validator" alias="debug.validator" public="true"/>
     <service id="translator.data_collector.inner" alias="translator.default"/>
     <service id="event_dispatcher" alias="debug.event_dispatcher" public="true"/>
