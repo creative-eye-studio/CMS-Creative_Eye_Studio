@@ -1,0 +1,12 @@
+{
+	"version": 3,
+	"file": "style.css",
+	"sources": [
+		"sass/style.scss"
+	],
+	"sourcesContent": [
+		"/******************************************************/\n/******************* CORPS DE SITE ********************/\n/******************************************************/\n\nbody{\n    background-color: #1565c0;\n}\n\n/******************************************************/\n/*********************** FONTS ************************/\n/******************************************************/\n\n\n\n/******************************************************/\n/*********************** BLOCS ************************/\n/******************************************************/\n\n@mixin bloc {\n    background-color: white;\n    padding: 1rem;\n}\n\n.bloc-login{\n    @include bloc();\n    position: absolute;\n    top: 50%;\n    left: 50%;\n    transform: translate(-50%, -55%);\n}"
+	],
+	"names": [],
+	"mappings": "AAAA,wDAAwD;AACxD,wDAAwD;AACxD,wDAAwD;;AAExD,AAAA,IAAI,CAAA;EACA,gBAAgB,EAAE,OAAO;CAC5B;;AAED,wDAAwD;AACxD,wDAAwD;AACxD,wDAAwD;AAIxD,wDAAwD;AACxD,wDAAwD;AACxD,wDAAwD;;AAOxD,AAAA,WAAW,CAAA;EAJP,gBAAgB,EAAE,KAAK;EACvB,OAAO,EAAE,IAAI;EAKb,QAAQ,EAAE,QAAQ;EAClB,GAAG,EAAE,GAAG;EACR,IAAI,EAAE,GAAG;EACT,SAAS,EAAE,qBAAqB;CACnC"
+}

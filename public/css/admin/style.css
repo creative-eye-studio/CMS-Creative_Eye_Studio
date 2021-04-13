@@ -1,0 +1,25 @@
+/******************************************************/
+/******************* CORPS DE SITE ********************/
+/******************************************************/
+/* line 5, ../../../../../Users/kevinrifa/Documents/Creative_Eye_Studio/cms-projects/public/css/admin/sass/style.scss */
+body {
+  background-color: #1565c0;
+}
+
+/******************************************************/
+/*********************** FONTS ************************/
+/******************************************************/
+/******************************************************/
+/*********************** BLOCS ************************/
+/******************************************************/
+/* line 24, ../../../../../Users/kevinrifa/Documents/Creative_Eye_Studio/cms-projects/public/css/admin/sass/style.scss */
+.bloc-login {
+  background-color: white;
+  padding: 1rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -55%);
+}
+
+/*# sourceMappingURL=style.css.map */
