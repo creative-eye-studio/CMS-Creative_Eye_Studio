@@ -60,7 +60,7 @@ main{
 
 @mixin bloc {
     background-color: white;
-    padding: .5rem 2rem;
+    padding: .5rem 2rem 2rem;
     margin-bottom: 2rem;
     box-sizing: border-box;
     font-family: "Lato";
@@ -100,12 +100,34 @@ main{
     transform: translate(-50%, -55%);
 }
 
+/******************************************************/
+/*********************** BLOCS ************************/
+/******************************************************/
+@mixin btn() {
+    background-color: #1565c0;
+    padding: 1rem;
+    text-decoration: none;
+    font: 300 1em/100% "Lato";
+    color: white;
+    display: inline-block;
+}
+
+.btn-add{
+    float: right;
+    .btn-link{
+        @include btn();
+    }
+}
+
+
+
 
 /******************************************************/
 /********************** INPUTS ************************/
 /******************************************************/
 label{
     display: block;
+    margin-top: 1rem;
     margin-bottom: .5rem;
 }
 
@@ -118,4 +140,10 @@ input{
         width: 100%;
         padding: .5rem .7rem;
     }
+}
+
+button{
+    @include btn();
+    cursor: pointer;
+    border: none;
 }

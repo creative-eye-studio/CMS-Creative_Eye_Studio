@@ -87,6 +87,12 @@ class __TwigTemplate_4a17964bad12c20855cbdf6178d6ac58d748c24248398cd93ef056a2bc1
         // line 6
         echo "
 <section class=\"bloc1\">
+    <p class=\"btn-add\">
+        <a class=\"btn-link\" href=\"";
+        // line 9
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_register");
+        echo "\">Ajouter un utilisateur</a>
+    </p>
     <h2>Utilisateurs</h2>
 </section>
 
@@ -111,7 +117,7 @@ class __TwigTemplate_4a17964bad12c20855cbdf6178d6ac58d748c24248398cd93ef056a2bc1
 
     public function getDebugInfo()
     {
-        return array (  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  93 => 9,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -123,6 +129,9 @@ class __TwigTemplate_4a17964bad12c20855cbdf6178d6ac58d748c24248398cd93ef056a2bc1
 {% block body %}
 
 <section class=\"bloc1\">
+    <p class=\"btn-add\">
+        <a class=\"btn-link\" href=\"{{ path('app_register') }}\">Ajouter un utilisateur</a>
+    </p>
     <h2>Utilisateurs</h2>
 </section>
 

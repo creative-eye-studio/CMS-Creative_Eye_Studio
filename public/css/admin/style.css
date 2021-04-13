@@ -66,7 +66,7 @@ main {
 /* line 77, ../../../../../Users/kevinrifa/Documents/Creative_Eye_Studio/cms-projects/public/css/admin/sass/style.scss */
 .bloc1 {
   background-color: white;
-  padding: .5rem 2rem;
+  padding: .5rem 2rem 2rem;
   margin-bottom: 2rem;
   box-sizing: border-box;
   font-family: "Lato";
@@ -81,7 +81,7 @@ main {
 /* line 82, ../../../../../Users/kevinrifa/Documents/Creative_Eye_Studio/cms-projects/public/css/admin/sass/style.scss */
 .bloc2 {
   background-color: white;
-  padding: .5rem 2rem;
+  padding: .5rem 2rem 2rem;
   margin-bottom: 2rem;
   box-sizing: border-box;
   font-family: "Lato";
@@ -96,7 +96,7 @@ main {
 /* line 87, ../../../../../Users/kevinrifa/Documents/Creative_Eye_Studio/cms-projects/public/css/admin/sass/style.scss */
 .bloc3 {
   background-color: white;
-  padding: .5rem 2rem;
+  padding: .5rem 2rem 2rem;
   margin-bottom: 2rem;
   box-sizing: border-box;
   font-family: "Lato";
@@ -111,7 +111,7 @@ main {
 /* line 92, ../../../../../Users/kevinrifa/Documents/Creative_Eye_Studio/cms-projects/public/css/admin/sass/style.scss */
 .bloc-login {
   background-color: white;
-  padding: .5rem 2rem;
+  padding: .5rem 2rem 2rem;
   margin-bottom: 2rem;
   box-sizing: border-box;
   font-family: "Lato";
@@ -130,20 +130,51 @@ main {
 }
 
 /******************************************************/
+/*********************** BLOCS ************************/
+/******************************************************/
+/* line 115, ../../../../../Users/kevinrifa/Documents/Creative_Eye_Studio/cms-projects/public/css/admin/sass/style.scss */
+.btn-add {
+  float: right;
+}
+
+/* line 117, ../../../../../Users/kevinrifa/Documents/Creative_Eye_Studio/cms-projects/public/css/admin/sass/style.scss */
+.btn-add .btn-link {
+  background-color: #1565c0;
+  padding: 1rem;
+  text-decoration: none;
+  font: 300 1em/100% "Lato";
+  color: white;
+  display: inline-block;
+}
+
+/******************************************************/
 /********************** INPUTS ************************/
 /******************************************************/
-/* line 107, ../../../../../Users/kevinrifa/Documents/Creative_Eye_Studio/cms-projects/public/css/admin/sass/style.scss */
+/* line 128, ../../../../../Users/kevinrifa/Documents/Creative_Eye_Studio/cms-projects/public/css/admin/sass/style.scss */
 label {
   display: block;
+  margin-top: 1rem;
   margin-bottom: .5rem;
 }
 
-/* line 113, ../../../../../Users/kevinrifa/Documents/Creative_Eye_Studio/cms-projects/public/css/admin/sass/style.scss */
+/* line 135, ../../../../../Users/kevinrifa/Documents/Creative_Eye_Studio/cms-projects/public/css/admin/sass/style.scss */
 input[type=text], input[type=email], input[type=password] {
   display: block;
   box-sizing: border-box;
   width: 100%;
   padding: .5rem .7rem;
+}
+
+/* line 145, ../../../../../Users/kevinrifa/Documents/Creative_Eye_Studio/cms-projects/public/css/admin/sass/style.scss */
+button {
+  background-color: #1565c0;
+  padding: 1rem;
+  text-decoration: none;
+  font: 300 1em/100% "Lato";
+  color: white;
+  display: inline-block;
+  cursor: pointer;
+  border: none;
 }
 
 /*# sourceMappingURL=style.css.map */

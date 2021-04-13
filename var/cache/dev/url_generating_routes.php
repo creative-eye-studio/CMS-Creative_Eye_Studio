@@ -19,7 +19,7 @@ return [
     'pages_site' => [[], ['_controller' => 'App\\Controller\\Admin\\AdminController::pages_site'], [], [['text', '/admin/pages-site']], [], []],
     'articles_site' => [[], ['_controller' => 'App\\Controller\\Admin\\AdminController::articles_site'], [], [['text', '/admin/articles-site']], [], []],
     'users_list' => [[], ['_controller' => 'App\\Controller\\Admin\\AdminController::users_list'], [], [['text', '/admin/users-list']], [], []],
-    'app_register' => [[], ['_controller' => 'App\\Controller\\RegistrationController::register'], [], [['text', '/register']], [], []],
+    'app_register' => [[], ['_controller' => 'App\\Controller\\RegistrationController::register'], [], [['text', '/admin/register']], [], []],
     'app_verify_email' => [[], ['_controller' => 'App\\Controller\\RegistrationController::verifyUserEmail'], [], [['text', '/verify/email']], [], []],
     'app_login' => [[], ['_controller' => 'App\\Controller\\SecurityController::login'], [], [['text', '/login']], [], []],
     'app_logout' => [[], ['_controller' => 'App\\Controller\\SecurityController::logout'], [], [['text', '/logout']], [], []],
