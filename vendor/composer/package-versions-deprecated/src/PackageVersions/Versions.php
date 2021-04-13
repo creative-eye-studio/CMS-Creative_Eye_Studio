@@ -52,6 +52,7 @@ final class Versions
   'doctrine/sql-formatter' => '1.1.1@56070bebac6e77230ed7d306ad13528e60732871',
   'egulias/email-validator' => '3.1.1@c81f18a3efb941d8c4d2e025f6183b5c6d697307',
   'friendsofphp/proxy-manager-lts' => 'v1.0.3@121af47c9aee9c03031bdeca3fac0540f59aa5c3',
+  'friendsofsymfony/ckeditor-bundle' => '2.3.0@282c79b0d3eda68855ea4c8732ab8d249cd5fbd0',
   'laminas/laminas-code' => '4.1.0@5b553c274b94af3f880cbaaf8fbab047f279a31c',
   'laminas/laminas-eventmanager' => '3.3.1@966c859b67867b179fde1eff0cd38df51472ce4a',
   'laminas/laminas-zendframework-bridge' => '1.2.0@6cccbddfcfc742eb02158d6137ca5687d92cee32',
@@ -137,10 +138,10 @@ final class Versions
   'symfony/maker-bundle' => 'v1.30.2@a395a85aa4ded6c1fa3da118d60329b64b6c2acd',
   'symfony/phpunit-bridge' => 'v5.2.6@f2f94fd78379cdcdef09dd5025af791301913968',
   'symfony/web-profiler-bundle' => 'v5.2.6@58e5be2aa69041ff35250537190d9ec29136782a',
-  'symfony/polyfill-ctype' => '*@',
-  'symfony/polyfill-iconv' => '*@',
-  'symfony/polyfill-php72' => '*@',
-  '__root__' => 'No version set (parsed as 1.0.0)@',
+  'symfony/polyfill-ctype' => '*@605b77b0262a3af39c3d816cd4a03a600f639a27',
+  'symfony/polyfill-iconv' => '*@605b77b0262a3af39c3d816cd4a03a600f639a27',
+  'symfony/polyfill-php72' => '*@605b77b0262a3af39c3d816cd4a03a600f639a27',
+  '__root__' => 'dev-Admin@605b77b0262a3af39c3d816cd4a03a600f639a27',
 );
 
     private function __construct()

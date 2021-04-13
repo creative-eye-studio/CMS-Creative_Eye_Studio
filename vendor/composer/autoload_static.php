@@ -128,6 +128,10 @@ class ComposerStaticInit379b4b38426f6588f135764b1e7f2501
             'Laminas\\EventManager\\' => 21,
             'Laminas\\Code\\' => 13,
         ),
+        'F' => 
+        array (
+            'FOS\\CKEditorBundle\\' => 19,
+        ),
         'E' => 
         array (
             'Egulias\\EmailValidator\\' => 23,
@@ -495,6 +499,10 @@ class ComposerStaticInit379b4b38426f6588f135764b1e7f2501
         'Laminas\\Code\\' => 
         array (
             0 => __DIR__ . '/..' . '/laminas/laminas-code/src',
+        ),
+        'FOS\\CKEditorBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/friendsofsymfony/ckeditor-bundle/src',
         ),
         'Egulias\\EmailValidator\\' => 
         array (
@@ -1745,6 +1753,21 @@ class ComposerStaticInit379b4b38426f6588f135764b1e7f2501
         'Egulias\\EmailValidator\\Warning\\QuotedString' => __DIR__ . '/..' . '/egulias/email-validator/src/Warning/QuotedString.php',
         'Egulias\\EmailValidator\\Warning\\TLD' => __DIR__ . '/..' . '/egulias/email-validator/src/Warning/TLD.php',
         'Egulias\\EmailValidator\\Warning\\Warning' => __DIR__ . '/..' . '/egulias/email-validator/src/Warning/Warning.php',
+        'FOS\\CKEditorBundle\\Builder\\JsonBuilder' => __DIR__ . '/..' . '/friendsofsymfony/ckeditor-bundle/src/Builder/JsonBuilder.php',
+        'FOS\\CKEditorBundle\\Command\\CKEditorInstallerCommand' => __DIR__ . '/..' . '/friendsofsymfony/ckeditor-bundle/src/Command/CKEditorInstallerCommand.php',
+        'FOS\\CKEditorBundle\\Config\\CKEditorConfiguration' => __DIR__ . '/..' . '/friendsofsymfony/ckeditor-bundle/src/Config/CKEditorConfiguration.php',
+        'FOS\\CKEditorBundle\\Config\\CKEditorConfigurationInterface' => __DIR__ . '/..' . '/friendsofsymfony/ckeditor-bundle/src/Config/CKEditorConfigurationInterface.php',
+        'FOS\\CKEditorBundle\\DependencyInjection\\Configuration' => __DIR__ . '/..' . '/friendsofsymfony/ckeditor-bundle/src/DependencyInjection/Configuration.php',
+        'FOS\\CKEditorBundle\\DependencyInjection\\FOSCKEditorExtension' => __DIR__ . '/..' . '/friendsofsymfony/ckeditor-bundle/src/DependencyInjection/FOSCKEditorExtension.php',
+        'FOS\\CKEditorBundle\\Exception\\BadProxyUrlException' => __DIR__ . '/..' . '/friendsofsymfony/ckeditor-bundle/src/Exception/BadProxyUrlException.php',
+        'FOS\\CKEditorBundle\\Exception\\ConfigException' => __DIR__ . '/..' . '/friendsofsymfony/ckeditor-bundle/src/Exception/ConfigException.php',
+        'FOS\\CKEditorBundle\\Exception\\FOSCKEditorException' => __DIR__ . '/..' . '/friendsofsymfony/ckeditor-bundle/src/Exception/FOSCKEditorException.php',
+        'FOS\\CKEditorBundle\\FOSCKEditorBundle' => __DIR__ . '/..' . '/friendsofsymfony/ckeditor-bundle/src/FOSCKEditorBundle.php',
+        'FOS\\CKEditorBundle\\Form\\Type\\CKEditorType' => __DIR__ . '/..' . '/friendsofsymfony/ckeditor-bundle/src/Form/Type/CKEditorType.php',
+        'FOS\\CKEditorBundle\\Installer\\CKEditorInstaller' => __DIR__ . '/..' . '/friendsofsymfony/ckeditor-bundle/src/Installer/CKEditorInstaller.php',
+        'FOS\\CKEditorBundle\\Renderer\\CKEditorRenderer' => __DIR__ . '/..' . '/friendsofsymfony/ckeditor-bundle/src/Renderer/CKEditorRenderer.php',
+        'FOS\\CKEditorBundle\\Renderer\\CKEditorRendererInterface' => __DIR__ . '/..' . '/friendsofsymfony/ckeditor-bundle/src/Renderer/CKEditorRendererInterface.php',
+        'FOS\\CKEditorBundle\\Twig\\CKEditorExtension' => __DIR__ . '/..' . '/friendsofsymfony/ckeditor-bundle/src/Twig/CKEditorExtension.php',
         'IntlDateFormatter' => __DIR__ . '/..' . '/symfony/intl/Resources/stubs/IntlDateFormatter.php',
         'JsonException' => __DIR__ . '/..' . '/symfony/polyfill-php73/Resources/stubs/JsonException.php',
         'Laminas\\Code\\DeclareStatement' => __DIR__ . '/..' . '/laminas/laminas-code/src/DeclareStatement.php',
