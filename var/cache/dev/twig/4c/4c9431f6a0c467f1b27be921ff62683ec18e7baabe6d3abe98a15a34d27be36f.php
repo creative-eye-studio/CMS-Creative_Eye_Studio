@@ -87,6 +87,12 @@ class __TwigTemplate_6c6a921370ac08b62d6355344f6671fb3d2eb6a9975687ac4b31656d850
         // line 6
         echo "
 <section class=\"bloc1\">
+    <p class=\"btn-add\">
+        <a class=\"btn-link\" href=\"";
+        // line 9
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("add_page");
+        echo "\">Ajouter une page</a>
+    </p>
     <h2>Liste des pages</h2>
 </section>
 
@@ -111,7 +117,7 @@ class __TwigTemplate_6c6a921370ac08b62d6355344f6671fb3d2eb6a9975687ac4b31656d850
 
     public function getDebugInfo()
     {
-        return array (  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  93 => 9,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -123,6 +129,9 @@ class __TwigTemplate_6c6a921370ac08b62d6355344f6671fb3d2eb6a9975687ac4b31656d850
 {% block body %}
 
 <section class=\"bloc1\">
+    <p class=\"btn-add\">
+        <a class=\"btn-link\" href=\"{{ path('add_page') }}\">Ajouter une page</a>
+    </p>
     <h2>Liste des pages</h2>
 </section>
 

@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Form\AddArticleType;
+use App\Form\AddPagesType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -24,6 +25,19 @@ class AdminController extends AbstractController
      */
     public function pages_site(){
         return $this->render('admin/pages-list.html.twig', [
+            'controller_name' => 'AdminController'
+        ]);
+    }
+
+    /**
+     * @Route("/admin/add-page", name="add_page")
+     */
+    public function add_page(){
+
+        $form = $this->createForm(AddPagesType::class);
+
+        return $this->render('admin/add-page.html.twig', [
+            'form' => $form->createView(),
             'controller_name' => 'AdminController'
         ]);
     }

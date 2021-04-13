@@ -15,6 +15,7 @@ return [
         '/_profiler/open' => [[['_route' => '_profiler_open_file', '_controller' => 'web_profiler.controller.profiler::openAction'], null, null, null, false, false, null]],
         '/admin' => [[['_route' => 'admin', '_controller' => 'App\\Controller\\Admin\\AdminController::index'], null, null, null, false, false, null]],
         '/admin/pages-site' => [[['_route' => 'pages_site', '_controller' => 'App\\Controller\\Admin\\AdminController::pages_site'], null, null, null, false, false, null]],
+        '/admin/add-page' => [[['_route' => 'add_page', '_controller' => 'App\\Controller\\Admin\\AdminController::add_page'], null, null, null, false, false, null]],
         '/admin/articles-site' => [[['_route' => 'articles_site', '_controller' => 'App\\Controller\\Admin\\AdminController::articles_site'], null, null, null, false, false, null]],
         '/admin/add-article' => [[['_route' => 'add_article', '_controller' => 'App\\Controller\\Admin\\AdminController::add_article'], null, null, null, false, false, null]],
         '/admin/users-list' => [[['_route' => 'users_list', '_controller' => 'App\\Controller\\Admin\\AdminController::users_list'], null, null, null, false, false, null]],
