@@ -5305,6 +5305,50 @@
     </service>
     <service id="fos_ck_editor.configuration" class="FOS\CKEditorBundle\Config\CKEditorConfiguration">
       <argument type="collection">
+        <argument key="configs" type="collection">
+          <argument key="main_config" type="collection">
+            <argument key="toolbar" type="collection">
+              <argument type="collection">
+                <argument key="name">styles</argument>
+                <argument key="items" type="collection">
+                  <argument>Bold</argument>
+                  <argument>Italic</argument>
+                  <argument>Underline</argument>
+                  <argument>Strike</argument>
+                  <argument>Blockquote</argument>
+                  <argument>-</argument>
+                  <argument>Link</argument>
+                  <argument>-</argument>
+                  <argument>RemoveFormat</argument>
+                  <argument>-</argument>
+                  <argument>NumberedList</argument>
+                  <argument>BulletedList</argument>
+                  <argument>-</argument>
+                  <argument>Outdent</argument>
+                  <argument>Indent</argument>
+                  <argument>-</argument>
+                  <argument>-</argument>
+                  <argument>JustifyLeft</argument>
+                  <argument>JustifyCenter</argument>
+                  <argument>JustifyRight</argument>
+                  <argument>JustifyBlock</argument>
+                  <argument>-</argument>
+                  <argument>Image</argument>
+                  <argument>Table</argument>
+                  <argument>-</argument>
+                  <argument>Styles</argument>
+                  <argument>Format</argument>
+                  <argument>Font</argument>
+                  <argument>FontSize</argument>
+                  <argument>-</argument>
+                  <argument>TextColor</argument>
+                  <argument>BGColor</argument>
+                  <argument>Source</argument>
+                </argument>
+              </argument>
+            </argument>
+          </argument>
+        </argument>
         <argument key="enable">true</argument>
         <argument key="async">false</argument>
         <argument key="auto_inline">true</argument>
@@ -5317,7 +5361,6 @@
         <argument key="js_path">bundles/fosckeditor/ckeditor.js</argument>
         <argument key="jquery_path">bundles/fosckeditor/adapters/jquery.js</argument>
         <argument key="default_config">null</argument>
-        <argument key="configs" type="collection"/>
         <argument key="plugins" type="collection"/>
         <argument key="styles" type="collection"/>
         <argument key="templates" type="collection"/>

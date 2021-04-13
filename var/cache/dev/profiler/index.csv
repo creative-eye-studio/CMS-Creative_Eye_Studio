@@ -237,3 +237,5 @@ bfa525,::1,GET,https://localhost:8000/admin/users-list,1618331227,,200
 d20fd9,::1,GET,https://localhost:8000/admin/register,1618331302,,200
 a190ca,::1,GET,https://localhost:8000/admin/users-list,1618332582,,200
 ad8969,::1,GET,https://localhost:8000/admin/register,1618332584,,200
+fbb380,::1,GET,https://localhost:8000/admin/users-list,1618332752,,200
+e99022,::1,GET,https://localhost:8000/admin/register,1618332754,,200
