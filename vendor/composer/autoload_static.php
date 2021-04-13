@@ -590,6 +590,8 @@ class ComposerStaticInit379b4b38426f6588f135764b1e7f2501
         'App\\Controller\\RegistrationController' => __DIR__ . '/../..' . '/src/Controller/RegistrationController.php',
         'App\\Controller\\SecurityController' => __DIR__ . '/../..' . '/src/Controller/SecurityController.php',
         'App\\Entity\\Users' => __DIR__ . '/../..' . '/src/Entity/Users.php',
+        'App\\Form\\AddArticleType' => __DIR__ . '/../..' . '/src/Form/AddArticleType.php',
+        'App\\Form\\AddPagesType' => __DIR__ . '/../..' . '/src/Form/AddPagesType.php',
         'App\\Form\\RegistrationFormType' => __DIR__ . '/../..' . '/src/Form/RegistrationFormType.php',
         'App\\Kernel' => __DIR__ . '/../..' . '/src/Kernel.php',
         'App\\Repository\\UsersRepository' => __DIR__ . '/../..' . '/src/Repository/UsersRepository.php',

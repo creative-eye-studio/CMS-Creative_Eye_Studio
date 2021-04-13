@@ -10,6 +10,8 @@ return array(
     'App\\Controller\\RegistrationController' => $baseDir . '/src/Controller/RegistrationController.php',
     'App\\Controller\\SecurityController' => $baseDir . '/src/Controller/SecurityController.php',
     'App\\Entity\\Users' => $baseDir . '/src/Entity/Users.php',
+    'App\\Form\\AddArticleType' => $baseDir . '/src/Form/AddArticleType.php',
+    'App\\Form\\AddPagesType' => $baseDir . '/src/Form/AddPagesType.php',
     'App\\Form\\RegistrationFormType' => $baseDir . '/src/Form/RegistrationFormType.php',
     'App\\Kernel' => $baseDir . '/src/Kernel.php',
     'App\\Repository\\UsersRepository' => $baseDir . '/src/Repository/UsersRepository.php',

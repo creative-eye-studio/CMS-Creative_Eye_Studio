@@ -14,7 +14,7 @@ body {
 
 /* line 17, ../../../../../Users/kevinrifa/Documents/Creative_Eye_Studio/cms-projects/public/css/admin/sass/style.scss */
 body.authentified {
-  margin-left: 300px;
+  margin-left: 20rem;
 }
 
 /* line 22, ../../../../../Users/kevinrifa/Documents/Creative_Eye_Studio/cms-projects/public/css/admin/sass/style.scss */
@@ -30,7 +30,7 @@ main {
   position: absolute;
   top: 0;
   left: 0;
-  width: 300px;
+  width: 20rem;
   height: 100vh;
   background-color: white;
 }
