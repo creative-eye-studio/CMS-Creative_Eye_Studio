@@ -64,12 +64,41 @@ class __TwigTemplate_156987a646e35e253f708f5755639fc548f0d3e6bb8dbf83de3fa19acb9
         $this->displayBlock('javascripts', $context, $blocks);
         // line 14
         echo "    </head>
-    <body>
-        ";
-        // line 16
+    <body class=\"";
+        // line 15
+        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
+            echo "authentified";
+        }
+        echo "\">
+        <header></header>
+        <nav class=\"navigation\">
+            <ul>
+                <li><a href=\"";
+        // line 19
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin");
+        echo "\">Accueil</a></li>
+                <li><a href=\"";
+        // line 20
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("pages_site");
+        echo "\">Pages du site</a></li>
+                <li><a href=\"";
+        // line 21
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("articles_site");
+        echo "\">Articles</a></li>
+                <li><a href=\"";
+        // line 22
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("users_list");
+        echo "\">Utilisateurs</a></li>
+                <li><a href=\"/logout\">Se déconnecter</a></li>
+            </ul>
+        </nav>
+        <main>
+            ";
+        // line 27
         $this->displayBlock('body', $context, $blocks);
-        // line 17
-        echo "    </body>
+        // line 28
+        echo "        </main>
+    </body>
 </html>
 ";
         
@@ -139,7 +168,7 @@ class __TwigTemplate_156987a646e35e253f708f5755639fc548f0d3e6bb8dbf83de3fa19acb9
 
     }
 
-    // line 16
+    // line 27
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -162,9 +191,14 @@ class __TwigTemplate_156987a646e35e253f708f5755639fc548f0d3e6bb8dbf83de3fa19acb9
         return "admin.html.twig";
     }
 
+    public function isTraitable()
+    {
+        return false;
+    }
+
     public function getDebugInfo()
     {
-        return array (  143 => 16,  133 => 13,  131 => 12,  121 => 11,  103 => 8,  84 => 5,  72 => 17,  70 => 16,  66 => 14,  64 => 11,  60 => 9,  57 => 8,  53 => 5,  47 => 1,);
+        return array (  172 => 27,  162 => 13,  160 => 12,  150 => 11,  132 => 8,  113 => 5,  100 => 28,  98 => 27,  90 => 22,  86 => 21,  82 => 20,  78 => 19,  69 => 15,  66 => 14,  64 => 11,  60 => 9,  57 => 8,  53 => 5,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -183,8 +217,20 @@ class __TwigTemplate_156987a646e35e253f708f5755639fc548f0d3e6bb8dbf83de3fa19acb9
             {#{{ encore_entry_script_tags('app') }}#}
         {% endblock %}
     </head>
-    <body>
-        {% block body %}{% endblock %}
+    <body class=\"{% if is_granted('ROLE_ADMIN') %}authentified{% endif %}\">
+        <header></header>
+        <nav class=\"navigation\">
+            <ul>
+                <li><a href=\"{{ path('admin') }}\">Accueil</a></li>
+                <li><a href=\"{{ path('pages_site') }}\">Pages du site</a></li>
+                <li><a href=\"{{ path('articles_site') }}\">Articles</a></li>
+                <li><a href=\"{{ path('users_list') }}\">Utilisateurs</a></li>
+                <li><a href=\"/logout\">Se déconnecter</a></li>
+            </ul>
+        </nav>
+        <main>
+            {% block body %}{% endblock %}
+        </main>
     </body>
 </html>
 ", "admin.html.twig", "/Users/kevinrifa/Documents/Creative_Eye_Studio/cms-projects/templates/admin.html.twig");

@@ -16,6 +16,6 @@ if (!\class_exists(App_KernelDevDebugContainer::class, false)) {
 
 return new \ContainerXOxECTo\App_KernelDevDebugContainer([
     'container.build_hash' => 'XOxECTo',
-    'container.build_id' => '806b7618',
-    'container.build_time' => 1618312984,
+    'container.build_id' => '3fa6e088',
+    'container.build_time' => 1618328950,
 ], __DIR__.\DIRECTORY_SEPARATOR.'ContainerXOxECTo');

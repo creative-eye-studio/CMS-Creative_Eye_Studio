@@ -33,7 +33,7 @@ class __TwigTemplate_929d08bebf6b00451614d639fdaf12a635faa8d783bbf297e44503b100f
     protected function doGetParent(array $context)
     {
         // line 1
-        return "base.html.twig";
+        return "admin.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = [])
@@ -45,7 +45,7 @@ class __TwigTemplate_929d08bebf6b00451614d639fdaf12a635faa8d783bbf297e44503b100f
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "admin/index.html.twig"));
 
-        $this->parent = $this->loadTemplate("base.html.twig", "admin/index.html.twig", 1);
+        $this->parent = $this->loadTemplate("admin.html.twig", "admin/index.html.twig", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
@@ -65,7 +65,7 @@ class __TwigTemplate_929d08bebf6b00451614d639fdaf12a635faa8d783bbf297e44503b100f
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "Hello AdminController!";
+        echo "Interface d'administration";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -85,29 +85,22 @@ class __TwigTemplate_929d08bebf6b00451614d639fdaf12a635faa8d783bbf297e44503b100f
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-
-<div class=\"example-wrapper\">
-    <h1>Hello ";
-        // line 12
-        echo twig_escape_filter($this->env, (isset($context["controller_name"]) || array_key_exists("controller_name", $context) ? $context["controller_name"] : (function () { throw new RuntimeError('Variable "controller_name" does not exist.', 12, $this->source); })()), "html", null, true);
-        echo "! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href=\"";
-        // line 16
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\CodeExtension']->getFileLink("/Users/kevinrifa/Documents/Creative_Eye_Studio/cms-projects/src/Controller/AdminController.php", 0), "html", null, true);
-        echo "\">src/Controller/AdminController.php</a></code></li>
-        <li>Your template at <code><a href=\"";
-        // line 17
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\CodeExtension']->getFileLink("/Users/kevinrifa/Documents/Creative_Eye_Studio/cms-projects/templates/admin/index.html.twig", 0), "html", null, true);
-        echo "\">templates/admin/index.html.twig</a></code></li>
-    </ul>
+        echo "
+<!-- Pages et articles -->
+<div class=\"content-blocs\">
+    <section class=\"bloc2\">
+        <h2>Dernières pages</h2>
+    </section>
+    <section class=\"bloc2\">
+        <h2>Dernièrs articles</h2>
+    </section>
 </div>
+
+<!-- Utilisateurs -->
+<section class=\"bloc2\">
+    <h2>Utilisateurs</h2>
+</section>
+
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -129,30 +122,32 @@ class __TwigTemplate_929d08bebf6b00451614d639fdaf12a635faa8d783bbf297e44503b100f
 
     public function getDebugInfo()
     {
-        return array (  107 => 17,  103 => 16,  96 => 12,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("{% extends 'base.html.twig' %}
+        return new Source("{% extends 'admin.html.twig' %}
 
-{% block title %}Hello AdminController!{% endblock %}
+{% block title %}Interface d'administration{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 
-<div class=\"example-wrapper\">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href=\"{{ '/Users/kevinrifa/Documents/Creative_Eye_Studio/cms-projects/src/Controller/AdminController.php'|file_link(0) }}\">src/Controller/AdminController.php</a></code></li>
-        <li>Your template at <code><a href=\"{{ '/Users/kevinrifa/Documents/Creative_Eye_Studio/cms-projects/templates/admin/index.html.twig'|file_link(0) }}\">templates/admin/index.html.twig</a></code></li>
-    </ul>
+<!-- Pages et articles -->
+<div class=\"content-blocs\">
+    <section class=\"bloc2\">
+        <h2>Dernières pages</h2>
+    </section>
+    <section class=\"bloc2\">
+        <h2>Dernièrs articles</h2>
+    </section>
 </div>
+
+<!-- Utilisateurs -->
+<section class=\"bloc2\">
+    <h2>Utilisateurs</h2>
+</section>
+
 {% endblock %}
 ", "admin/index.html.twig", "/Users/kevinrifa/Documents/Creative_Eye_Studio/cms-projects/templates/admin/index.html.twig");
     }

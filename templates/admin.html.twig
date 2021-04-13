@@ -12,7 +12,19 @@
             {#{{ encore_entry_script_tags('app') }}#}
         {% endblock %}
     </head>
-    <body>
-        {% block body %}{% endblock %}
+    <body class="{% if is_granted('ROLE_ADMIN') %}authentified{% endif %}">
+        <header></header>
+        <nav class="navigation">
+            <ul>
+                <li><a href="{{ path('admin') }}">Accueil</a></li>
+                <li><a href="{{ path('pages_site') }}">Pages du site</a></li>
+                <li><a href="{{ path('articles_site') }}">Articles</a></li>
+                <li><a href="{{ path('users_list') }}">Utilisateurs</a></li>
+                <li><a href="/logout">Se déconnecter</a></li>
+            </ul>
+        </nav>
+        <main>
+            {% block body %}{% endblock %}
+        </main>
     </body>
 </html>
