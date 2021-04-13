@@ -142,6 +142,10 @@ input{
     }
 }
 
+.cke{
+    margin-bottom: 1.2rem !important;
+}
+
 button{
     @include btn();
     cursor: pointer;

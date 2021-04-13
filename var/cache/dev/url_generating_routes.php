@@ -18,6 +18,7 @@ return [
     'admin' => [[], ['_controller' => 'App\\Controller\\Admin\\AdminController::index'], [], [['text', '/admin']], [], []],
     'pages_site' => [[], ['_controller' => 'App\\Controller\\Admin\\AdminController::pages_site'], [], [['text', '/admin/pages-site']], [], []],
     'articles_site' => [[], ['_controller' => 'App\\Controller\\Admin\\AdminController::articles_site'], [], [['text', '/admin/articles-site']], [], []],
+    'add_article' => [[], ['_controller' => 'App\\Controller\\Admin\\AdminController::add_article'], [], [['text', '/admin/add-article']], [], []],
     'users_list' => [[], ['_controller' => 'App\\Controller\\Admin\\AdminController::users_list'], [], [['text', '/admin/users-list']], [], []],
     'app_register' => [[], ['_controller' => 'App\\Controller\\RegistrationController::register'], [], [['text', '/admin/register']], [], []],
     'app_verify_email' => [[], ['_controller' => 'App\\Controller\\RegistrationController::verifyUserEmail'], [], [['text', '/verify/email']], [], []],

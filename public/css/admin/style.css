@@ -166,6 +166,11 @@ input[type=text], input[type=email], input[type=password] {
 }
 
 /* line 145, ../../../../../Users/kevinrifa/Documents/Creative_Eye_Studio/cms-projects/public/css/admin/sass/style.scss */
+.cke {
+  margin-bottom: 1.2rem !important;
+}
+
+/* line 149, ../../../../../Users/kevinrifa/Documents/Creative_Eye_Studio/cms-projects/public/css/admin/sass/style.scss */
 button {
   background-color: #1565c0;
   padding: 1rem;

@@ -2,6 +2,7 @@
 
 namespace App\Controller\Admin;
 
+use App\Form\AddArticleType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -32,6 +33,19 @@ class AdminController extends AbstractController
      */
     public function articles_site(){
         return $this->render('admin/articles-list.html.twig', [
+            'controller_name' => 'AdminController'
+        ]);
+    }
+
+    /**
+     * @Route("/admin/add-article", name="add_article")
+     */
+    public function add_article(){
+
+        $form = $this->createForm(AddArticleType::class);
+
+        return $this->render('admin/add-article.html.twig', [
+            'form' => $form->createView(),
             'controller_name' => 'AdminController'
         ]);
     }
