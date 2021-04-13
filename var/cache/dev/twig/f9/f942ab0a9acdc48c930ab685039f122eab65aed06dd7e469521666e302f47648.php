@@ -113,12 +113,12 @@ class __TwigTemplate_da381fbc0f02bfe04182db82b2672fd326cb6745487331a1dcdd2ef8d5a
         }
         // line 16
         echo "
-    <p><label for=\"inputEmail\">Email</label><br>
+    <p><label for=\"inputEmail\">E-mail</label>
     <input type=\"email\" value=\"";
         // line 18
         echo twig_escape_filter($this->env, (isset($context["last_username"]) || array_key_exists("last_username", $context) ? $context["last_username"] : (function () { throw new RuntimeError('Variable "last_username" does not exist.', 18, $this->source); })()), "html", null, true);
         echo "\" name=\"email\" id=\"inputEmail\" class=\"form-control\" required autofocus></p>
-    <p><label for=\"inputPassword\">Password</label><br>
+    <p><label for=\"inputPassword\">Mot de passe</label>
     <input type=\"password\" name=\"password\" id=\"inputPassword\" class=\"form-control\" required></p>
 
     <input type=\"hidden\" name=\"_csrf_token\"
@@ -132,7 +132,7 @@ class __TwigTemplate_da381fbc0f02bfe04182db82b2672fd326cb6745487331a1dcdd2ef8d5a
         // line 36
         echo "
     <button class=\"btn btn-lg btn-primary\" type=\"submit\">
-        Sign in
+        Se connecter
     </button>
 </form>
 ";
@@ -177,9 +177,9 @@ class __TwigTemplate_da381fbc0f02bfe04182db82b2672fd326cb6745487331a1dcdd2ef8d5a
         </div>
     {% endif %}
 
-    <p><label for=\"inputEmail\">Email</label><br>
+    <p><label for=\"inputEmail\">E-mail</label>
     <input type=\"email\" value=\"{{ last_username }}\" name=\"email\" id=\"inputEmail\" class=\"form-control\" required autofocus></p>
-    <p><label for=\"inputPassword\">Password</label><br>
+    <p><label for=\"inputPassword\">Mot de passe</label>
     <input type=\"password\" name=\"password\" id=\"inputPassword\" class=\"form-control\" required></p>
 
     <input type=\"hidden\" name=\"_csrf_token\"
@@ -198,7 +198,7 @@ class __TwigTemplate_da381fbc0f02bfe04182db82b2672fd326cb6745487331a1dcdd2ef8d5a
     #}
 
     <button class=\"btn btn-lg btn-primary\" type=\"submit\">
-        Sign in
+        Se connecter
     </button>
 </form>
 {% endblock %}

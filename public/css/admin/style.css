@@ -1,6 +1,8 @@
 /******************************************************/
 /******************* CORPS DE SITE ********************/
 /******************************************************/
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap");
 /* line 5, ../../../../../Users/kevinrifa/Documents/Creative_Eye_Studio/cms-projects/public/css/admin/sass/style.scss */
 body {
   background-color: #1565c0;
@@ -12,14 +14,35 @@ body {
 /******************************************************/
 /*********************** BLOCS ************************/
 /******************************************************/
-/* line 24, ../../../../../Users/kevinrifa/Documents/Creative_Eye_Studio/cms-projects/public/css/admin/sass/style.scss */
+/* line 26, ../../../../../Users/kevinrifa/Documents/Creative_Eye_Studio/cms-projects/public/css/admin/sass/style.scss */
 .bloc-login {
   background-color: white;
   padding: 1rem;
+  font-family: "Lato";
+  font-size: 1em;
+  font-weight: 400;
+  width: 300px;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -55%);
+}
+
+/******************************************************/
+/********************** INPUTS ************************/
+/******************************************************/
+/* line 41, ../../../../../Users/kevinrifa/Documents/Creative_Eye_Studio/cms-projects/public/css/admin/sass/style.scss */
+label {
+  display: block;
+  margin-bottom: .5rem;
+}
+
+/* line 47, ../../../../../Users/kevinrifa/Documents/Creative_Eye_Studio/cms-projects/public/css/admin/sass/style.scss */
+input[type=text], input[type=email], input[type=password] {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  padding: .5rem .7rem;
 }
 
 /*# sourceMappingURL=style.css.map */
