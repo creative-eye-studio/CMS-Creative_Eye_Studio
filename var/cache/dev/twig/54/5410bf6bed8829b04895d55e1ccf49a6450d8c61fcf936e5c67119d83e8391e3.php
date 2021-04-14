@@ -93,17 +93,25 @@ class __TwigTemplate_fbbc316be3b7d905abf4242679fce46da5bc69ce0af051ab5f95988b374
             // line 23
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("users_list");
             echo "\">Utilisateurs</a></li>
+                <li><a href=\"";
+            // line 24
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("css_modify");
+            echo "\">Style CSS</a></li>
+                <li><a href=\"";
+            // line 25
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("js_modify");
+            echo "\">Fonctions JS</a></li>
                 <li><a href=\"/logout\">Se déconnecter</a></li>
             </ul>
         </nav>
          ";
         }
-        // line 28
+        // line 30
         echo "        <main>
             ";
-        // line 29
+        // line 31
         $this->displayBlock('body', $context, $blocks);
-        // line 30
+        // line 32
         echo "        </main>
     </body>
 </html>
@@ -175,7 +183,7 @@ class __TwigTemplate_fbbc316be3b7d905abf4242679fce46da5bc69ce0af051ab5f95988b374
 
     }
 
-    // line 29
+    // line 31
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -205,7 +213,7 @@ class __TwigTemplate_fbbc316be3b7d905abf4242679fce46da5bc69ce0af051ab5f95988b374
 
     public function getDebugInfo()
     {
-        return array (  179 => 29,  169 => 13,  167 => 12,  157 => 11,  139 => 8,  120 => 5,  107 => 30,  105 => 29,  102 => 28,  94 => 23,  90 => 22,  86 => 21,  82 => 20,  78 => 18,  76 => 17,  69 => 15,  66 => 14,  64 => 11,  60 => 9,  57 => 8,  53 => 5,  47 => 1,);
+        return array (  187 => 31,  177 => 13,  175 => 12,  165 => 11,  147 => 8,  128 => 5,  115 => 32,  113 => 31,  110 => 30,  102 => 25,  98 => 24,  94 => 23,  90 => 22,  86 => 21,  82 => 20,  78 => 18,  76 => 17,  69 => 15,  66 => 14,  64 => 11,  60 => 9,  57 => 8,  53 => 5,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -233,6 +241,8 @@ class __TwigTemplate_fbbc316be3b7d905abf4242679fce46da5bc69ce0af051ab5f95988b374
                 <li><a href=\"{{ path('pages_site') }}\">Pages du site</a></li>
                 <li><a href=\"{{ path('articles_site') }}\">Articles</a></li>
                 <li><a href=\"{{ path('users_list') }}\">Utilisateurs</a></li>
+                <li><a href=\"{{ path('css_modify') }}\">Style CSS</a></li>
+                <li><a href=\"{{ path('js_modify') }}\">Fonctions JS</a></li>
                 <li><a href=\"/logout\">Se déconnecter</a></li>
             </ul>
         </nav>
