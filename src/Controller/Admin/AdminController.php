@@ -2,6 +2,7 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\Articles;
 use App\Entity\Pages;
 use App\Form\AddArticleType;
 use App\Form\AddPagesType;
@@ -67,8 +68,8 @@ class AdminController extends AbstractController
     public function add_page(Request $request): Response{
 
         $form = $this->createForm(AddPagesType::class);
-
         $form->handleRequest($request);
+
         if($form->isSubmitted() && $form->isValid()){
             $data = $form->getData();
             $slugPage = new Slugify();
@@ -84,7 +85,7 @@ class AdminController extends AbstractController
             $entityManager->flush();
 
             //Création de la page
-            $file = fopen("../templates/front/" . $slugPageStr . ".html.twig", "c+b");
+            $file = fopen("../templates/front/website/" . $slugPageStr . ".html.twig", "c+b");
             fwrite($file, $data["page_content"]);
 
 
@@ -109,9 +110,32 @@ class AdminController extends AbstractController
     /**
      * @Route("/admin/add-article", name="add_article")
      */
-    public function add_article(){
+    public function add_article(Request $request){
 
         $form = $this->createForm(AddArticleType::class);
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid()){
+            $data = $form->getData();
+            $slugPage = new Slugify();
+            $slugPageStr = $slugPage->slugify($data["article_title"]);
+            //$slugPageStr = strval($slugPage);
+
+            $page = new Articles();
+            $page->setName($data["article_title"]);
+            $page->setSlug($slugPageStr);
+
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($page);
+            $entityManager->flush();
+
+            //Création de la page
+            $file = fopen("../templates/front/blog/" . $slugPageStr . ".html.twig", "c+b");
+            fwrite($file, $data["article_content"]);
+
+
+            return $this->redirectToRoute('add_article');
+        }
 
         return $this->render('admin/add-article.html.twig', [
             'form' => $form->createView(),
