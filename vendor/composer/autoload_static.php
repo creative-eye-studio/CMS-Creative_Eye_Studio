@@ -38,6 +38,7 @@ class ComposerStaticInit379b4b38426f6588f135764b1e7f2501
         ),
         'S' => 
         array (
+            'Symfony\\WebpackEncoreBundle\\' => 28,
             'Symfony\\Polyfill\\Php80\\' => 23,
             'Symfony\\Polyfill\\Php73\\' => 23,
             'Symfony\\Polyfill\\Mbstring\\' => 26,
@@ -124,6 +125,7 @@ class ComposerStaticInit379b4b38426f6588f135764b1e7f2501
         ),
         'L' => 
         array (
+            'Leafo\\ScssPhp\\' => 14,
             'Laminas\\ZendFrameworkBridge\\' => 28,
             'Laminas\\EventManager\\' => 21,
             'Laminas\\Code\\' => 13,
@@ -184,6 +186,10 @@ class ComposerStaticInit379b4b38426f6588f135764b1e7f2501
         'Twig\\' => 
         array (
             0 => __DIR__ . '/..' . '/twig/twig/src',
+        ),
+        'Symfony\\WebpackEncoreBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/webpack-encore-bundle/src',
         ),
         'Symfony\\Polyfill\\Php80\\' => 
         array (
@@ -493,6 +499,10 @@ class ComposerStaticInit379b4b38426f6588f135764b1e7f2501
         array (
             0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
         ),
+        'Leafo\\ScssPhp\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/leafo/scssphp/src',
+        ),
         'Laminas\\ZendFrameworkBridge\\' => 
         array (
             0 => __DIR__ . '/..' . '/laminas/laminas-zendframework-bridge/src',
@@ -597,12 +607,16 @@ class ComposerStaticInit379b4b38426f6588f135764b1e7f2501
         'App\\Controller\\Admin\\AdminController' => __DIR__ . '/../..' . '/src/Controller/Admin/AdminController.php',
         'App\\Controller\\RegistrationController' => __DIR__ . '/../..' . '/src/Controller/RegistrationController.php',
         'App\\Controller\\SecurityController' => __DIR__ . '/../..' . '/src/Controller/SecurityController.php',
+        'App\\Entity\\Articles' => __DIR__ . '/../..' . '/src/Entity/Articles.php',
         'App\\Entity\\Pages' => __DIR__ . '/../..' . '/src/Entity/Pages.php',
         'App\\Entity\\Users' => __DIR__ . '/../..' . '/src/Entity/Users.php',
         'App\\Form\\AddArticleType' => __DIR__ . '/../..' . '/src/Form/AddArticleType.php',
         'App\\Form\\AddPagesType' => __DIR__ . '/../..' . '/src/Form/AddPagesType.php',
+        'App\\Form\\CodeCssType' => __DIR__ . '/../..' . '/src/Form/CodeCssType.php',
+        'App\\Form\\CodeJsType' => __DIR__ . '/../..' . '/src/Form/CodeJsType.php',
         'App\\Form\\RegistrationFormType' => __DIR__ . '/../..' . '/src/Form/RegistrationFormType.php',
         'App\\Kernel' => __DIR__ . '/../..' . '/src/Kernel.php',
+        'App\\Repository\\ArticlesRepository' => __DIR__ . '/../..' . '/src/Repository/ArticlesRepository.php',
         'App\\Repository\\PagesRepository' => __DIR__ . '/../..' . '/src/Repository/PagesRepository.php',
         'App\\Repository\\UsersRepository' => __DIR__ . '/../..' . '/src/Repository/UsersRepository.php',
         'App\\Security\\EmailVerifier' => __DIR__ . '/../..' . '/src/Security/EmailVerifier.php',
@@ -1922,6 +1936,34 @@ class ComposerStaticInit379b4b38426f6588f135764b1e7f2501
         'Laminas\\ZendFrameworkBridge\\Module' => __DIR__ . '/..' . '/laminas/laminas-zendframework-bridge/src/Module.php',
         'Laminas\\ZendFrameworkBridge\\Replacements' => __DIR__ . '/..' . '/laminas/laminas-zendframework-bridge/src/Replacements.php',
         'Laminas\\ZendFrameworkBridge\\RewriteRules' => __DIR__ . '/..' . '/laminas/laminas-zendframework-bridge/src/RewriteRules.php',
+        'Leafo\\ScssPhp\\Base\\Range' => __DIR__ . '/..' . '/leafo/scssphp/src/Base/Range.php',
+        'Leafo\\ScssPhp\\Block' => __DIR__ . '/..' . '/leafo/scssphp/src/Block.php',
+        'Leafo\\ScssPhp\\Cache' => __DIR__ . '/..' . '/leafo/scssphp/src/Cache.php',
+        'Leafo\\ScssPhp\\Colors' => __DIR__ . '/..' . '/leafo/scssphp/src/Colors.php',
+        'Leafo\\ScssPhp\\Compiler' => __DIR__ . '/..' . '/leafo/scssphp/src/Compiler.php',
+        'Leafo\\ScssPhp\\Compiler\\Environment' => __DIR__ . '/..' . '/leafo/scssphp/src/Compiler/Environment.php',
+        'Leafo\\ScssPhp\\Exception\\CompilerException' => __DIR__ . '/..' . '/leafo/scssphp/src/Exception/CompilerException.php',
+        'Leafo\\ScssPhp\\Exception\\ParserException' => __DIR__ . '/..' . '/leafo/scssphp/src/Exception/ParserException.php',
+        'Leafo\\ScssPhp\\Exception\\RangeException' => __DIR__ . '/..' . '/leafo/scssphp/src/Exception/RangeException.php',
+        'Leafo\\ScssPhp\\Exception\\ServerException' => __DIR__ . '/..' . '/leafo/scssphp/src/Exception/ServerException.php',
+        'Leafo\\ScssPhp\\Formatter' => __DIR__ . '/..' . '/leafo/scssphp/src/Formatter.php',
+        'Leafo\\ScssPhp\\Formatter\\Compact' => __DIR__ . '/..' . '/leafo/scssphp/src/Formatter/Compact.php',
+        'Leafo\\ScssPhp\\Formatter\\Compressed' => __DIR__ . '/..' . '/leafo/scssphp/src/Formatter/Compressed.php',
+        'Leafo\\ScssPhp\\Formatter\\Crunched' => __DIR__ . '/..' . '/leafo/scssphp/src/Formatter/Crunched.php',
+        'Leafo\\ScssPhp\\Formatter\\Debug' => __DIR__ . '/..' . '/leafo/scssphp/src/Formatter/Debug.php',
+        'Leafo\\ScssPhp\\Formatter\\Expanded' => __DIR__ . '/..' . '/leafo/scssphp/src/Formatter/Expanded.php',
+        'Leafo\\ScssPhp\\Formatter\\Nested' => __DIR__ . '/..' . '/leafo/scssphp/src/Formatter/Nested.php',
+        'Leafo\\ScssPhp\\Formatter\\OutputBlock' => __DIR__ . '/..' . '/leafo/scssphp/src/Formatter/OutputBlock.php',
+        'Leafo\\ScssPhp\\Node' => __DIR__ . '/..' . '/leafo/scssphp/src/Node.php',
+        'Leafo\\ScssPhp\\Node\\Number' => __DIR__ . '/..' . '/leafo/scssphp/src/Node/Number.php',
+        'Leafo\\ScssPhp\\Parser' => __DIR__ . '/..' . '/leafo/scssphp/src/Parser.php',
+        'Leafo\\ScssPhp\\SourceMap\\Base64' => __DIR__ . '/..' . '/leafo/scssphp/src/SourceMap/Base64.php',
+        'Leafo\\ScssPhp\\SourceMap\\Base64VLQ' => __DIR__ . '/..' . '/leafo/scssphp/src/SourceMap/Base64VLQ.php',
+        'Leafo\\ScssPhp\\SourceMap\\Base64VLQEncoder' => __DIR__ . '/..' . '/leafo/scssphp/src/SourceMap/Base64VLQEncoder.php',
+        'Leafo\\ScssPhp\\SourceMap\\SourceMapGenerator' => __DIR__ . '/..' . '/leafo/scssphp/src/SourceMap/SourceMapGenerator.php',
+        'Leafo\\ScssPhp\\Type' => __DIR__ . '/..' . '/leafo/scssphp/src/Type.php',
+        'Leafo\\ScssPhp\\Util' => __DIR__ . '/..' . '/leafo/scssphp/src/Util.php',
+        'Leafo\\ScssPhp\\Version' => __DIR__ . '/..' . '/leafo/scssphp/src/Version.php',
         'Locale' => __DIR__ . '/..' . '/symfony/intl/Resources/stubs/Locale.php',
         'Monolog\\DateTimeImmutable' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/DateTimeImmutable.php',
         'Monolog\\ErrorHandler' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/ErrorHandler.php',
@@ -5181,6 +5223,23 @@ class ComposerStaticInit379b4b38426f6588f135764b1e7f2501
         'Symfony\\Polyfill\\Mbstring\\Mbstring' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/Mbstring.php',
         'Symfony\\Polyfill\\Php73\\Php73' => __DIR__ . '/..' . '/symfony/polyfill-php73/Php73.php',
         'Symfony\\Polyfill\\Php80\\Php80' => __DIR__ . '/..' . '/symfony/polyfill-php80/Php80.php',
+        'Symfony\\WebpackEncoreBundle\\Asset\\EntrypointLookup' => __DIR__ . '/..' . '/symfony/webpack-encore-bundle/src/Asset/EntrypointLookup.php',
+        'Symfony\\WebpackEncoreBundle\\Asset\\EntrypointLookupCollection' => __DIR__ . '/..' . '/symfony/webpack-encore-bundle/src/Asset/EntrypointLookupCollection.php',
+        'Symfony\\WebpackEncoreBundle\\Asset\\EntrypointLookupCollectionInterface' => __DIR__ . '/..' . '/symfony/webpack-encore-bundle/src/Asset/EntrypointLookupCollectionInterface.php',
+        'Symfony\\WebpackEncoreBundle\\Asset\\EntrypointLookupInterface' => __DIR__ . '/..' . '/symfony/webpack-encore-bundle/src/Asset/EntrypointLookupInterface.php',
+        'Symfony\\WebpackEncoreBundle\\Asset\\IntegrityDataProviderInterface' => __DIR__ . '/..' . '/symfony/webpack-encore-bundle/src/Asset/IntegrityDataProviderInterface.php',
+        'Symfony\\WebpackEncoreBundle\\Asset\\TagRenderer' => __DIR__ . '/..' . '/symfony/webpack-encore-bundle/src/Asset/TagRenderer.php',
+        'Symfony\\WebpackEncoreBundle\\CacheWarmer\\EntrypointCacheWarmer' => __DIR__ . '/..' . '/symfony/webpack-encore-bundle/src/CacheWarmer/EntrypointCacheWarmer.php',
+        'Symfony\\WebpackEncoreBundle\\DependencyInjection\\Configuration' => __DIR__ . '/..' . '/symfony/webpack-encore-bundle/src/DependencyInjection/Configuration.php',
+        'Symfony\\WebpackEncoreBundle\\DependencyInjection\\WebpackEncoreExtension' => __DIR__ . '/..' . '/symfony/webpack-encore-bundle/src/DependencyInjection/WebpackEncoreExtension.php',
+        'Symfony\\WebpackEncoreBundle\\EventListener\\ExceptionListener' => __DIR__ . '/..' . '/symfony/webpack-encore-bundle/src/EventListener/ExceptionListener.php',
+        'Symfony\\WebpackEncoreBundle\\EventListener\\PreLoadAssetsEventListener' => __DIR__ . '/..' . '/symfony/webpack-encore-bundle/src/EventListener/PreLoadAssetsEventListener.php',
+        'Symfony\\WebpackEncoreBundle\\Event\\RenderAssetTagEvent' => __DIR__ . '/..' . '/symfony/webpack-encore-bundle/src/Event/RenderAssetTagEvent.php',
+        'Symfony\\WebpackEncoreBundle\\Exception\\EntrypointNotFoundException' => __DIR__ . '/..' . '/symfony/webpack-encore-bundle/src/Exception/EntrypointNotFoundException.php',
+        'Symfony\\WebpackEncoreBundle\\Exception\\UndefinedBuildException' => __DIR__ . '/..' . '/symfony/webpack-encore-bundle/src/Exception/UndefinedBuildException.php',
+        'Symfony\\WebpackEncoreBundle\\Twig\\EntryFilesTwigExtension' => __DIR__ . '/..' . '/symfony/webpack-encore-bundle/src/Twig/EntryFilesTwigExtension.php',
+        'Symfony\\WebpackEncoreBundle\\Twig\\StimulusTwigExtension' => __DIR__ . '/..' . '/symfony/webpack-encore-bundle/src/Twig/StimulusTwigExtension.php',
+        'Symfony\\WebpackEncoreBundle\\WebpackEncoreBundle' => __DIR__ . '/..' . '/symfony/webpack-encore-bundle/src/WebpackEncoreBundle.php',
         'Twig\\Cache\\CacheInterface' => __DIR__ . '/..' . '/twig/twig/src/Cache/CacheInterface.php',
         'Twig\\Cache\\FilesystemCache' => __DIR__ . '/..' . '/twig/twig/src/Cache/FilesystemCache.php',
         'Twig\\Cache\\NullCache' => __DIR__ . '/..' . '/twig/twig/src/Cache/NullCache.php',

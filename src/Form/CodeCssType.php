@@ -13,7 +13,7 @@ class CodeCssType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $dataFile = file_get_contents("../public/css/website/style.scss");
+        $dataFile = file_get_contents("../assets/styles/app.scss");
         $builder
             ->add('code_front', CKEditorType::class, ["data" => dump($dataFile)])
             ->add('code_front_submit', SubmitType::class, ["label" => "Envoyer"])

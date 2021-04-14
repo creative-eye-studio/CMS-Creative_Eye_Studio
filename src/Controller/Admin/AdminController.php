@@ -29,32 +29,6 @@ class AdminController extends AbstractController
     }
 
     /**
-     * @Route("/admin/css-front", name="css_modify")
-     */
-    public function css_front(): Response
-    {
-        $form = $this->createForm(CodeCssType::class);
-
-        return $this->render('admin/css-code.html.twig', [
-            'form' => $form->createView(),
-            'controller_name' => 'AdminController',
-        ]);
-    }
-
-    /**
-     * @Route("/admin/js-front", name="js_modify")
-     */
-    public function js_front(): Response
-    {
-        $form = $this->createForm(CodeJsType::class);
-
-        return $this->render('admin/js-code.html.twig', [
-            'form' => $form->createView(),
-            'controller_name' => 'AdminController',
-        ]);
-    }
-
-    /**
      * @Route("/admin/pages-site", name="pages_site")
      */
     public function pages_site(){
