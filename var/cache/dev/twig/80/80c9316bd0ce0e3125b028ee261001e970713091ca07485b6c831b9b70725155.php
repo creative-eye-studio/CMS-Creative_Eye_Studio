@@ -65,7 +65,7 @@ class __TwigTemplate_bf3f4d2406015edfd592f1fb35177a252633863525f6dcc9081b28e76b7
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "Interface d'administration";
+        echo "Articles";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -124,7 +124,7 @@ class __TwigTemplate_bf3f4d2406015edfd592f1fb35177a252633863525f6dcc9081b28e76b7
     {
         return new Source("{% extends 'admin.html.twig' %}
 
-{% block title %}Interface d'administration{% endblock %}
+{% block title %}Articles{% endblock %}
 
 {% block body %}
 

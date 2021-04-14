@@ -527,8 +527,15 @@
     <service id="App\Form\AddPagesType" class="App\Form\AddPagesType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
+    <service id="App\Form\CodeFrontFormType" class="App\Form\CodeFrontFormType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
     <service id="App\Form\RegistrationFormType" class="App\Form\RegistrationFormType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
+    </service>
+    <service id="App\Repository\PagesRepository" class="App\Repository\PagesRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
     </service>
     <service id="App\Repository\UsersRepository" class="App\Repository\UsersRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
@@ -1016,6 +1023,7 @@
       <argument type="collection">
         <argument>App\Form\AddArticleType</argument>
         <argument>App\Form\AddPagesType</argument>
+        <argument>App\Form\CodeFrontFormType</argument>
         <argument>App\Form\RegistrationFormType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\FormType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\ChoiceType</argument>
@@ -1376,7 +1384,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension">
-      <argument type="service" id=".service_locator.oEzABdy"/>
+      <argument type="service" id=".service_locator.wKYQVOj"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -3673,7 +3681,7 @@
       <factory class="Doctrine\ORM\EntityManager" method="create"/>
     </service>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory">
-      <argument type="service" id=".service_locator.6_XyAor"/>
+      <argument type="service" id=".service_locator.V0BA1mF"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -5614,8 +5622,12 @@
     <service id=".abstract.instanceof.App\Form\AddArticleType" class="App\Form\AddArticleType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\AddPagesType" class="App\Form\AddPagesType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\AddPagesType" class="App\Form\AddPagesType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\CodeFrontFormType" class="App\Form\CodeFrontFormType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\CodeFrontFormType" class="App\Form\CodeFrontFormType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\RegistrationFormType" class="App\Form\RegistrationFormType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\RegistrationFormType" class="App\Form\RegistrationFormType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\PagesRepository" class="App\Repository\PagesRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\PagesRepository" class="App\Repository\PagesRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\UsersRepository" class="App\Repository\UsersRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\UsersRepository" class="App\Repository\UsersRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".service_locator.Kbr2i2X" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -6032,11 +6044,12 @@
       <argument type="service" id="debug.argument_resolver.not_tagged_controller.inner"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.oEzABdy" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.wKYQVOj" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Form\AddArticleType" type="service" id="App\Form\AddArticleType"/>
         <argument key="App\Form\AddPagesType" type="service" id="App\Form\AddPagesType"/>
+        <argument key="App\Form\CodeFrontFormType" type="service" id="App\Form\CodeFrontFormType"/>
         <argument key="App\Form\RegistrationFormType" type="service" id="App\Form\RegistrationFormType"/>
         <argument key="FM\ElfinderBundle\Form\Type\ElFinderType" type="service" id="fm_elfinder.form.type"/>
         <argument key="FOS\CKEditorBundle\Form\Type\CKEditorType" type="service" id="fos_ck_editor.form.type"/>
@@ -6060,9 +6073,10 @@
         <argument key="doctrine.orm.listeners.pdo_cache_adapter_doctrine_schema_subscriber" type="service" id="doctrine.orm.listeners.pdo_cache_adapter_doctrine_schema_subscriber"/>
       </argument>
     </service>
-    <service id=".service_locator.6_XyAor" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.V0BA1mF" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="App\Repository\PagesRepository" type="service" id="App\Repository\PagesRepository"/>
         <argument key="App\Repository\UsersRepository" type="service" id="App\Repository\UsersRepository"/>
       </argument>
     </service>
@@ -6903,7 +6917,7 @@
     <service id="Psr\Log\LoggerInterface $securityLogger" alias="monolog.logger.security"/>
     <service id="Psr\Log\LoggerInterface $debugLogger" alias="monolog.logger.debug"/>
     <service id=".service_locator.wKF4yn1" alias=".service_locator.anofQPJ"/>
-    <service id=".service_locator.yZwzSTZ" alias=".service_locator.oEzABdy"/>
+    <service id=".service_locator.TQ0kk3z" alias=".service_locator.wKYQVOj"/>
     <service id="validator" alias="debug.validator" public="true"/>
     <service id="translator.data_collector.inner" alias="translator.default"/>
     <service id="event_dispatcher" alias="debug.event_dispatcher" public="true"/>

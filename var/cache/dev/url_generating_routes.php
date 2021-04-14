@@ -16,6 +16,8 @@ return [
     '_profiler_exception' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::body'], [], [['text', '/exception'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], []],
     '_profiler_exception_css' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::stylesheet'], [], [['text', '/exception.css'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], []],
     'admin' => [[], ['_controller' => 'App\\Controller\\Admin\\AdminController::index'], [], [['text', '/admin']], [], []],
+    'css_modify' => [[], ['_controller' => 'App\\Controller\\Admin\\AdminController::css_front'], [], [['text', '/admin/css-front']], [], []],
+    'js_modify' => [[], ['_controller' => 'App\\Controller\\Admin\\AdminController::js_front'], [], [['text', '/admin/js-front']], [], []],
     'pages_site' => [[], ['_controller' => 'App\\Controller\\Admin\\AdminController::pages_site'], [], [['text', '/admin/pages-site']], [], []],
     'add_page' => [[], ['_controller' => 'App\\Controller\\Admin\\AdminController::add_page'], [], [['text', '/admin/add-page']], [], []],
     'articles_site' => [[], ['_controller' => 'App\\Controller\\Admin\\AdminController::articles_site'], [], [['text', '/admin/articles-site']], [], []],
