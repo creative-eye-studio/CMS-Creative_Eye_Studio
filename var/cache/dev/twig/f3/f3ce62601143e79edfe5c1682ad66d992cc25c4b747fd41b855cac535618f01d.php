@@ -102,10 +102,6 @@ class __TwigTemplate_16525e98008e8107bfbc2a213925d1fdf834d8ac20cc1305e675a44f0fb
         echo "
 </section>
 
-<script>
-    CKEDITOR.instances[cke_1_contents].setData(data_file)
-</script>
-
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -144,10 +140,6 @@ class __TwigTemplate_16525e98008e8107bfbc2a213925d1fdf834d8ac20cc1305e675a44f0fb
         {{ form_row(form.code_front, { label: 'Code source du SCSS' }) }}
     {{ form_end(form) }}
 </section>
-
-<script>
-    CKEDITOR.instances[cke_1_contents].setData(data_file)
-</script>
 
 {% endblock %}", "admin/css-code.html.twig", "/Users/kevinrifa/Documents/Creative_Eye_Studio/cms-projects/templates/admin/css-code.html.twig");
     }

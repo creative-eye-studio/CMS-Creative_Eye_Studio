@@ -6,7 +6,8 @@ use App\Entity\Articles;
 use App\Entity\Pages;
 use App\Form\AddArticleType;
 use App\Form\AddPagesType;
-use App\Form\CodeFrontFormType;
+use App\Form\CodeCssType;
+use App\Form\CodeJsType;
 use Cocur\Slugify\Slugify;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Filesystem\Exception\IOExceptionInterface;
@@ -32,9 +33,7 @@ class AdminController extends AbstractController
      */
     public function css_front(): Response
     {
-
-        $form = $this->createForm(CodeFrontFormType::class);
-        
+        $form = $this->createForm(CodeCssType::class);
 
         return $this->render('admin/css-code.html.twig', [
             'form' => $form->createView(),
@@ -47,7 +46,7 @@ class AdminController extends AbstractController
      */
     public function js_front(): Response
     {
-        $form = $this->createForm(CodeFrontFormType::class);
+        $form = $this->createForm(CodeJsType::class);
 
         return $this->render('admin/js-code.html.twig', [
             'form' => $form->createView(),
