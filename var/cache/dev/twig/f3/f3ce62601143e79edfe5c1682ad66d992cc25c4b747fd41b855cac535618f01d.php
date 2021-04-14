@@ -87,27 +87,24 @@ class __TwigTemplate_16525e98008e8107bfbc2a213925d1fdf834d8ac20cc1305e675a44f0fb
         // line 6
         echo "
 <section class=\"bloc1\">
-    <p class=\"btn-add\">
-        <a class=\"btn-link\" href=\"";
-        // line 9
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("add_article");
-        echo "\">Ajouter un article</a>
-    </p>
     <h2>Style SCSS du site</h2>
     ";
-        // line 12
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 12, $this->source); })()), 'form_start');
+        // line 9
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 9, $this->source); })()), 'form_start');
         echo "
         ";
-        // line 13
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 13, $this->source); })()), "code_front", [], "any", false, false, false, 13), 'row', ["label" => "Code source du CSS"]);
-        // line 15
+        // line 10
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 10, $this->source); })()), "code_front", [], "any", false, false, false, 10), 'row', ["label" => "Code source du SCSS"]);
         echo "
     ";
-        // line 16
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 16, $this->source); })()), 'form_end');
+        // line 11
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 11, $this->source); })()), 'form_end');
         echo "
 </section>
+
+<script>
+    CKEDITOR.instances[cke_1_contents].setData(data_file)
+</script>
 
 ";
         
@@ -130,7 +127,7 @@ class __TwigTemplate_16525e98008e8107bfbc2a213925d1fdf834d8ac20cc1305e675a44f0fb
 
     public function getDebugInfo()
     {
-        return array (  108 => 16,  105 => 15,  103 => 13,  99 => 12,  93 => 9,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  101 => 11,  97 => 10,  93 => 9,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -142,16 +139,15 @@ class __TwigTemplate_16525e98008e8107bfbc2a213925d1fdf834d8ac20cc1305e675a44f0fb
 {% block body %}
 
 <section class=\"bloc1\">
-    <p class=\"btn-add\">
-        <a class=\"btn-link\" href=\"{{ path('add_article') }}\">Ajouter un article</a>
-    </p>
     <h2>Style SCSS du site</h2>
     {{ form_start(form) }}
-        {{ form_row(form.code_front, {
-            label: 'Code source du CSS'
-        }) }}
+        {{ form_row(form.code_front, { label: 'Code source du SCSS' }) }}
     {{ form_end(form) }}
 </section>
+
+<script>
+    CKEDITOR.instances[cke_1_contents].setData(data_file)
+</script>
 
 {% endblock %}", "admin/css-code.html.twig", "/Users/kevinrifa/Documents/Creative_Eye_Studio/cms-projects/templates/admin/css-code.html.twig");
     }
