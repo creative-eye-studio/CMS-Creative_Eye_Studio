@@ -71,3 +71,5 @@ a842cf,::1,GET,https://localhost:8000/admin/add-page,1618421227,,200
 de9090,::1,POST,https://localhost:8000/admin/add-article,1618425195,,500
 dc74b0,::1,POST,https://localhost:8000/admin/add-article,1618425211,,302
 7e4ccf,::1,GET,https://localhost:8000/admin/add-article,1618425211,,200
+84013f,::1,GET,https://localhost:8000/admin/articles-site,1618425577,,200
+a928db,::1,GET,https://localhost:8000/admin/add-article,1618426301,,200
