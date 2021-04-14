@@ -268,3 +268,11 @@ ef662c,::1,GET,https://localhost:8000/admin/css-front,1618442825,,200
 6f6316,::1,GET,https://localhost:8000/admin/users-list,1618442981,,200
 fa4382,::1,GET,https://localhost:8000/css/admin/style.css.map,1618442982,24a0d4,404
 24a0d4,::1,GET,https://localhost:8000/css/admin/style.css.map,1618442982,,404
+7d5a85,::1,GET,https://localhost:8000/admin/register,1618443076,,200
+ec76e4,::1,GET,https://localhost:8000/admin/articles-site,1618443080,,200
+806a4f,::1,GET,https://localhost:8000/admin/add-article,1618443081,,200
+099991,::1,GET,https://localhost:8000/admin/pages-site,1618443086,,200
+20b0f5,::1,GET,https://localhost:8000/admin/add-page,1618443088,,200
+512533,::1,POST,https://localhost:8000/admin/add-page,1618443219,,302
+1bbf9a,::1,GET,https://localhost:8000/admin/add-page,1618443219,,200
+045103,::1,GET,https://localhost:8000/admin/pages-site,1618443221,,200
