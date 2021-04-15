@@ -87,6 +87,24 @@ class AdminController extends AbstractController
     }
 
     /**
+     * @Route("/admin/delete-page/{id}", name="delete_page")
+     */
+    public function delete_page(int $id)
+    {
+        $filesystem = new Filesystem();
+        $entityManager = $this->getDoctrine()->getManager();
+        $page = $entityManager->getRepository(Pages::class)->find($id);
+        $pageFile = $page->getSlug();
+
+        $entityManager->remove($page);
+        $entityManager->flush();
+
+        $filesystem->remove(['../templates/front/website/" . $slugPageStr . ".html.twig']);
+
+        return $this->redirectToRoute('pages_site');
+    }
+
+    /**
      * @Route("/admin/articles-site", name="articles_site")
      */
     public function articles_site()

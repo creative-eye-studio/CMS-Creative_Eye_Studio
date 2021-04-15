@@ -118,7 +118,10 @@ class __TwigTemplate_fc1be931e66e4e3d1151e2caffd157f164dd3ea473a0221b950b81e76ff
             if ((0 !== twig_compare(twig_get_attribute($this->env, $this->source, $context["page"], "slug", [], "any", false, false, false, 22), "index"))) {
                 // line 23
                 echo "            <li>
-                <a>Supprimer</a>
+                <a href=\" ";
+                // line 24
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("delete_page", ["id" => twig_get_attribute($this->env, $this->source, $context["page"], "id", [], "any", false, false, false, 24)]), "html", null, true);
+                echo " \">Supprimer</a>
             </li>
             ";
             }
@@ -160,7 +163,7 @@ class __TwigTemplate_fc1be931e66e4e3d1151e2caffd157f164dd3ea473a0221b950b81e76ff
 
     public function getDebugInfo()
     {
-        return array (  140 => 32,  133 => 30,  126 => 27,  120 => 23,  118 => 22,  107 => 14,  104 => 13,  99 => 12,  93 => 9,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  143 => 32,  136 => 30,  129 => 27,  123 => 24,  120 => 23,  118 => 22,  107 => 14,  104 => 13,  99 => 12,  93 => 9,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -188,7 +191,7 @@ class __TwigTemplate_fc1be931e66e4e3d1151e2caffd157f164dd3ea473a0221b950b81e76ff
             </li>
             {% if page.slug != \"index\" %}
             <li>
-                <a>Supprimer</a>
+                <a href=\" {{ path('delete_page', { id: page.id } )}} \">Supprimer</a>
             </li>
             {% endif %}
         </ul>
