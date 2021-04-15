@@ -81,7 +81,12 @@ class AdminController extends AbstractController
 
             //Création de la page
             $file = fopen("../templates/front/website/" . $slugPageStr . ".html.twig", "c+b");
-            fwrite($file, $data["page_content"]);
+            fwrite($file, "
+            {% extends 'base.html.twig' %}
+            {% block title %}".$data["page_title"]."{% endblock %}
+            {% block body %}
+                ".$data["page_content"]."
+            {% endblock %}");
 
 
             return $this->redirectToRoute('add_page');
@@ -154,8 +159,13 @@ class AdminController extends AbstractController
 
             //Création de la page
             $file = fopen("../templates/front/blog/" . $slugPageStr . ".html.twig", "c+b");
-            fwrite($file, $data["article_content"]);
-
+            fwrite($file, "
+            {% extends 'base.html.twig' %}
+            {% block title %}".$data["article_title"]."{% endblock %}
+            {% block body %}
+                ".$data["article_content"]."
+            {% endblock %}"
+        );
 
             return $this->redirectToRoute('add_article');
         }
