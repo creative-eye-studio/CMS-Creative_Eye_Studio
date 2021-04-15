@@ -412,3 +412,16 @@ f5e6e7,::1,GET,https://localhost:8000/admin/articles-site,1618483111,,200
 aa8a1d,::1,GET,https://localhost:8000/admin/pages-site,1618483114,,200
 d5f32b,::1,GET,https://localhost:8000/admin,1618483118,,200
 80bb6a,::1,GET,https://localhost:8000/admin/articles-site,1618483122,,200
+0cc452,::1,GET,https://localhost:8000/admin/pages-site,1618483161,,200
+6259eb,::1,GET,https://localhost:8000/admin/add-page,1618485043,,200
+38a195,::1,POST,https://localhost:8000/admin/add-page,1618485057,,302
+552b3c,::1,GET,https://localhost:8000/admin/add-page,1618485057,,200
+68bfc7,::1,GET,https://localhost:8000/admin/pages-site,1618485058,,200
+4748b3,::1,GET,https://localhost:8000/admin/delete-page/5,1618485061,,302
+26da8b,::1,GET,https://localhost:8000/admin/pages-site,1618485061,,200
+7802e3,::1,GET,https://localhost:8000/admin/add-page,1618485135,,200
+9d83b6,::1,POST,https://localhost:8000/admin/add-page,1618485144,,302
+fe9316,::1,GET,https://localhost:8000/admin/add-page,1618485144,,200
+6e9b37,::1,GET,https://localhost:8000/admin/pages-site,1618485147,,200
+9f3d64,::1,GET,https://localhost:8000/admin/delete-page/6,1618485149,,302
+174f46,::1,GET,https://localhost:8000/admin/pages-site,1618485149,,200

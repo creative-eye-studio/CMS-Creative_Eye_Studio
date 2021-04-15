@@ -19,6 +19,9 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class AdminController extends AbstractController
 {
+
+    /******************************* ADMINISTRATION *******************************/
+     
     /**
      * @Route("/admin", name="admin")
      */
@@ -36,6 +39,10 @@ class AdminController extends AbstractController
             'users' => $users
         ]);
     }
+
+
+
+    /******************************* PAGES *******************************/ 
 
     /**
      * @Route("/admin/pages-site", name="pages_site")
@@ -99,10 +106,15 @@ class AdminController extends AbstractController
         $entityManager->remove($page);
         $entityManager->flush();
 
-        $filesystem->remove(['../templates/front/website/" . $slugPageStr . ".html.twig']);
+        $filesystem->remove(['../templates/front/website/' . $pageFile . '.html.twig']);
 
         return $this->redirectToRoute('pages_site');
     }
+
+
+
+
+    /******************************* ARTICLES *******************************/ 
 
     /**
      * @Route("/admin/articles-site", name="articles_site")
@@ -153,6 +165,29 @@ class AdminController extends AbstractController
             'controller_name' => 'AdminController'
         ]);
     }
+
+    /**
+     * @Route("/admin/delete-article/{id}", name="delete_article")
+     */
+    public function delete_article(int $id)
+    {
+        $filesystem = new Filesystem();
+        $entityManager = $this->getDoctrine()->getManager();
+        $page = $entityManager->getRepository(Articles::class)->find($id);
+        $pageFile = $page->getSlug();
+
+        $entityManager->remove($page);
+        $entityManager->flush();
+
+        $filesystem->remove(['../templates/front/blog/' . $pageFile . '.html.twig']);
+
+        return $this->redirectToRoute('pages_site');
+    }
+
+
+
+
+    /******************************* UTILISATEURS *******************************/ 
 
     /**
      * @Route("/admin/users-list", name="users_list")

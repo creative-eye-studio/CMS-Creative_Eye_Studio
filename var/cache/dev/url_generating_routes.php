@@ -21,6 +21,7 @@ return [
     'delete_page' => [['id'], ['_controller' => 'App\\Controller\\Admin\\AdminController::delete_page'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/admin/delete-page']], [], []],
     'articles_site' => [[], ['_controller' => 'App\\Controller\\Admin\\AdminController::articles_site'], [], [['text', '/admin/articles-site']], [], []],
     'add_article' => [[], ['_controller' => 'App\\Controller\\Admin\\AdminController::add_article'], [], [['text', '/admin/add-article']], [], []],
+    'delete_article' => [['id'], ['_controller' => 'App\\Controller\\Admin\\AdminController::delete_article'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/admin/delete-article']], [], []],
     'users_list' => [[], ['_controller' => 'App\\Controller\\Admin\\AdminController::users_list'], [], [['text', '/admin/users-list']], [], []],
     'app_register' => [[], ['_controller' => 'App\\Controller\\RegistrationController::register'], [], [['text', '/admin/register']], [], []],
     'app_verify_email' => [[], ['_controller' => 'App\\Controller\\RegistrationController::verifyUserEmail'], [], [['text', '/verify/email']], [], []],
