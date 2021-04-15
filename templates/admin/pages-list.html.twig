@@ -19,9 +19,11 @@
             <li>
                 <a>Modifier</a>
             </li>
+            {% if page.slug != "index" %}
             <li>
                 <a>Supprimer</a>
             </li>
+            {% endif %}
         </ul>
     </div>
     {% else %}

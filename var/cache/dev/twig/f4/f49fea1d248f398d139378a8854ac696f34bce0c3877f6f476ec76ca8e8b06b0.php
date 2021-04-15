@@ -113,23 +113,30 @@ class __TwigTemplate_fc1be931e66e4e3d1151e2caffd157f164dd3ea473a0221b950b81e76ff
             <li>
                 <a>Modifier</a>
             </li>
-            <li>
+            ";
+            // line 22
+            if ((0 !== twig_compare(twig_get_attribute($this->env, $this->source, $context["page"], "slug", [], "any", false, false, false, 22), "index"))) {
+                // line 23
+                echo "            <li>
                 <a>Supprimer</a>
             </li>
-        </ul>
+            ";
+            }
+            // line 27
+            echo "        </ul>
     </div>
     ";
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 28
+            // line 30
             echo "        <p>Il n'y a pas encore de pages publiées !</p>
     ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['page'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 30
+        // line 32
         echo "</section>
 
 ";
@@ -153,7 +160,7 @@ class __TwigTemplate_fc1be931e66e4e3d1151e2caffd157f164dd3ea473a0221b950b81e76ff
 
     public function getDebugInfo()
     {
-        return array (  133 => 30,  126 => 28,  107 => 14,  104 => 13,  99 => 12,  93 => 9,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  140 => 32,  133 => 30,  126 => 27,  120 => 23,  118 => 22,  107 => 14,  104 => 13,  99 => 12,  93 => 9,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -179,9 +186,11 @@ class __TwigTemplate_fc1be931e66e4e3d1151e2caffd157f164dd3ea473a0221b950b81e76ff
             <li>
                 <a>Modifier</a>
             </li>
+            {% if page.slug != \"index\" %}
             <li>
                 <a>Supprimer</a>
             </li>
+            {% endif %}
         </ul>
     </div>
     {% else %}
