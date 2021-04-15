@@ -456,3 +456,5 @@ be5bbc,::1,GET,https://localhost:8000/admin/articles-site,1618511223,,200
 f0ae96,::1,GET,https://localhost:8000/admin/articles-site,1618511228,,200
 50178f,::1,GET,https://localhost:8000/admin/add-article,1618511259,,200
 50bb89,::1,GET,https://localhost:8000/admin,1618512465,,200
+3fae62,::1,GET,https://localhost:8000/,1618515697,,200
+fb756d,::1,GET,https://localhost:8000/admin,1618515735,,200
