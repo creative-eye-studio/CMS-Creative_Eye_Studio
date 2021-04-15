@@ -9,6 +9,24 @@
         <a class="btn-link" href="{{ path('add_article') }}">Ajouter un article</a>
     </p>
     <h2>Liste des articles</h2>
+    <div class="line">
+        {% for article in articles %}
+            <p>{{ article.name }}</p>
+            <ul>
+                <li>
+                    <a>Voir</a>
+                </li>
+                <li>
+                    <a>Modifier</a>
+                </li>
+                <li>
+                    <a>Supprimer</a>
+                </li>
+            </ul>
+        {% else %}
+            <p>Il n'y a pas encore de pages publiées !</p>
+        {% endfor %}
+    </div>
 </section>
 
 {% endblock %}

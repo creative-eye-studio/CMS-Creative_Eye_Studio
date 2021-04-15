@@ -4,6 +4,7 @@ namespace App\Controller\Admin;
 
 use App\Entity\Articles;
 use App\Entity\Pages;
+use App\Entity\Users;
 use App\Form\AddArticleType;
 use App\Form\AddPagesType;
 use App\Form\CodeCssType;
@@ -23,8 +24,16 @@ class AdminController extends AbstractController
      */
     public function index(): Response
     {
+        $entityManager = $this->getDoctrine()->getManager();
+        $pages = $entityManager->getRepository(Pages::class)->findBy(array(), null, 5, null);
+        $articles = $entityManager->getRepository(Articles::class)->findBy(array(), null, 5, null);
+        $users = $entityManager->getRepository(Users::class)->findBy(array(), null, 5, null);
+
         return $this->render('admin/index.html.twig', [
             'controller_name' => 'AdminController',
+            'pages' => $pages,
+            'articles' => $articles,
+            'users' => $users
         ]);
     }
 
@@ -80,9 +89,14 @@ class AdminController extends AbstractController
     /**
      * @Route("/admin/articles-site", name="articles_site")
      */
-    public function articles_site(){
+    public function articles_site()
+    {
+        $entityManager = $this->getDoctrine()->getManager();
+        $articles = $entityManager->getRepository(Articles::class)->findAll();
+
         return $this->render('admin/articles-list.html.twig', [
-            'controller_name' => 'AdminController'
+            'controller_name' => 'AdminController',
+            'articles' => $articles,
         ]);
     }
 
@@ -126,8 +140,13 @@ class AdminController extends AbstractController
      * @Route("/admin/users-list", name="users_list")
      */
     public function users_list(){
+
+        $entityManager = $this->getDoctrine()->getManager();
+        $users = $entityManager->getRepository(Users::class)->findAll();
+
         return $this->render('admin/users-list.html.twig', [
-            'controller_name' => 'AdminController'
+            'controller_name' => 'AdminController',
+            'users' => $users
         ]);
     }
 }

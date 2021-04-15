@@ -90,16 +90,78 @@ class __TwigTemplate_cd2d2eeec53a8a7aa710da0b4e0d0f5f6f1163d0a7d7ff022a5075087ef
 <div class=\"content-blocs\">
     <section class=\"bloc2\">
         <h2>Dernières pages</h2>
+        ";
+        // line 11
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["pages"]) || array_key_exists("pages", $context) ? $context["pages"] : (function () { throw new RuntimeError('Variable "pages" does not exist.', 11, $this->source); })()));
+        $context['_iterated'] = false;
+        foreach ($context['_seq'] as $context["_key"] => $context["page"]) {
+            // line 12
+            echo "            <p>";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["page"], "name", [], "any", false, false, false, 12), "html", null, true);
+            echo "</p>
+        ";
+            $context['_iterated'] = true;
+        }
+        if (!$context['_iterated']) {
+            // line 14
+            echo "            <p>Il n'y a pas encore de pages publiées !</p>
+        ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['page'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 16
+        echo "
     </section>
     <section class=\"bloc2\">
         <h2>Dernièrs articles</h2>
-    </section>
+        ";
+        // line 20
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["articles"]) || array_key_exists("articles", $context) ? $context["articles"] : (function () { throw new RuntimeError('Variable "articles" does not exist.', 20, $this->source); })()));
+        $context['_iterated'] = false;
+        foreach ($context['_seq'] as $context["_key"] => $context["article"]) {
+            // line 21
+            echo "            <p>";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "name", [], "any", false, false, false, 21), "html", null, true);
+            echo "</p>
+        ";
+            $context['_iterated'] = true;
+        }
+        if (!$context['_iterated']) {
+            // line 23
+            echo "            <p>Il n'y a pas encore d'articles publiés !</p>
+        ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['article'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 25
+        echo "    </section>
 </div>
 
 <!-- Utilisateurs -->
 <section class=\"bloc2\">
     <h2>Utilisateurs</h2>
-</section>
+        ";
+        // line 31
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["users"]) || array_key_exists("users", $context) ? $context["users"] : (function () { throw new RuntimeError('Variable "users" does not exist.', 31, $this->source); })()));
+        foreach ($context['_seq'] as $context["_key"] => $context["user"]) {
+            // line 32
+            echo "            <p>";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "name", [], "any", false, false, false, 32), "html", null, true);
+            echo " ";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "firstname", [], "any", false, false, false, 32), "html", null, true);
+            echo "</p>
+        ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['user'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 34
+        echo "</section>
 
 ";
         
@@ -122,7 +184,7 @@ class __TwigTemplate_cd2d2eeec53a8a7aa710da0b4e0d0f5f6f1163d0a7d7ff022a5075087ef
 
     public function getDebugInfo()
     {
-        return array (  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  164 => 34,  153 => 32,  149 => 31,  141 => 25,  134 => 23,  126 => 21,  121 => 20,  115 => 16,  108 => 14,  100 => 12,  95 => 11,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -137,15 +199,29 @@ class __TwigTemplate_cd2d2eeec53a8a7aa710da0b4e0d0f5f6f1163d0a7d7ff022a5075087ef
 <div class=\"content-blocs\">
     <section class=\"bloc2\">
         <h2>Dernières pages</h2>
+        {% for page in pages %}
+            <p>{{ page.name }}</p>
+        {% else %}
+            <p>Il n'y a pas encore de pages publiées !</p>
+        {% endfor %}
+
     </section>
     <section class=\"bloc2\">
         <h2>Dernièrs articles</h2>
+        {% for article in articles %}
+            <p>{{ article.name }}</p>
+        {% else %}
+            <p>Il n'y a pas encore d'articles publiés !</p>
+        {% endfor %}
     </section>
 </div>
 
 <!-- Utilisateurs -->
 <section class=\"bloc2\">
     <h2>Utilisateurs</h2>
+        {% for user in users %}
+            <p>{{ user.name }} {{ user.firstname }}</p>
+        {% endfor %}
 </section>
 
 {% endblock %}

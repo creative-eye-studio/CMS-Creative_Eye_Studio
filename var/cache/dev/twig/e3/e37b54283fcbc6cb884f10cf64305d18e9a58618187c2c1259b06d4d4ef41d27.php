@@ -94,7 +94,39 @@ class __TwigTemplate_54f8a04b92f6c2879c5e9c7b904ca928027f548eae61ec759c13e9378b0
         echo "\">Ajouter un utilisateur</a>
     </p>
     <h2>Utilisateurs</h2>
-</section>
+    ";
+        // line 12
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["users"]) || array_key_exists("users", $context) ? $context["users"] : (function () { throw new RuntimeError('Variable "users" does not exist.', 12, $this->source); })()));
+        $context['_iterated'] = false;
+        foreach ($context['_seq'] as $context["_key"] => $context["user"]) {
+            // line 13
+            echo "    <div class=\"line\">
+        <p>";
+            // line 14
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "name", [], "any", false, false, false, 14), "html", null, true);
+            echo " ";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "firstname", [], "any", false, false, false, 14), "html", null, true);
+            echo "</p>
+        <ul>
+            <li>
+                <a>Supprimer</a>
+            </li>
+        </ul>
+    </div>
+    ";
+            $context['_iterated'] = true;
+        }
+        if (!$context['_iterated']) {
+            // line 22
+            echo "        <p>Il n'y a pas encore de pages publiées !</p>
+    ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['user'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 24
+        echo "</section>
 
 ";
         
@@ -117,7 +149,7 @@ class __TwigTemplate_54f8a04b92f6c2879c5e9c7b904ca928027f548eae61ec759c13e9378b0
 
     public function getDebugInfo()
     {
-        return array (  93 => 9,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  129 => 24,  122 => 22,  107 => 14,  104 => 13,  99 => 12,  93 => 9,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -133,6 +165,18 @@ class __TwigTemplate_54f8a04b92f6c2879c5e9c7b904ca928027f548eae61ec759c13e9378b0
         <a class=\"btn-link\" href=\"{{ path('app_register') }}\">Ajouter un utilisateur</a>
     </p>
     <h2>Utilisateurs</h2>
+    {% for user in users %}
+    <div class=\"line\">
+        <p>{{ user.name }} {{ user.firstname }}</p>
+        <ul>
+            <li>
+                <a>Supprimer</a>
+            </li>
+        </ul>
+    </div>
+    {% else %}
+        <p>Il n'y a pas encore de pages publiées !</p>
+    {% endfor %}
 </section>
 
 {% endblock %}", "admin/users-list.html.twig", "/Users/kevinrifa/Documents/Creative_Eye_Studio/cms-projects/templates/admin/users-list.html.twig");
