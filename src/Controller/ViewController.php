@@ -13,7 +13,7 @@ class ViewController extends AbstractController
      */
     public function index(): Response
     {
-        return $this->render('view/index.html.twig', [
+        return $this->render('front/website/index.html.twig', [
             'controller_name' => 'ViewController',
         ]);
     }
