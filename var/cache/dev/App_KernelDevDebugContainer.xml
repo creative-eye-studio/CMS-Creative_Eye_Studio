@@ -5552,6 +5552,12 @@
             <argument key="filebrowserBrowseRouteParameters" type="collection"/>
           </argument>
         </argument>
+        <argument key="plugins" type="collection">
+          <argument key="wordcount" type="collection">
+            <argument key="path">/bundles/mybundle/wordcount/</argument>
+            <argument key="filename">config.js</argument>
+          </argument>
+        </argument>
         <argument key="enable">true</argument>
         <argument key="async">false</argument>
         <argument key="auto_inline">true</argument>
@@ -5564,7 +5570,6 @@
         <argument key="js_path">bundles/fosckeditor/ckeditor.js</argument>
         <argument key="jquery_path">bundles/fosckeditor/adapters/jquery.js</argument>
         <argument key="default_config">null</argument>
-        <argument key="plugins" type="collection"/>
         <argument key="styles" type="collection"/>
         <argument key="templates" type="collection"/>
         <argument key="filebrowsers" type="collection"/>

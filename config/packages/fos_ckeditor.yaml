@@ -10,3 +10,7 @@ fos_ck_editor:
             toolbar: full
             filebrowserBrowseRoute: elfinder
             filebrowserBrowseRouteParameters: []
+    plugins:
+        wordcount:
+            path:     "/bundles/mybundle/wordcount/"
+            filename: "config.js"
