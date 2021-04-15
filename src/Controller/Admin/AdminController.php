@@ -32,8 +32,12 @@ class AdminController extends AbstractController
      * @Route("/admin/pages-site", name="pages_site")
      */
     public function pages_site(){
+        $entityManager = $this->getDoctrine()->getManager();
+        $pages = $entityManager->getRepository(Pages::class)->findAll();
+
         return $this->render('admin/pages-list.html.twig', [
-            'controller_name' => 'AdminController'
+            'controller_name' => 'AdminController',
+            'pages' => $pages
         ]);
     }
 

@@ -94,7 +94,43 @@ class __TwigTemplate_fc1be931e66e4e3d1151e2caffd157f164dd3ea473a0221b950b81e76ff
         echo "\">Ajouter une page</a>
     </p>
     <h2>Liste des pages</h2>
-</section>
+    ";
+        // line 12
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["pages"]) || array_key_exists("pages", $context) ? $context["pages"] : (function () { throw new RuntimeError('Variable "pages" does not exist.', 12, $this->source); })()));
+        $context['_iterated'] = false;
+        foreach ($context['_seq'] as $context["_key"] => $context["page"]) {
+            // line 13
+            echo "    <div class=\"line\">
+        <p>";
+            // line 14
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["page"], "name", [], "any", false, false, false, 14), "html", null, true);
+            echo "</p>
+        <ul>
+            <li>
+                <a>Voir</a>
+            </li>
+            <li>
+                <a>Modifier</a>
+            </li>
+            <li>
+                <a>Supprimer</a>
+            </li>
+        </ul>
+    </div>
+    ";
+            $context['_iterated'] = true;
+        }
+        if (!$context['_iterated']) {
+            // line 28
+            echo "        <p>Il n'y a pas encore de pages publiées !</p>
+    ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['page'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 30
+        echo "</section>
 
 ";
         
@@ -117,7 +153,7 @@ class __TwigTemplate_fc1be931e66e4e3d1151e2caffd157f164dd3ea473a0221b950b81e76ff
 
     public function getDebugInfo()
     {
-        return array (  93 => 9,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  133 => 30,  126 => 28,  107 => 14,  104 => 13,  99 => 12,  93 => 9,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -133,6 +169,24 @@ class __TwigTemplate_fc1be931e66e4e3d1151e2caffd157f164dd3ea473a0221b950b81e76ff
         <a class=\"btn-link\" href=\"{{ path('add_page') }}\">Ajouter une page</a>
     </p>
     <h2>Liste des pages</h2>
+    {% for page in pages %}
+    <div class=\"line\">
+        <p>{{ page.name }}</p>
+        <ul>
+            <li>
+                <a>Voir</a>
+            </li>
+            <li>
+                <a>Modifier</a>
+            </li>
+            <li>
+                <a>Supprimer</a>
+            </li>
+        </ul>
+    </div>
+    {% else %}
+        <p>Il n'y a pas encore de pages publiées !</p>
+    {% endfor %}
 </section>
 
 {% endblock %}", "admin/pages-list.html.twig", "/Users/kevinrifa/Documents/Creative_Eye_Studio/cms-projects/templates/admin/pages-list.html.twig");

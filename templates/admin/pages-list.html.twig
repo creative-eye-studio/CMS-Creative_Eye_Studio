@@ -9,6 +9,24 @@
         <a class="btn-link" href="{{ path('add_page') }}">Ajouter une page</a>
     </p>
     <h2>Liste des pages</h2>
+    {% for page in pages %}
+    <div class="line">
+        <p>{{ page.name }}</p>
+        <ul>
+            <li>
+                <a>Voir</a>
+            </li>
+            <li>
+                <a>Modifier</a>
+            </li>
+            <li>
+                <a>Supprimer</a>
+            </li>
+        </ul>
+    </div>
+    {% else %}
+        <p>Il n'y a pas encore de pages publiées !</p>
+    {% endfor %}
 </section>
 
 {% endblock %}
