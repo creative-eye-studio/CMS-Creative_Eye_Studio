@@ -13,9 +13,15 @@
     <div class="line">
         <p>{{ page.name }}</p>
         <ul>
+            {% if page.slug == "index" %}
             <li>
-                <a>Voir</a>
+                <a href=" {{ app.request.schemeAndHttpHost }}" target="_blank" rel="noopener">Voir</a>
             </li>
+            {% elseif page.slug != "index" %}
+            <li>
+                <a href=" {{ app.request.schemeAndHttpHost }}/{{ page.slug }}" target="_blank" rel="noopener">Voir</a>
+            </li>
+            {% endif %}
             <li>
                 <a href=" {{ path('modify_page', { slug: page.slug } )}} ">Modifier</a>
             </li>

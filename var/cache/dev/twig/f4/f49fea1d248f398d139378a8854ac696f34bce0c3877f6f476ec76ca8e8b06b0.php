@@ -107,42 +107,64 @@ class __TwigTemplate_fc1be931e66e4e3d1151e2caffd157f164dd3ea473a0221b950b81e76ff
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["page"], "name", [], "any", false, false, false, 14), "html", null, true);
             echo "</p>
         <ul>
-            <li>
-                <a>Voir</a>
-            </li>
-            <li>
+            ";
+            // line 16
+            if ((0 === twig_compare(twig_get_attribute($this->env, $this->source, $context["page"], "slug", [], "any", false, false, false, 16), "index"))) {
+                // line 17
+                echo "            <li>
                 <a href=\" ";
-            // line 20
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("modify_page", ["slug" => twig_get_attribute($this->env, $this->source, $context["page"], "slug", [], "any", false, false, false, 20)]), "html", null, true);
+                // line 18
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 18, $this->source); })()), "request", [], "any", false, false, false, 18), "schemeAndHttpHost", [], "any", false, false, false, 18), "html", null, true);
+                echo "\" target=\"_blank\" rel=\"noopener\">Voir</a>
+            </li>
+            ";
+            } elseif ((0 !== twig_compare(twig_get_attribute($this->env, $this->source,             // line 20
+$context["page"], "slug", [], "any", false, false, false, 20), "index"))) {
+                // line 21
+                echo "            <li>
+                <a href=\" ";
+                // line 22
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 22, $this->source); })()), "request", [], "any", false, false, false, 22), "schemeAndHttpHost", [], "any", false, false, false, 22), "html", null, true);
+                echo "/";
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["page"], "slug", [], "any", false, false, false, 22), "html", null, true);
+                echo "\" target=\"_blank\" rel=\"noopener\">Voir</a>
+            </li>
+            ";
+            }
+            // line 25
+            echo "            <li>
+                <a href=\" ";
+            // line 26
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("modify_page", ["slug" => twig_get_attribute($this->env, $this->source, $context["page"], "slug", [], "any", false, false, false, 26)]), "html", null, true);
             echo " \">Modifier</a>
             </li>
             ";
-            // line 22
-            if ((0 !== twig_compare(twig_get_attribute($this->env, $this->source, $context["page"], "slug", [], "any", false, false, false, 22), "index"))) {
-                // line 23
+            // line 28
+            if ((0 !== twig_compare(twig_get_attribute($this->env, $this->source, $context["page"], "slug", [], "any", false, false, false, 28), "index"))) {
+                // line 29
                 echo "            <li>
                 <a href=\" ";
-                // line 24
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("delete_page", ["id" => twig_get_attribute($this->env, $this->source, $context["page"], "id", [], "any", false, false, false, 24)]), "html", null, true);
+                // line 30
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("delete_page", ["id" => twig_get_attribute($this->env, $this->source, $context["page"], "id", [], "any", false, false, false, 30)]), "html", null, true);
                 echo " \">Supprimer</a>
             </li>
             ";
             }
-            // line 27
+            // line 33
             echo "        </ul>
     </div>
     ";
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 30
+            // line 36
             echo "        <p>Il n'y a pas encore de pages publiées !</p>
     ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['page'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 32
+        // line 38
         echo "</section>
 
 ";
@@ -166,7 +188,7 @@ class __TwigTemplate_fc1be931e66e4e3d1151e2caffd157f164dd3ea473a0221b950b81e76ff
 
     public function getDebugInfo()
     {
-        return array (  146 => 32,  139 => 30,  132 => 27,  126 => 24,  123 => 23,  121 => 22,  116 => 20,  107 => 14,  104 => 13,  99 => 12,  93 => 9,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  168 => 38,  161 => 36,  154 => 33,  148 => 30,  145 => 29,  143 => 28,  138 => 26,  135 => 25,  127 => 22,  124 => 21,  122 => 20,  117 => 18,  114 => 17,  112 => 16,  107 => 14,  104 => 13,  99 => 12,  93 => 9,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -186,9 +208,15 @@ class __TwigTemplate_fc1be931e66e4e3d1151e2caffd157f164dd3ea473a0221b950b81e76ff
     <div class=\"line\">
         <p>{{ page.name }}</p>
         <ul>
+            {% if page.slug == \"index\" %}
             <li>
-                <a>Voir</a>
+                <a href=\" {{ app.request.schemeAndHttpHost }}\" target=\"_blank\" rel=\"noopener\">Voir</a>
             </li>
+            {% elseif page.slug != \"index\" %}
+            <li>
+                <a href=\" {{ app.request.schemeAndHttpHost }}/{{ page.slug }}\" target=\"_blank\" rel=\"noopener\">Voir</a>
+            </li>
+            {% endif %}
             <li>
                 <a href=\" {{ path('modify_page', { slug: page.slug } )}} \">Modifier</a>
             </li>
