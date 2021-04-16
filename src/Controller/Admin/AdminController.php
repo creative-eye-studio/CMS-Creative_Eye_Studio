@@ -99,6 +99,42 @@ class AdminController extends AbstractController
     }
 
     /**
+     * @Route("/admin/modify-page/{slug}", name="modify_page")
+     */
+    public function modify_page(Request $request, String $slug): Response
+    {
+        $dataFile = file_get_contents("../templates/front/website/".$slug.".html.twig");
+
+        $form = $this->createForm(AddPagesType::class);
+        $form->handleRequest($request);
+
+        $entityManager = $this->getDoctrine()->getManager();
+        $pages = $entityManager->getRepository(Pages::class)->findOneBy(["slug" => $slug]);
+        $pageName = $pages->getName();
+
+        if($form->isSubmitted() && $form->isValid()){
+            $data = $form->getData();
+            $pages->setName($data["page_title"]);
+
+            //Création de la page
+            $filesystem = new Filesystem();
+            $filesystem->remove(['../templates/front/website/' . $slug . '.html.twig']);
+            $file = fopen("../templates/front/website/" . $slug . ".html.twig", "c+b");
+            fwrite($file, $data["page_content"]);
+
+            return $this->redirectToRoute('pages_site');
+        }
+
+        return $this->render('admin/modify-page.html.twig', [
+            'form' => $form->createView(),
+            'pages' => $pages,
+            'pageName' => $pageName,
+            'dataFile' => $dataFile,
+            'controller_name' => 'AdminController'
+        ]);
+    }
+
+    /**
      * @Route("/admin/delete-page/{id}", name="delete_page")
      */
     public function delete_page(int $id)

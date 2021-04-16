@@ -111,7 +111,10 @@ class __TwigTemplate_fc1be931e66e4e3d1151e2caffd157f164dd3ea473a0221b950b81e76ff
                 <a>Voir</a>
             </li>
             <li>
-                <a>Modifier</a>
+                <a href=\" ";
+            // line 20
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("modify_page", ["slug" => twig_get_attribute($this->env, $this->source, $context["page"], "slug", [], "any", false, false, false, 20)]), "html", null, true);
+            echo " \">Modifier</a>
             </li>
             ";
             // line 22
@@ -163,7 +166,7 @@ class __TwigTemplate_fc1be931e66e4e3d1151e2caffd157f164dd3ea473a0221b950b81e76ff
 
     public function getDebugInfo()
     {
-        return array (  143 => 32,  136 => 30,  129 => 27,  123 => 24,  120 => 23,  118 => 22,  107 => 14,  104 => 13,  99 => 12,  93 => 9,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  146 => 32,  139 => 30,  132 => 27,  126 => 24,  123 => 23,  121 => 22,  116 => 20,  107 => 14,  104 => 13,  99 => 12,  93 => 9,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -187,7 +190,7 @@ class __TwigTemplate_fc1be931e66e4e3d1151e2caffd157f164dd3ea473a0221b950b81e76ff
                 <a>Voir</a>
             </li>
             <li>
-                <a>Modifier</a>
+                <a href=\" {{ path('modify_page', { slug: page.slug } )}} \">Modifier</a>
             </li>
             {% if page.slug != \"index\" %}
             <li>

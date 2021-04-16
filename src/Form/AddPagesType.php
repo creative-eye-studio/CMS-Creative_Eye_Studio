@@ -15,7 +15,9 @@ class AddPagesType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('page_title', TextType::class, ["label" => "Nom de la page"])
+            ->add('page_title', TextType::class, [
+                "label" => "Nom de la page",
+            ])
             ->add("page_nav_position", ChoiceType::class, [
                 "choices" => [
                     "Menu principal" => "main",
@@ -23,8 +25,12 @@ class AddPagesType extends AbstractType
                 ],
                 "label" => "Menu"
             ])
-            ->add('page_content', CKEditorType::class, ["label" => "Contenu de la page"])
-            ->add("page_submit", SubmitType::class, ["label" => "Envoyer"])
+            ->add('page_content', CKEditorType::class, [
+                "label" => "Contenu de la page"
+            ])
+            ->add("page_submit", SubmitType::class, [
+                "label" => "Envoyer"
+            ])
         ;
     }
 
