@@ -458,6 +458,7 @@ f0ae96,::1,GET,https://localhost:8000/admin/articles-site,1618511228,,200
 50bb89,::1,GET,https://localhost:8000/admin,1618512465,,200
 3fae62,::1,GET,https://localhost:8000/,1618515697,,200
 fb756d,::1,GET,https://localhost:8000/admin,1618515735,,200
+<<<<<<< HEAD
 f125fc,::1,GET,https://localhost:8000/admin,1618516280,,200
 8f8cb7,::1,GET,https://localhost:8000/,1618516304,9d85ce,500
 9d85ce,::1,GET,https://localhost:8000/,1618516304,,500
@@ -485,3 +486,5 @@ fae9ca,::1,GET,https://localhost:8000/about,1618516741,,200
 7ff737,::1,GET,https://localhost:8000/,1618565436,,200
 a88fc0,::1,GET,https://localhost:8000/favicon.ico,1618565436,5726e9,500
 5726e9,::1,GET,https://localhost:8000/favicon.ico,1618565436,,500
+=======
+>>>>>>> parent of b2240f02 ([Front-End] - Initialisation de la page Index)

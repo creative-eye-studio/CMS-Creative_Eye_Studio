@@ -1,3 +1,7 @@
 <?php //%255B%255BC%255DApp%255CController%255CViewController%2523index%255D%255B1%255D
 
+<<<<<<< HEAD
 return [PHP_INT_MAX, 1618565417];
+=======
+return [PHP_INT_MAX, 1618515697];
+>>>>>>> parent of b2240f02 ([Front-End] - Initialisation de la page Index)

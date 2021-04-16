@@ -24,6 +24,7 @@ return [
         '/login' => [[['_route' => 'app_login', '_controller' => 'App\\Controller\\SecurityController::login'], null, null, null, false, false, null]],
         '/logout' => [[['_route' => 'app_logout', '_controller' => 'App\\Controller\\SecurityController::logout'], null, null, null, false, false, null]],
         '/' => [[['_route' => 'home', '_controller' => 'App\\Controller\\ViewController::index'], null, null, null, false, false, null]],
+        '/elfinder.main.js' => [[['_route' => 'ef_main_js', '_controller' => 'FM\\ElfinderBundle\\Controller\\ElFinderController::mainJS'], null, null, null, false, false, null]],
     ],
     [ // $regexpList
         0 => '{^(?'
@@ -46,13 +47,9 @@ return [
                     .'|page/([^/]++)(*:200)'
                     .'|article/([^/]++)(*:224)'
                 .')'
-                .'|/([^/]++)(*:242)'
                 .'|/e(?'
-                    .'|fconnect(?:/([^/]++)(?:/([^/]++))?)?(*:291)'
-                    .'|lfinder(?'
-                        .'|\\.main\\.js(*:319)'
-                        .'|(?:/([^/]++)(?:/([^/]++))?)?(*:355)'
-                    .')'
+                    .'|fconnect(?:/([^/]++)(?:/([^/]++))?)?(*:274)'
+                    .'|lfinder(?:/([^/]++)(?:/([^/]++))?)?(*:317)'
                 .')'
             .')/?$}sDu',
     ],
@@ -66,10 +63,8 @@ return [
         159 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
         200 => [[['_route' => 'delete_page', '_controller' => 'App\\Controller\\Admin\\AdminController::delete_page'], ['id'], null, null, false, true, null]],
         224 => [[['_route' => 'delete_article', '_controller' => 'App\\Controller\\Admin\\AdminController::delete_article'], ['id'], null, null, false, true, null]],
-        242 => [[['_route' => 'page_view', '_controller' => 'App\\Controller\\ViewController::page_view'], ['slug'], null, null, false, true, null]],
-        291 => [[['_route' => 'ef_connect', '_controller' => 'FM\\ElfinderBundle\\Controller\\ElFinderController::load', 'instance' => 'default', 'homeFolder' => ''], ['instance', 'homeFolder'], null, null, false, true, null]],
-        319 => [[['_route' => 'ef_main_js', '_controller' => 'FM\\ElfinderBundle\\Controller\\ElFinderController::mainJS'], [], null, null, false, false, null]],
-        355 => [
+        274 => [[['_route' => 'ef_connect', '_controller' => 'FM\\ElfinderBundle\\Controller\\ElFinderController::load', 'instance' => 'default', 'homeFolder' => ''], ['instance', 'homeFolder'], null, null, false, true, null]],
+        317 => [
             [['_route' => 'elfinder', '_controller' => 'FM\\ElfinderBundle\\Controller\\ElFinderController::show', 'instance' => 'default', 'homeFolder' => ''], ['instance', 'homeFolder'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],

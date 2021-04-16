@@ -17,14 +17,4 @@ class ViewController extends AbstractController
             'controller_name' => 'ViewController',
         ]);
     }
-
-    /**
-     * @Route("/{slug}", name="page_view")
-     */
-    public function page_view(string $slug): Response
-    {
-        return $this->render('front/website/'.$slug.'.html.twig', [
-            'controller_name' => 'ViewController',
-        ]);
-    }
 }
