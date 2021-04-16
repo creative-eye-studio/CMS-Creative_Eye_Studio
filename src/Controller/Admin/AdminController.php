@@ -69,11 +69,11 @@ class AdminController extends AbstractController
             $data = $form->getData();
             $slugPage = new Slugify();
             $slugPageStr = $slugPage->slugify($data["page_title"]);
-            //$slugPageStr = strval($slugPage);
 
             $page = new Pages();
             $page->setName($data["page_title"]);
             $page->setSlug($slugPageStr);
+            $page->setNavPosition($data["page_nav_position"]);
 
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($page);

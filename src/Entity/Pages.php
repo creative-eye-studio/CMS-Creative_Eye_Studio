@@ -32,12 +32,6 @@ class Pages
      */
     private $nav_position;
 
-    /**
-     * @ORM\GeneratedValue
-     * @ORM\Column(type="integer")
-     */
-    private $nav_pos_id;
-
     public function getId(): ?int
     {
         return $this->id;
@@ -75,18 +69,6 @@ class Pages
     public function setNavPosition(string $nav_position): self
     {
         $this->nav_position = $nav_position;
-
-        return $this;
-    }
-
-    public function getNavPosId(): ?int
-    {
-        return $this->nav_pos_id;
-    }
-
-    public function setNavPosId(int $nav_pos_id): self
-    {
-        $this->nav_pos_id = $nav_pos_id;
 
         return $this;
     }
