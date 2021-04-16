@@ -655,3 +655,6 @@ b7a589,::1,GET,https://localhost:8000/admin/pages-site,1618606495,,200
 b2649a,::1,POST,https://localhost:8000/admin/add-page,1618606971,,500
 4d741d,::1,POST,https://localhost:8000/admin/add-page,1618607016,,302
 3b8ac9,::1,GET,https://localhost:8000/admin/add-page,1618607016,,200
+9280bd,::1,GET,https://localhost:8000/admin/pages-site,1618607087,,200
+35fee8,::1,GET,https://localhost:8000/admin/delete-page/12,1618607089,,302
+302168,::1,GET,https://localhost:8000/admin/pages-site,1618607089,,200
