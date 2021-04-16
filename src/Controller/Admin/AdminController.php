@@ -114,6 +114,9 @@ class AdminController extends AbstractController
             $pages->setName($data["page_title"]);
             $pages->setMetaTitle($data["page_meta_title"]);
 
+            $entityManager->persist($pages);
+            $entityManager->flush();
+
             //Création de la page
             $filesystem = new Filesystem();
             $filesystem->remove(['../templates/front/website/' . $slug . '.html.twig']);
