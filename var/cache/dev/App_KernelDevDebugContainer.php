@@ -16,6 +16,6 @@ if (!\class_exists(App_KernelDevDebugContainer::class, false)) {
 
 return new \ContainerXtAMuBV\App_KernelDevDebugContainer([
     'container.build_hash' => 'XtAMuBV',
-    'container.build_id' => '2a1f39a9',
-    'container.build_time' => 1618515696,
+    'container.build_id' => 'ffce418a',
+    'container.build_time' => 1618516700,
 ], __DIR__.\DIRECTORY_SEPARATOR.'ContainerXtAMuBV');
