@@ -74,6 +74,7 @@ class AdminController extends AbstractController
             $page->setName($data["page_title"]);
             $page->setSlug($slugPageStr);
             $page->setNavPosition($data["page_nav_position"]);
+            $page->setMetaTitle($data["page_meta_title"]);
 
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($page);

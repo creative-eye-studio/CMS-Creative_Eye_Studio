@@ -25,6 +25,9 @@ class AddPagesType extends AbstractType
                 ],
                 "label" => "Menu"
             ])
+            ->add('page_meta_title', TextType::class, [
+                "label" => "Balise Title de la page",
+            ])
             ->add('page_content', CKEditorType::class, [
                 "label" => "Contenu de la page"
             ])

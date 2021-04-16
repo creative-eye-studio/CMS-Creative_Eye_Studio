@@ -32,6 +32,11 @@ class Pages
      */
     private $nav_position;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $meta_title;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -69,6 +74,18 @@ class Pages
     public function setNavPosition(string $nav_position): self
     {
         $this->nav_position = $nav_position;
+
+        return $this;
+    }
+
+    public function getMetaTitle(): ?string
+    {
+        return $this->meta_title;
+    }
+
+    public function setMetaTitle(string $meta_title): self
+    {
+        $this->meta_title = $meta_title;
 
         return $this;
     }
