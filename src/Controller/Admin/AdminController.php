@@ -107,10 +107,12 @@ class AdminController extends AbstractController
         $entityManager = $this->getDoctrine()->getManager();
         $pages = $entityManager->getRepository(Pages::class)->findOneBy(["slug" => $slug]);
         $pageName = $pages->getName();
+        $pageMetaTitle = $pages->getMetaTitle();
 
         if($form->isSubmitted() && $form->isValid()){
             $data = $form->getData();
             $pages->setName($data["page_title"]);
+            $pages->setMetaTitle($data["page_meta_title"]);
 
             //Création de la page
             $filesystem = new Filesystem();
@@ -125,6 +127,7 @@ class AdminController extends AbstractController
             'form' => $form->createView(),
             'pages' => $pages,
             'pageName' => $pageName,
+            'pageMetaTitle' => $pageMetaTitle,
             'dataFile' => $dataFile,
             'controller_name' => 'AdminController'
         ]);

@@ -102,7 +102,7 @@ class __TwigTemplate_d1b33495be0e14ee6a7b7d0f250cd2b461c30a906ad47af69148089dc71
         echo "
             ";
         // line 12
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 12, $this->source); })()), "page_meta_title", [], "any", false, false, false, 12), 'row');
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 12, $this->source); })()), "page_meta_title", [], "any", false, false, false, 12), 'row', ["value" => (isset($context["pageMetaTitle"]) || array_key_exists("pageMetaTitle", $context) ? $context["pageMetaTitle"] : (function () { throw new RuntimeError('Variable "pageMetaTitle" does not exist.', 12, $this->source); })())]);
         echo "
             ";
         // line 13
@@ -155,7 +155,7 @@ class __TwigTemplate_d1b33495be0e14ee6a7b7d0f250cd2b461c30a906ad47af69148089dc71
         {{ form_start(form) }}
             {{ form_row(form.page_title, { value: pageName } ) }}
             {{ form_row(form.page_nav_position) }}
-            {{ form_row(form.page_meta_title) }}
+            {{ form_row(form.page_meta_title, { value: pageMetaTitle }) }}
             {{ form_row(form.page_content, { value: dataFile }) }}
             {{ form_row(form.page_submit) }}
         {{ form_end(form) }}
