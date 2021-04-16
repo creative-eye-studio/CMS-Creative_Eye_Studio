@@ -436,3 +436,12 @@ d05396,::1,GET,https://localhost:8000/admin/pages-site,1618492345,,200
 2cc133,::1,GET,https://localhost:8000/admin/pages-site,1618492596,,200
 06bea7,::1,GET,https://localhost:8000/admin/add-page,1618492605,,200
 e196f0,::1,GET,https://localhost:8000/admin/pages-site,1618492617,,200
+487e1b,::1,GET,https://localhost:8000/admin/articles-site,1618591709,,200
+3e5287,::1,GET,https://localhost:8000/favicon.ico,1618591709,04c029,404
+04c029,::1,GET,https://localhost:8000/favicon.ico,1618591709,,404
+8c0425,::1,GET,https://localhost:8000/admin/pages-site,1618591710,,200
+7d06e7,::1,GET,https://localhost:8000/admin/add-page,1618591713,d6c3cb,500
+d6c3cb,::1,GET,https://localhost:8000/admin/add-page,1618591713,,500
+571658,::1,GET,https://localhost:8000/admin/articles-site,1618591725,,200
+1aa5af,::1,GET,https://localhost:8000/admin/add-article,1618591728,1dcb35,500
+1dcb35,::1,GET,https://localhost:8000/admin/add-article,1618591728,,500
