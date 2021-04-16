@@ -48,37 +48,39 @@ class __TwigTemplate_75904c184d759504a069e0ab2a7e8b24186374f258723d946c47e1d9d07
 <html>
     <head>
         <meta charset=\"UTF-8\">
-        <title>";
-        // line 5
+        <title>
+            ";
+        // line 6
         $this->displayBlock('title', $context, $blocks);
-        echo "</title>
-        ";
-        // line 8
-        echo "        ";
-        $this->displayBlock('stylesheets', $context, $blocks);
-        // line 11
-        echo "
+        // line 9
+        echo "        </title>
         ";
         // line 12
-        $this->displayBlock('javascripts', $context, $blocks);
+        echo "        ";
+        $this->displayBlock('stylesheets', $context, $blocks);
         // line 15
+        echo "
+        ";
+        // line 16
+        $this->displayBlock('javascripts', $context, $blocks);
+        // line 19
         echo "    </head>
     <body>
         <header></header>
         <nav>
             <ul>
                 ";
-        // line 20
+        // line 24
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["links"]) || array_key_exists("links", $context) ? $context["links"] : (function () { throw new RuntimeError('Variable "links" does not exist.', 20, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["links"]) || array_key_exists("links", $context) ? $context["links"] : (function () { throw new RuntimeError('Variable "links" does not exist.', 24, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["link"]) {
-            // line 21
+            // line 25
             echo "                <li>
                     <a href=";
-            // line 22
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("page_view", ["slug" => twig_get_attribute($this->env, $this->source, $context["link"], "slug", [], "any", false, false, false, 22)]), "html", null, true);
+            // line 26
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("page_view", ["slug" => twig_get_attribute($this->env, $this->source, $context["link"], "slug", [], "any", false, false, false, 26)]), "html", null, true);
             echo ">";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["link"], "name", [], "any", false, false, false, 22), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["link"], "name", [], "any", false, false, false, 26), "html", null, true);
             echo "</a>
                 </li>
                 ";
@@ -86,13 +88,13 @@ class __TwigTemplate_75904c184d759504a069e0ab2a7e8b24186374f258723d946c47e1d9d07
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['link'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 25
+        // line 29
         echo "            </ul>
         </nav>
         ";
-        // line 27
+        // line 31
         $this->displayBlock('body', $context, $blocks);
-        // line 34
+        // line 38
         echo "    </body>
 </html>
 ";
@@ -104,7 +106,7 @@ class __TwigTemplate_75904c184d759504a069e0ab2a7e8b24186374f258723d946c47e1d9d07
 
     }
 
-    // line 5
+    // line 6
     public function block_title($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -114,7 +116,11 @@ class __TwigTemplate_75904c184d759504a069e0ab2a7e8b24186374f258723d946c47e1d9d07
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "Welcome!";
+        // line 7
+        echo "                ";
+        echo twig_escape_filter($this->env, (isset($context["meta_title"]) || array_key_exists("meta_title", $context) ? $context["meta_title"] : (function () { throw new RuntimeError('Variable "meta_title" does not exist.', 7, $this->source); })()), "html", null, true);
+        echo "
+            ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -123,7 +129,7 @@ class __TwigTemplate_75904c184d759504a069e0ab2a7e8b24186374f258723d946c47e1d9d07
 
     }
 
-    // line 8
+    // line 12
     public function block_stylesheets($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -133,7 +139,7 @@ class __TwigTemplate_75904c184d759504a069e0ab2a7e8b24186374f258723d946c47e1d9d07
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheets"));
 
-        // line 9
+        // line 13
         echo "            ";
         echo $this->extensions['Symfony\WebpackEncoreBundle\Twig\EntryFilesTwigExtension']->renderWebpackLinkTags("app");
         echo "
@@ -146,7 +152,7 @@ class __TwigTemplate_75904c184d759504a069e0ab2a7e8b24186374f258723d946c47e1d9d07
 
     }
 
-    // line 12
+    // line 16
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -156,7 +162,7 @@ class __TwigTemplate_75904c184d759504a069e0ab2a7e8b24186374f258723d946c47e1d9d07
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 13
+        // line 17
         echo "            ";
         echo $this->extensions['Symfony\WebpackEncoreBundle\Twig\EntryFilesTwigExtension']->renderWebpackScriptTags("app");
         echo "
@@ -169,7 +175,7 @@ class __TwigTemplate_75904c184d759504a069e0ab2a7e8b24186374f258723d946c47e1d9d07
 
     }
 
-    // line 27
+    // line 31
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -179,22 +185,22 @@ class __TwigTemplate_75904c184d759504a069e0ab2a7e8b24186374f258723d946c47e1d9d07
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 28
+        // line 32
         echo "            ";
-        if ((0 === twig_compare(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 28, $this->source); })()), "request", [], "any", false, false, false, 28), "attributes", [], "any", false, false, false, 28), "get", [0 => "_route"], "method", false, false, false, 28), "home"))) {
-            // line 29
+        if ((0 === twig_compare(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 32, $this->source); })()), "request", [], "any", false, false, false, 32), "attributes", [], "any", false, false, false, 32), "get", [0 => "_route"], "method", false, false, false, 32), "home"))) {
+            // line 33
             echo "                ";
-            $this->loadTemplate("front/website/index.html.twig", "base.html.twig", 29)->display($context);
-            // line 30
+            $this->loadTemplate("front/website/index.html.twig", "base.html.twig", 33)->display($context);
+            // line 34
             echo "            ";
-        } elseif ((0 !== twig_compare(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 30, $this->source); })()), "request", [], "any", false, false, false, 30), "attributes", [], "any", false, false, false, 30), "get", [0 => "_route"], "method", false, false, false, 30), "home"))) {
-            // line 31
+        } elseif ((0 !== twig_compare(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 34, $this->source); })()), "request", [], "any", false, false, false, 34), "attributes", [], "any", false, false, false, 34), "get", [0 => "_route"], "method", false, false, false, 34), "home"))) {
+            // line 35
             echo "                ";
-            $this->loadTemplate((("front/website/" . twig_get_attribute($this->env, $this->source, (isset($context["slugs"]) || array_key_exists("slugs", $context) ? $context["slugs"] : (function () { throw new RuntimeError('Variable "slugs" does not exist.', 31, $this->source); })()), "slug", [], "any", false, false, false, 31)) . ".html.twig"), "base.html.twig", 31)->display($context);
-            // line 32
+            $this->loadTemplate((("front/website/" . twig_get_attribute($this->env, $this->source, (isset($context["slugs"]) || array_key_exists("slugs", $context) ? $context["slugs"] : (function () { throw new RuntimeError('Variable "slugs" does not exist.', 35, $this->source); })()), "slug", [], "any", false, false, false, 35)) . ".html.twig"), "base.html.twig", 35)->display($context);
+            // line 36
             echo "            ";
         }
-        // line 33
+        // line 37
         echo "        ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -216,7 +222,7 @@ class __TwigTemplate_75904c184d759504a069e0ab2a7e8b24186374f258723d946c47e1d9d07
 
     public function getDebugInfo()
     {
-        return array (  198 => 33,  195 => 32,  192 => 31,  189 => 30,  186 => 29,  183 => 28,  173 => 27,  160 => 13,  150 => 12,  137 => 9,  127 => 8,  108 => 5,  96 => 34,  94 => 27,  90 => 25,  79 => 22,  76 => 21,  72 => 20,  65 => 15,  63 => 12,  60 => 11,  57 => 8,  53 => 5,  47 => 1,);
+        return array (  204 => 37,  201 => 36,  198 => 35,  195 => 34,  192 => 33,  189 => 32,  179 => 31,  166 => 17,  156 => 16,  143 => 13,  133 => 12,  120 => 7,  110 => 6,  98 => 38,  96 => 31,  92 => 29,  81 => 26,  78 => 25,  74 => 24,  67 => 19,  65 => 16,  62 => 15,  59 => 12,  56 => 9,  54 => 6,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -225,7 +231,11 @@ class __TwigTemplate_75904c184d759504a069e0ab2a7e8b24186374f258723d946c47e1d9d07
 <html>
     <head>
         <meta charset=\"UTF-8\">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>
+            {% block title %}
+                {{ meta_title }}
+            {% endblock %}
+        </title>
         {# Run `composer require symfony/webpack-encore-bundle`
            and uncomment the following Encore helpers to start using Symfony UX #}
         {% block stylesheets %}

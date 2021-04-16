@@ -16,10 +16,15 @@ class ViewController extends AbstractController
     {
         $entityManager = $this->getDoctrine()->getManager();
         $linksNav = $entityManager->getRepository(Pages::class)->findAll();
+        $metaTitleSlug = $entityManager->getRepository(Pages::class)->findOneBy(["slug" => "index"]);
+        $metaTitleName = $metaTitleSlug->getMetaTitle();
+
+        dump($metaTitleName);
 
         return $this->render('base.html.twig', [
             'controller_name' => 'ViewController',
             'links' => $linksNav,
+            'meta_title' => $metaTitleName,
         ]);
     }
 
@@ -31,15 +36,19 @@ class ViewController extends AbstractController
         $entityManager = $this->getDoctrine()->getManager();
         $linksNav = $entityManager->getRepository(Pages::class)->findAll();
         $page = $entityManager->getRepository(Pages::class)->findOneBy(['slug' => $slug]);
+        $metaTitleName = $page->getMetaTitle();
 
         if($slug == "index"){
             return $this->redirectToRoute('home');
         }
 
+        dump($metaTitleName);
+
         return $this->render('base.html.twig', [
             'controller_name' => 'ViewController',
             'links' => $linksNav,
             'slugs' => $page,
+            'meta_title' => $metaTitleName,
         ]);
     }
 }
