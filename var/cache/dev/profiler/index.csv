@@ -648,3 +648,6 @@ fdbf17,::1,GET,https://localhost:8000/a-propos,1618600985,,404
 6c5103,::1,GET,https://localhost:8000/index,1618600995,b2aff3,404
 b2aff3,::1,GET,https://localhost:8000/index,1618600995,,404
 cc4512,::1,GET,https://localhost:8000/admin/pages-site,1618601092,,200
+ee74d6,::1,GET,https://localhost:8000/admin/modify-page/a-propos,1618606479,,200
+b7a589,::1,GET,https://localhost:8000/admin/pages-site,1618606495,,200
+8e1d17,::1,GET,https://localhost:8000/admin/add-page,1618606497,,200
