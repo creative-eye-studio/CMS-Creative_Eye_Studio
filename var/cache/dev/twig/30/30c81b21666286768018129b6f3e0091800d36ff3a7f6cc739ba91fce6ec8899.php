@@ -78,7 +78,7 @@ class __TwigTemplate_75904c184d759504a069e0ab2a7e8b24186374f258723d946c47e1d9d07
         ";
         // line 25
         $this->displayBlock('body', $context, $blocks);
-        // line 34
+        // line 32
         echo "    </body>
 </html>
 ";
@@ -166,25 +166,22 @@ class __TwigTemplate_75904c184d759504a069e0ab2a7e8b24186374f258723d946c47e1d9d07
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 26
-        echo "
-            ";
-        // line 27
-        if ((0 === twig_compare(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 27, $this->source); })()), "request", [], "any", false, false, false, 27), "attributes", [], "any", false, false, false, 27), "get", [0 => "_route"], "method", false, false, false, 27), "home"))) {
+        echo "            ";
+        if ((0 === twig_compare(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 26, $this->source); })()), "request", [], "any", false, false, false, 26), "attributes", [], "any", false, false, false, 26), "get", [0 => "_route"], "method", false, false, false, 26), "home"))) {
+            // line 27
+            echo "                ";
+            $this->loadTemplate("front/website/index.html.twig", "base.html.twig", 27)->display($context);
             // line 28
-            echo "                ";
-            $this->loadTemplate("front/website/index.html.twig", "base.html.twig", 28)->display($context);
-            // line 29
             echo "            ";
-        } elseif ((0 !== twig_compare(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 29, $this->source); })()), "request", [], "any", false, false, false, 29), "attributes", [], "any", false, false, false, 29), "get", [0 => "_route"], "method", false, false, false, 29), "home"))) {
-            // line 30
+        } elseif ((0 !== twig_compare(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 28, $this->source); })()), "request", [], "any", false, false, false, 28), "attributes", [], "any", false, false, false, 28), "get", [0 => "_route"], "method", false, false, false, 28), "home"))) {
+            // line 29
             echo "                ";
-            $this->loadTemplate((("front/website/" . twig_get_attribute($this->env, $this->source, (isset($context["slugs"]) || array_key_exists("slugs", $context) ? $context["slugs"] : (function () { throw new RuntimeError('Variable "slugs" does not exist.', 30, $this->source); })()), "slug", [], "any", false, false, false, 30)) . ".html.twig"), "base.html.twig", 30)->display($context);
-            // line 31
+            $this->loadTemplate((("front/website/" . twig_get_attribute($this->env, $this->source, (isset($context["slugs"]) || array_key_exists("slugs", $context) ? $context["slugs"] : (function () { throw new RuntimeError('Variable "slugs" does not exist.', 29, $this->source); })()), "slug", [], "any", false, false, false, 29)) . ".html.twig"), "base.html.twig", 29)->display($context);
+            // line 30
             echo "            ";
         }
-        // line 32
-        echo "
-        ";
+        // line 31
+        echo "        ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -205,7 +202,7 @@ class __TwigTemplate_75904c184d759504a069e0ab2a7e8b24186374f258723d946c47e1d9d07
 
     public function getDebugInfo()
     {
-        return array (  186 => 32,  183 => 31,  180 => 30,  177 => 29,  174 => 28,  172 => 27,  169 => 26,  159 => 25,  146 => 13,  136 => 12,  123 => 9,  113 => 8,  94 => 5,  82 => 34,  80 => 25,  73 => 21,  65 => 15,  63 => 12,  60 => 11,  57 => 8,  53 => 5,  47 => 1,);
+        return array (  184 => 31,  181 => 30,  178 => 29,  175 => 28,  172 => 27,  169 => 26,  159 => 25,  146 => 13,  136 => 12,  123 => 9,  113 => 8,  94 => 5,  82 => 32,  80 => 25,  73 => 21,  65 => 15,  63 => 12,  60 => 11,  57 => 8,  53 => 5,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -235,13 +232,11 @@ class __TwigTemplate_75904c184d759504a069e0ab2a7e8b24186374f258723d946c47e1d9d07
             </ul>
         </nav>
         {% block body %}
-
             {% if app.request.attributes.get('_route') == 'home' %}
                 {% include \"front/website/index.html.twig\" %}
             {% elseif app.request.attributes.get('_route') != 'home' %}
                 {% include \"front/website/#{slugs.slug}.html.twig\" %}
             {% endif %}
-
         {% endblock %}
     </body>
 </html>

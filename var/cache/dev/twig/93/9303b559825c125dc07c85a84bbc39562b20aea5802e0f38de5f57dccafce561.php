@@ -40,7 +40,7 @@ class __TwigTemplate_56e2e92930bda6de110bd92290c3152d87bb764098238aef32e9dfcd3f8
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "front/website/index.html.twig"));
 
         // line 1
-        echo "<p>Contenu de la page d&#39;accueil</p>";
+        echo "<p>Oui &ccedil;a marche !</p>";
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
 
@@ -61,6 +61,6 @@ class __TwigTemplate_56e2e92930bda6de110bd92290c3152d87bb764098238aef32e9dfcd3f8
 
     public function getSourceContext()
     {
-        return new Source("<p>Contenu de la page d&#39;accueil</p>", "front/website/index.html.twig", "/Users/kevinrifa/Documents/Creative_Eye_Studio/cms-projects/templates/front/website/index.html.twig");
+        return new Source("<p>Oui &ccedil;a marche !</p>", "front/website/index.html.twig", "/Users/kevinrifa/Documents/Creative_Eye_Studio/cms-projects/templates/front/website/index.html.twig");
     }
 }
