@@ -17,9 +17,11 @@
         <header></header>
         <nav>
             <ul>
+                {% for link in links %}
                 <li>
-                    <a href={{ path('home') }}>Accueil</a>
+                    <a href={{ path('page_view', { slug: link.slug }) }}>{{link.name}}</a>
                 </li>
+                {% endfor %}
             </ul>
         </nav>
         {% block body %}
