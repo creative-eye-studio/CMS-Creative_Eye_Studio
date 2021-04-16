@@ -64,10 +64,21 @@ class __TwigTemplate_75904c184d759504a069e0ab2a7e8b24186374f258723d946c47e1d9d07
         // line 15
         echo "    </head>
     <body>
+        <header></header>
+        <nav>
+            <ul>
+                <li>
+                    <a href=";
+        // line 21
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
+        echo ">Accueil</a>
+                </li>
+            </ul>
+        </nav>
         ";
-        // line 17
+        // line 25
         $this->displayBlock('body', $context, $blocks);
-        // line 18
+        // line 26
         echo "    </body>
 </html>
 ";
@@ -110,8 +121,9 @@ class __TwigTemplate_75904c184d759504a069e0ab2a7e8b24186374f258723d946c47e1d9d07
 
         // line 9
         echo "            ";
-        // line 10
-        echo "        ";
+        echo $this->extensions['Symfony\WebpackEncoreBundle\Twig\EntryFilesTwigExtension']->renderWebpackLinkTags("app");
+        echo "
+        ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -132,8 +144,9 @@ class __TwigTemplate_75904c184d759504a069e0ab2a7e8b24186374f258723d946c47e1d9d07
 
         // line 13
         echo "            ";
-        // line 14
-        echo "        ";
+        echo $this->extensions['Symfony\WebpackEncoreBundle\Twig\EntryFilesTwigExtension']->renderWebpackScriptTags("app");
+        echo "
+        ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -142,7 +155,7 @@ class __TwigTemplate_75904c184d759504a069e0ab2a7e8b24186374f258723d946c47e1d9d07
 
     }
 
-    // line 17
+    // line 25
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -165,9 +178,14 @@ class __TwigTemplate_75904c184d759504a069e0ab2a7e8b24186374f258723d946c47e1d9d07
         return "base.html.twig";
     }
 
+    public function isTraitable()
+    {
+        return false;
+    }
+
     public function getDebugInfo()
     {
-        return array (  146 => 17,  136 => 14,  134 => 13,  124 => 12,  114 => 10,  112 => 9,  102 => 8,  83 => 5,  71 => 18,  69 => 17,  65 => 15,  63 => 12,  60 => 11,  57 => 8,  53 => 5,  47 => 1,);
+        return array (  159 => 25,  146 => 13,  136 => 12,  123 => 9,  113 => 8,  94 => 5,  82 => 26,  80 => 25,  73 => 21,  65 => 15,  63 => 12,  60 => 11,  57 => 8,  53 => 5,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -180,14 +198,22 @@ class __TwigTemplate_75904c184d759504a069e0ab2a7e8b24186374f258723d946c47e1d9d07
         {# Run `composer require symfony/webpack-encore-bundle`
            and uncomment the following Encore helpers to start using Symfony UX #}
         {% block stylesheets %}
-            {#{{ encore_entry_link_tags('app') }}#}
+            {{ encore_entry_link_tags('app') }}
         {% endblock %}
 
         {% block javascripts %}
-            {#{{ encore_entry_script_tags('app') }}#}
+            {{ encore_entry_script_tags('app') }}
         {% endblock %}
     </head>
     <body>
+        <header></header>
+        <nav>
+            <ul>
+                <li>
+                    <a href={{ path('home') }}>Accueil</a>
+                </li>
+            </ul>
+        </nav>
         {% block body %}{% endblock %}
     </body>
 </html>

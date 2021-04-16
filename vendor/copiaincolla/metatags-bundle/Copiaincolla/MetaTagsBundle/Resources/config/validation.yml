@@ -1,5 +1,0 @@
-# MetaTag
-Copiaincolla\MetaTagsBundle\Entity\MetaTag:
-    properties:
-        url:
-            - NotNull: ~

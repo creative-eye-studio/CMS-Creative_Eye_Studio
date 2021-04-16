@@ -488,3 +488,15 @@ a88fc0,::1,GET,https://localhost:8000/favicon.ico,1618565436,5726e9,500
 5726e9,::1,GET,https://localhost:8000/favicon.ico,1618565436,,500
 =======
 >>>>>>> parent of b2240f02 ([Front-End] - Initialisation de la page Index)
+65294f,::1,GET,https://localhost:8000/,1618565933,3be053,500
+3be053,::1,GET,https://localhost:8000/,1618565933,,500
+15f722,::1,GET,https://localhost:8000/admin,1618565993,,200
+bf7b37,::1,GET,https://localhost:8000/favicon.ico,1618565994,52d369,404
+52d369,::1,GET,https://localhost:8000/favicon.ico,1618565994,,404
+172dc2,::1,GET,https://localhost:8000/about,1618566000,61fdd4,404
+61fdd4,::1,GET,https://localhost:8000/about,1618566000,,404
+95ef78,::1,GET,https://localhost:8000/,1618566005,2ab047,500
+2ab047,::1,GET,https://localhost:8000/,1618566005,,500
+68d2ab,::1,GET,https://localhost:8000/,1618566083,13d952,500
+13d952,::1,GET,https://localhost:8000/,1618566083,,500
+b53949,::1,GET,https://localhost:8000/,1618566113,,200

@@ -30,7 +30,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => 'b2240f024a2c45bc009345d4a54f9385688df8de',
+    'reference' => '2031aa20fc50ccb78ab012e3d368ad67a147a3da',
     'name' => '__root__',
   ),
   'versions' => 
@@ -42,7 +42,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => 'b2240f024a2c45bc009345d4a54f9385688df8de',
+      'reference' => '2031aa20fc50ccb78ab012e3d368ad67a147a3da',
     ),
     'cocur/slugify' => 
     array (
@@ -61,15 +61,6 @@ private static $installed = array (
       array (
       ),
       'reference' => '7413f0b55a051e89485c5cb9f765fe24bb02a7b6',
-    ),
-    'copiaincolla/metatags-bundle' => 
-    array (
-      'pretty_version' => '2.8',
-      'version' => '2.8.0.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => 'a5364e5c4793bff7767b2228424e107c23d9d19b',
     ),
     'doctrine/annotations' => 
     array (
@@ -253,12 +244,12 @@ private static $installed = array (
     ),
     'laminas/laminas-code' => 
     array (
-      'pretty_version' => '4.1.0',
-      'version' => '4.1.0.0',
+      'pretty_version' => '4.2.0',
+      'version' => '4.2.0.0',
       'aliases' => 
       array (
       ),
-      'reference' => '5b553c274b94af3f880cbaaf8fbab047f279a31c',
+      'reference' => 'e7e8f8a9c267520051d8026ff1da74823a3d8b97',
     ),
     'laminas/laminas-eventmanager' => 
     array (
@@ -1190,7 +1181,7 @@ private static $installed = array (
     array (
       'replaced' => 
       array (
-        0 => '4.1.0',
+        0 => '4.2.0',
       ),
     ),
     'zendframework/zend-eventmanager' => 

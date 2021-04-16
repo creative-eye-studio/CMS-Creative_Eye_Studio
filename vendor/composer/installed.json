@@ -146,66 +146,6 @@
             "install-path": "./package-versions-deprecated"
         },
         {
-            "name": "copiaincolla/metatags-bundle",
-            "version": "2.8",
-            "version_normalized": "2.8.0.0",
-            "target-dir": "Copiaincolla/MetaTagsBundle",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/copiaincolla/MetaTagsBundle.git",
-                "reference": "a5364e5c4793bff7767b2228424e107c23d9d19b"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/copiaincolla/MetaTagsBundle/zipball/a5364e5c4793bff7767b2228424e107c23d9d19b",
-                "reference": "a5364e5c4793bff7767b2228424e107c23d9d19b",
-                "shasum": ""
-            },
-            "require": {
-                "symfony/framework-bundle": ">=2.3.0"
-            },
-            "suggest": {
-                "symfony/twig-bundle": "2.*"
-            },
-            "time": "2014-05-20T21:28:34+00:00",
-            "type": "symfony-bundle",
-            "installation-source": "dist",
-            "autoload": {
-                "psr-0": {
-                    "Copiaincolla\\MetaTagsBundle": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Emanuele Gaspari Castelletti",
-                    "email": "inmarelibero@gmail.com",
-                    "homepage": "https://twitter.com/inmarelibero"
-                },
-                {
-                    "name": "Jury D'Ambros",
-                    "email": "jurydambros@gmail.com",
-                    "homepage": "https://twitter.com/juryDam"
-                }
-            ],
-            "description": "HTML Meta Tags management.",
-            "homepage": "https://github.com/copiaincolla/MetaTagsBundle",
-            "keywords": [
-                "html",
-                "meta",
-                "metatag",
-                "tag"
-            ],
-            "support": {
-                "issues": "https://github.com/copiaincolla/MetaTagsBundle/issues",
-                "source": "https://github.com/copiaincolla/MetaTagsBundle/tree/2.8"
-            },
-            "install-path": "../copiaincolla/metatags-bundle/Copiaincolla/MetaTagsBundle"
-        },
-        {
             "name": "doctrine/annotations",
             "version": "1.12.1",
             "version_normalized": "1.12.1.0",
@@ -1840,17 +1780,17 @@
         },
         {
             "name": "laminas/laminas-code",
-            "version": "4.1.0",
-            "version_normalized": "4.1.0.0",
+            "version": "4.2.0",
+            "version_normalized": "4.2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laminas/laminas-code.git",
-                "reference": "5b553c274b94af3f880cbaaf8fbab047f279a31c"
+                "reference": "e7e8f8a9c267520051d8026ff1da74823a3d8b97"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laminas/laminas-code/zipball/5b553c274b94af3f880cbaaf8fbab047f279a31c",
-                "reference": "5b553c274b94af3f880cbaaf8fbab047f279a31c",
+                "url": "https://api.github.com/repos/laminas/laminas-code/zipball/e7e8f8a9c267520051d8026ff1da74823a3d8b97",
+                "reference": "e7e8f8a9c267520051d8026ff1da74823a3d8b97",
                 "shasum": ""
             },
             "require": {
@@ -1877,7 +1817,7 @@
                 "laminas/laminas-stdlib": "Laminas\\Stdlib component",
                 "laminas/laminas-zendframework-bridge": "A bridge with Zend Framework"
             },
-            "time": "2021-03-27T13:55:31+00:00",
+            "time": "2021-04-14T22:05:06+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -1896,6 +1836,14 @@
                 "laminas",
                 "laminasframework"
             ],
+            "support": {
+                "chat": "https://laminas.dev/chat",
+                "docs": "https://docs.laminas.dev/laminas-code/",
+                "forum": "https://discourse.laminas.dev",
+                "issues": "https://github.com/laminas/laminas-code/issues",
+                "rss": "https://github.com/laminas/laminas-code/releases.atom",
+                "source": "https://github.com/laminas/laminas-code"
+            },
             "funding": [
                 {
                     "url": "https://funding.communitybridge.org/projects/laminas-project",

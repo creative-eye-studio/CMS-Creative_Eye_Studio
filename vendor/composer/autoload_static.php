@@ -603,16 +603,6 @@ class ComposerStaticInit379b4b38426f6588f135764b1e7f2501
         ),
     );
 
-    public static $prefixesPsr0 = array (
-        'C' => 
-        array (
-            'Copiaincolla\\MetaTagsBundle' => 
-            array (
-                0 => __DIR__ . '/..' . '/copiaincolla/metatags-bundle',
-            ),
-        ),
-    );
-
     public static $classMap = array (
         'App\\Controller\\Admin\\AdminController' => __DIR__ . '/../..' . '/src/Controller/Admin/AdminController.php',
         'App\\Controller\\RegistrationController' => __DIR__ . '/../..' . '/src/Controller/RegistrationController.php',
@@ -654,28 +644,6 @@ class ComposerStaticInit379b4b38426f6588f135764b1e7f2501
         'Cocur\\Slugify\\SlugifyInterface' => __DIR__ . '/..' . '/cocur/slugify/src/SlugifyInterface.php',
         'Collator' => __DIR__ . '/..' . '/symfony/intl/Resources/stubs/Collator.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
-        'Copiaincolla\\MetaTagsBundle\\Command\\DebugCommand' => __DIR__ . '/..' . '/copiaincolla/metatags-bundle/Copiaincolla/MetaTagsBundle/Command/DebugCommand.php',
-        'Copiaincolla\\MetaTagsBundle\\Controller\\MetaTagsAdminController' => __DIR__ . '/..' . '/copiaincolla/metatags-bundle/Copiaincolla/MetaTagsBundle/Controller/MetaTagsAdminController.php',
-        'Copiaincolla\\MetaTagsBundle\\Controller\\MetaTagsAdminDefaultsController' => __DIR__ . '/..' . '/copiaincolla/metatags-bundle/Copiaincolla/MetaTagsBundle/Controller/MetaTagsAdminDefaultsController.php',
-        'Copiaincolla\\MetaTagsBundle\\Controller\\MetaTagsController' => __DIR__ . '/..' . '/copiaincolla/metatags-bundle/Copiaincolla/MetaTagsBundle/Controller/MetaTagsController.php',
-        'Copiaincolla\\MetaTagsBundle\\CopiaincollaMetaTagsBundle' => __DIR__ . '/..' . '/copiaincolla/metatags-bundle/Copiaincolla/MetaTagsBundle/CopiaincollaMetaTagsBundle.php',
-        'Copiaincolla\\MetaTagsBundle\\DependencyInjection\\Configuration' => __DIR__ . '/..' . '/copiaincolla/metatags-bundle/Copiaincolla/MetaTagsBundle/DependencyInjection/Configuration.php',
-        'Copiaincolla\\MetaTagsBundle\\DependencyInjection\\CopiaincollaMetaTagsExtension' => __DIR__ . '/..' . '/copiaincolla/metatags-bundle/Copiaincolla/MetaTagsBundle/DependencyInjection/CopiaincollaMetaTagsExtension.php',
-        'Copiaincolla\\MetaTagsBundle\\Entity\\Metatag' => __DIR__ . '/..' . '/copiaincolla/metatags-bundle/Copiaincolla/MetaTagsBundle/Entity/Metatag.php',
-        'Copiaincolla\\MetaTagsBundle\\Entity\\MetatagDefaults' => __DIR__ . '/..' . '/copiaincolla/metatags-bundle/Copiaincolla/MetaTagsBundle/Entity/MetatagDefaults.php',
-        'Copiaincolla\\MetaTagsBundle\\Extension\\MetaTagsExtension' => __DIR__ . '/..' . '/copiaincolla/metatags-bundle/Copiaincolla/MetaTagsBundle/Extension/MetaTagsExtension.php',
-        'Copiaincolla\\MetaTagsBundle\\Form\\MetatagDefaultsType' => __DIR__ . '/..' . '/copiaincolla/metatags-bundle/Copiaincolla/MetaTagsBundle/Form/MetatagDefaultsType.php',
-        'Copiaincolla\\MetaTagsBundle\\Form\\MetatagType' => __DIR__ . '/..' . '/copiaincolla/metatags-bundle/Copiaincolla/MetaTagsBundle/Form/MetatagType.php',
-        'Copiaincolla\\MetaTagsBundle\\Lib\\CartesianProduct' => __DIR__ . '/..' . '/copiaincolla/metatags-bundle/Copiaincolla/MetaTagsBundle/Lib/CartesianProduct.php',
-        'Copiaincolla\\MetaTagsBundle\\Loader\\MetaTagsLoader' => __DIR__ . '/..' . '/copiaincolla/metatags-bundle/Copiaincolla/MetaTagsBundle/Loader/MetaTagsLoader.php',
-        'Copiaincolla\\MetaTagsBundle\\Loader\\UrlsLoader' => __DIR__ . '/..' . '/copiaincolla/metatags-bundle/Copiaincolla/MetaTagsBundle/Loader/UrlsLoader.php',
-        'Copiaincolla\\MetaTagsBundle\\Loader\\UrlsLoaderInterface' => __DIR__ . '/..' . '/copiaincolla/metatags-bundle/Copiaincolla/MetaTagsBundle/Loader/UrlsLoaderInterface.php',
-        'Copiaincolla\\MetaTagsBundle\\Repository\\MetatagDefaultsRepository' => __DIR__ . '/..' . '/copiaincolla/metatags-bundle/Copiaincolla/MetaTagsBundle/Repository/MetatagDefaultsRepository.php',
-        'Copiaincolla\\MetaTagsBundle\\Repository\\MetatagRepository' => __DIR__ . '/..' . '/copiaincolla/metatags-bundle/Copiaincolla/MetaTagsBundle/Repository/MetatagRepository.php',
-        'Copiaincolla\\MetaTagsBundle\\Service\\Defaults' => __DIR__ . '/..' . '/copiaincolla/metatags-bundle/Copiaincolla/MetaTagsBundle/Service/Defaults.php',
-        'Copiaincolla\\MetaTagsBundle\\Service\\DynamicRouteUrlsGenerator' => __DIR__ . '/..' . '/copiaincolla/metatags-bundle/Copiaincolla/MetaTagsBundle/Service/DynamicRouteUrlsGenerator.php',
-        'Copiaincolla\\MetaTagsBundle\\Service\\RouteExposer' => __DIR__ . '/..' . '/copiaincolla/metatags-bundle/Copiaincolla/MetaTagsBundle/Service/RouteExposer.php',
-        'Copiaincolla\\MetaTagsBundle\\Service\\UrlsGenerator' => __DIR__ . '/..' . '/copiaincolla/metatags-bundle/Copiaincolla/MetaTagsBundle/Service/UrlsGenerator.php',
         'Doctrine\\Bundle\\DoctrineBundle\\CacheWarmer\\DoctrineMetadataCacheWarmer' => __DIR__ . '/..' . '/doctrine/doctrine-bundle/CacheWarmer/DoctrineMetadataCacheWarmer.php',
         'Doctrine\\Bundle\\DoctrineBundle\\Command\\CreateDatabaseDoctrineCommand' => __DIR__ . '/..' . '/doctrine/doctrine-bundle/Command/CreateDatabaseDoctrineCommand.php',
         'Doctrine\\Bundle\\DoctrineBundle\\Command\\DoctrineCommand' => __DIR__ . '/..' . '/doctrine/doctrine-bundle/Command/DoctrineCommand.php',
@@ -5564,7 +5532,6 @@ class ComposerStaticInit379b4b38426f6588f135764b1e7f2501
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInit379b4b38426f6588f135764b1e7f2501::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInit379b4b38426f6588f135764b1e7f2501::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit379b4b38426f6588f135764b1e7f2501::$prefixesPsr0;
             $loader->classMap = ComposerStaticInit379b4b38426f6588f135764b1e7f2501::$classMap;
 
         }, null, ClassLoader::class);
