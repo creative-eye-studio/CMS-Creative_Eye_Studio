@@ -81,12 +81,7 @@ class AdminController extends AbstractController
 
             //Création de la page
             $file = fopen("../templates/front/website/" . $slugPageStr . ".html.twig", "c+b");
-            fwrite($file, "
-            {% extends 'base.html.twig' %}
-            {% block title %}".$data["page_title"]."{% endblock %}
-            {% block body %}
-                ".$data["page_content"]."
-            {% endblock %}");
+            fwrite($file, $data["page_content"]);
 
 
             return $this->redirectToRoute('add_page');
