@@ -1,0 +1,10 @@
+# eclipse
+.buildpath
+.project
+.settings/
+
+# netbeans
+nbproject
+
+# phpunit
+phpunit.xml

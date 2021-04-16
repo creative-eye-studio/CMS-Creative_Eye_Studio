@@ -26,6 +26,7 @@ class __TwigTemplate_56e2e92930bda6de110bd92290c3152d87bb764098238aef32e9dfcd3f8
 
         $this->blocks = [
             'title' => [$this, 'block_title'],
+            'metaTag' => [$this, 'block_metaTag'],
             'body' => [$this, 'block_body'],
         ];
     }
@@ -74,7 +75,30 @@ class __TwigTemplate_56e2e92930bda6de110bd92290c3152d87bb764098238aef32e9dfcd3f8
 
     }
 
-    // line 5
+    // line 4
+    public function block_metaTag($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "metaTag"));
+
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "metaTag"));
+
+        // line 5
+        echo "      <meta name=\"";
+        echo twig_escape_filter($this->env, (isset($context["description"]) || array_key_exists("description", $context) ? $context["description"] : (function () { throw new RuntimeError('Variable "description" does not exist.', 5, $this->source); })()), "html", null, true);
+        echo "\" content=\"Your description\">
+";
+        
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
+
+        
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
+
+    }
+
+    // line 8
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -84,7 +108,7 @@ class __TwigTemplate_56e2e92930bda6de110bd92290c3152d87bb764098238aef32e9dfcd3f8
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 6
+        // line 9
         echo "
 <p>Contenu de la page d&#39;accueil</p>
 
@@ -109,7 +133,7 @@ class __TwigTemplate_56e2e92930bda6de110bd92290c3152d87bb764098238aef32e9dfcd3f8
 
     public function getDebugInfo()
     {
-        return array (  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  112 => 9,  102 => 8,  89 => 5,  79 => 4,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -117,6 +141,9 @@ class __TwigTemplate_56e2e92930bda6de110bd92290c3152d87bb764098238aef32e9dfcd3f8
         return new Source("{% extends 'base.html.twig' %}
 
 {% block title %}Page d'accueil{% endblock %}
+{% block metaTag %}
+      <meta name=\"{{ description }}\" content=\"Your description\">
+{% endblock %}
 
 {% block body %}
 

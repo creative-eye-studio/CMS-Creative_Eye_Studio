@@ -481,3 +481,7 @@ b9ccff,::1,GET,https://localhost:8000/about,1618516633,,500
 df1b04,::1,GET,https://localhost:8000/about,1618516739,,200
 bd078e,::1,GET,https://localhost:8000/,1618516740,,200
 fae9ca,::1,GET,https://localhost:8000/about,1618516741,,200
+3ab072,::1,GET,https://localhost:8000/,1618565417,,200
+7ff737,::1,GET,https://localhost:8000/,1618565436,,200
+a88fc0,::1,GET,https://localhost:8000/favicon.ico,1618565436,5726e9,500
+5726e9,::1,GET,https://localhost:8000/favicon.ico,1618565436,,500
