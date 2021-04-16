@@ -22,6 +22,14 @@
                 </li>
             </ul>
         </nav>
-        {% block body %}{% endblock %}
+        {% block body %}
+
+            {% if app.request.attributes.get('_route') == 'home' %}
+                {% include "front/website/index.html.twig" %}
+            {% elseif app.request.attributes.get('_route') != 'home' %}
+                {% include "front/website/#{slugs.slug}.html.twig" %}
+            {% endif %}
+
+        {% endblock %}
     </body>
 </html>
