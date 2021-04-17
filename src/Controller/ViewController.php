@@ -16,8 +16,9 @@ class ViewController extends AbstractController
     {
         $entityManager = $this->getDoctrine()->getManager();
         $linksNav = $entityManager->getRepository(Pages::class)->findAll();
-        $metaTitleSlug = $entityManager->getRepository(Pages::class)->findOneBy(["slug" => "index"]);
-        $metaTitleName = $metaTitleSlug->getMetaTitle();
+        $pageSlug = $entityManager->getRepository(Pages::class)->findOneBy(["slug" => "index"]);
+        $metaTitleName = $pageSlug->getMetaTitle();
+        $metaDescription = $pageSlug->getMetaDescription();
 
         dump($metaTitleName);
 
@@ -25,6 +26,7 @@ class ViewController extends AbstractController
             'controller_name' => 'ViewController',
             'links' => $linksNav,
             'meta_title' => $metaTitleName,
+            'meta_description' => $metaDescription,
         ]);
     }
 
@@ -37,6 +39,7 @@ class ViewController extends AbstractController
         $linksNav = $entityManager->getRepository(Pages::class)->findAll();
         $page = $entityManager->getRepository(Pages::class)->findOneBy(['slug' => $slug]);
         $metaTitleName = $page->getMetaTitle();
+        $metaDescription = $page->getMetaDescription();
 
         if($slug == "index"){
             return $this->redirectToRoute('home');
@@ -49,6 +52,7 @@ class ViewController extends AbstractController
             'links' => $linksNav,
             'slugs' => $page,
             'meta_title' => $metaTitleName,
+            'meta_description' => $metaDescription,
         ]);
     }
 }
