@@ -117,6 +117,12 @@ main {
   display: inline-block;
   margin-left: 1rem;
 }
+.line a {
+  color: black;
+}
+.line a:hover {
+  text-decoration: none;
+}
 .line:hover {
   background-color: #ececec;
 }

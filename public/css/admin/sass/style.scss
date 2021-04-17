@@ -118,6 +118,12 @@ main{
         display: inline-block;
         margin-left: 1rem;
     }
+    a{
+        color: black;
+        &:hover{
+            text-decoration: none;
+        }
+    }
     &:hover{
         background-color: rgb(236, 236, 236);
     }
