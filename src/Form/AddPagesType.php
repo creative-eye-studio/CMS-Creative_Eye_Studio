@@ -31,9 +31,11 @@ class AddPagesType extends AbstractType
             ])
             ->add('page_meta_title', TextType::class, [
                 "label" => "Balise Title de la page",
+                "required" => false,
             ])
             ->add("page_meta_desc", TextareaType::class, [
                 "label" => "Balise Description de la page",
+                "required" => false,
             ])
             ->add("page_submit", SubmitType::class, [
                 "label" => "Envoyer"

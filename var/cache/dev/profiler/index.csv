@@ -401,3 +401,12 @@ fc365e,::1,GET,https://localhost:8000/admin/modify-page/a-propos,1618667671,,200
 dce1d4,::1,GET,https://localhost:8000/admin/modify-page/a-propos,1618667738,,200
 658879,::1,GET,https://localhost:8000/favicon.ico,1618667738,141df6,500
 141df6,::1,GET,https://localhost:8000/favicon.ico,1618667738,,500
+3753d1,::1,GET,https://localhost:8000/admin/pages-site,1618667794,,200
+505adf,::1,GET,https://localhost:8000/favicon.ico,1618667795,20c399,500
+20c399,::1,GET,https://localhost:8000/favicon.ico,1618667795,,500
+3fddae,::1,GET,https://localhost:8000/admin/add-page,1618667796,,200
+b42052,::1,GET,https://localhost:8000/favicon.ico,1618667796,d0585e,500
+d0585e,::1,GET,https://localhost:8000/favicon.ico,1618667796,,500
+3ae499,::1,GET,https://localhost:8000/admin/add-page,1618668128,,200
+82f801,::1,GET,https://localhost:8000/favicon.ico,1618668129,a65e53,500
+a65e53,::1,GET,https://localhost:8000/favicon.ico,1618668129,,500
