@@ -233,3 +233,13 @@ c78356,::1,GET,https://localhost:8000/admin/pages-site,1618641055,,200
 e347fd,::1,GET,https://localhost:8000/,1618641058,,200
 bfd836,::1,GET,https://localhost:8000/favicon.ico,1618641058,9dad57,500
 9dad57,::1,GET,https://localhost:8000/favicon.ico,1618641058,,500
+8639c8,::1,GET,https://localhost:8000/a-propos,1618641153,,200
+629123,::1,GET,https://localhost:8000/favicon.ico,1618641153,2bdf3d,500
+2bdf3d,::1,GET,https://localhost:8000/favicon.ico,1618641153,,500
+d2e299,::1,GET,https://localhost:8000/index,1618641154,,302
+5bb0fa,::1,GET,https://localhost:8000/,1618641154,,200
+a6a572,::1,GET,https://localhost:8000/favicon.ico,1618641154,6412f7,500
+6412f7,::1,GET,https://localhost:8000/favicon.ico,1618641154,,500
+010028,::1,GET,https://localhost:8000/a-propos,1618641424,,200
+36f1e5,::1,GET,https://localhost:8000/favicon.ico,1618641425,c620b3,500
+c620b3,::1,GET,https://localhost:8000/favicon.ico,1618641425,,500

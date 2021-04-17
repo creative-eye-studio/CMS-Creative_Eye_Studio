@@ -37,6 +37,11 @@ class Pages
      */
     private $meta_title;
 
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $meta_description;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -86,6 +91,18 @@ class Pages
     public function setMetaTitle(string $meta_title): self
     {
         $this->meta_title = $meta_title;
+
+        return $this;
+    }
+
+    public function getMetaDescription(): ?string
+    {
+        return $this->meta_description;
+    }
+
+    public function setMetaDescription(?string $meta_description): self
+    {
+        $this->meta_description = $meta_description;
 
         return $this;
     }
