@@ -29,8 +29,8 @@ class __TwigTemplate_fac6402d8f3629d81b66fca8a71923ba28a93a7bd49812e14fdd9e06baa
         $this->blocks = [
             'title' => [$this, 'block_title'],
             'stylesheets' => [$this, 'block_stylesheets'],
-            'javascripts' => [$this, 'block_javascripts'],
             'body' => [$this, 'block_body'],
+            'javascripts' => [$this, 'block_javascripts'],
         ];
     }
 
@@ -56,41 +56,35 @@ class __TwigTemplate_fac6402d8f3629d81b66fca8a71923ba28a93a7bd49812e14fdd9e06baa
         // line 8
         echo "        ";
         $this->displayBlock('stylesheets', $context, $blocks);
-        // line 9
-        echo "        <link rel=\"stylesheet\" type=\"text/css\" href=\"/css/admin/style.css\" />
-
-        ";
         // line 11
-        $this->displayBlock('javascripts', $context, $blocks);
-        // line 14
         echo "    </head>
     <body class=\"";
-        // line 15
-        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 15, $this->source); })()), "user", [], "any", false, false, false, 15)) {
+        // line 12
+        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 12, $this->source); })()), "user", [], "any", false, false, false, 12)) {
             echo "authentified";
         }
         echo "\">
         <header></header>
          ";
-        // line 17
-        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 17, $this->source); })()), "user", [], "any", false, false, false, 17)) {
-            // line 18
+        // line 14
+        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 14, $this->source); })()), "user", [], "any", false, false, false, 14)) {
+            // line 15
             echo "        <nav class=\"navigation\">
             <ul>
                 <li><a href=\"";
-            // line 20
+            // line 17
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin");
             echo "\">Accueil</a></li>
                 <li><a href=\"";
-            // line 21
+            // line 18
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("pages_site");
             echo "\">Pages du site</a></li>
                 <li><a href=\"";
-            // line 22
+            // line 19
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("articles_site");
             echo "\">Articles</a></li>
                 <li><a href=\"";
-            // line 23
+            // line 20
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("users_list");
             echo "\">Utilisateurs</a></li>
                 <li><a href=\"/logout\">Se déconnecter</a></li>
@@ -98,14 +92,19 @@ class __TwigTemplate_fac6402d8f3629d81b66fca8a71923ba28a93a7bd49812e14fdd9e06baa
         </nav>
          ";
         }
-        // line 28
+        // line 25
         echo "        <main>
             ";
-        // line 29
+        // line 26
         $this->displayBlock('body', $context, $blocks);
-        // line 30
+        // line 27
         echo "        </main>
-    </body>
+
+        ";
+        // line 29
+        $this->displayBlock('javascripts', $context, $blocks);
+        // line 32
+        echo "    </body>
 </html>
 ";
         
@@ -145,28 +144,11 @@ class __TwigTemplate_fac6402d8f3629d81b66fca8a71923ba28a93a7bd49812e14fdd9e06baa
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheets"));
 
-        
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
-
-        
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
-
-    }
-
-    // line 11
-    public function block_javascripts($context, array $blocks = [])
-    {
-        $macros = $this->macros;
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
-
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
-
-        // line 12
+        // line 9
         echo "            ";
-        // line 13
-        echo "        ";
+        echo $this->extensions['Symfony\WebpackEncoreBundle\Twig\EntryFilesTwigExtension']->renderWebpackLinkTags("app_admin");
+        echo "
+        ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -175,7 +157,7 @@ class __TwigTemplate_fac6402d8f3629d81b66fca8a71923ba28a93a7bd49812e14fdd9e06baa
 
     }
 
-    // line 29
+    // line 26
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -185,6 +167,29 @@ class __TwigTemplate_fac6402d8f3629d81b66fca8a71923ba28a93a7bd49812e14fdd9e06baa
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
+        
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
+
+        
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
+
+    }
+
+    // line 29
+    public function block_javascripts($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
+
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
+
+        // line 30
+        echo "            ";
+        echo $this->extensions['Symfony\WebpackEncoreBundle\Twig\EntryFilesTwigExtension']->renderWebpackScriptTags("app_admin");
+        echo "
+        ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -205,7 +210,7 @@ class __TwigTemplate_fac6402d8f3629d81b66fca8a71923ba28a93a7bd49812e14fdd9e06baa
 
     public function getDebugInfo()
     {
-        return array (  179 => 29,  169 => 13,  167 => 12,  157 => 11,  139 => 8,  120 => 5,  107 => 30,  105 => 29,  102 => 28,  94 => 23,  90 => 22,  86 => 21,  82 => 20,  78 => 18,  76 => 17,  69 => 15,  66 => 14,  64 => 11,  60 => 9,  57 => 8,  53 => 5,  47 => 1,);
+        return array (  189 => 30,  179 => 29,  161 => 26,  148 => 9,  138 => 8,  119 => 5,  107 => 32,  105 => 29,  101 => 27,  99 => 26,  96 => 25,  88 => 20,  84 => 19,  80 => 18,  76 => 17,  72 => 15,  70 => 14,  63 => 12,  60 => 11,  57 => 8,  53 => 5,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -217,11 +222,8 @@ class __TwigTemplate_fac6402d8f3629d81b66fca8a71923ba28a93a7bd49812e14fdd9e06baa
         <title>{% block title %}Welcome!{% endblock %}</title>
         {# Run `composer require symfony/webpack-encore-bundle`
            and uncomment the following Encore helpers to start using Symfony UX #}
-        {% block stylesheets %}{% endblock %}
-        <link rel=\"stylesheet\" type=\"text/css\" href=\"/css/admin/style.css\" />
-
-        {% block javascripts %}
-            {#{{ encore_entry_script_tags('app') }}#}
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app_admin') }}
         {% endblock %}
     </head>
     <body class=\"{% if app.user %}authentified{% endif %}\">
@@ -240,6 +242,10 @@ class __TwigTemplate_fac6402d8f3629d81b66fca8a71923ba28a93a7bd49812e14fdd9e06baa
         <main>
             {% block body %}{% endblock %}
         </main>
+
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app_admin') }}
+        {% endblock %}
     </body>
 </html>
 ", "admin.html.twig", "/Users/kevinrifa/Documents/Creative_Eye_Studio/cms-projects/templates/admin.html.twig");
