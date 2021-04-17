@@ -88,49 +88,9 @@ class __TwigTemplate_9a3a610dd2897de93f355b15ab45ffe29d9019664d128518ba55d1d3b97
         echo "
 <section class=\"bloc1\">
     <h2>Ajouter une nouvelle page</h2>
-    <ul class=\"tab-button\">
-        <li>
-            <a href=\"#content-page\" class=\"content-btn\">Contenu</a>
-        </li>
-        <li>
-            <a href=\"#content-seo\" class=\"content-btn\">Metas SEO</a>
-        </li>
-    </ul>
     ";
-        // line 17
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 17, $this->source); })()), 'form_start');
-        echo "
-        <div id=\"content-page\" class=\"tab active\">
-            ";
-        // line 19
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 19, $this->source); })()), "page_title", [], "any", false, false, false, 19), 'row');
-        echo "
-            ";
-        // line 20
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 20, $this->source); })()), "page_nav_position", [], "any", false, false, false, 20), 'row');
-        echo "
-            ";
-        // line 21
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 21, $this->source); })()), "page_content", [], "any", false, false, false, 21), 'row');
-        echo "
-        </div>
-        <div id=\"content-seo\" class=\"tab\">
-            ";
-        // line 24
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 24, $this->source); })()), "page_meta_title", [], "any", false, false, false, 24), 'row');
-        echo "
-            ";
-        // line 25
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 25, $this->source); })()), "page_meta_desc", [], "any", false, false, false, 25), 'row');
-        echo "
-        </div>
-        ";
-        // line 27
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 27, $this->source); })()), "page_submit", [], "any", false, false, false, 27), 'row');
-        echo "
-    ";
-        // line 28
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 28, $this->source); })()), 'form_end');
+        // line 9
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 9, $this->source); })()), 'form');
         echo "
 </section>
 
@@ -155,7 +115,7 @@ class __TwigTemplate_9a3a610dd2897de93f355b15ab45ffe29d9019664d128518ba55d1d3b97
 
     public function getDebugInfo()
     {
-        return array (  133 => 28,  129 => 27,  124 => 25,  120 => 24,  114 => 21,  110 => 20,  106 => 19,  101 => 17,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  93 => 9,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -168,26 +128,7 @@ class __TwigTemplate_9a3a610dd2897de93f355b15ab45ffe29d9019664d128518ba55d1d3b97
 
 <section class=\"bloc1\">
     <h2>Ajouter une nouvelle page</h2>
-    <ul class=\"tab-button\">
-        <li>
-            <a href=\"#content-page\" class=\"content-btn\">Contenu</a>
-        </li>
-        <li>
-            <a href=\"#content-seo\" class=\"content-btn\">Metas SEO</a>
-        </li>
-    </ul>
-    {{ form_start(form) }}
-        <div id=\"content-page\" class=\"tab active\">
-            {{ form_row(form.page_title) }}
-            {{ form_row(form.page_nav_position) }}
-            {{ form_row(form.page_content) }}
-        </div>
-        <div id=\"content-seo\" class=\"tab\">
-            {{ form_row(form.page_meta_title) }}
-            {{ form_row(form.page_meta_desc) }}
-        </div>
-        {{ form_row(form.page_submit) }}
-    {{ form_end(form) }}
+    {{ form(form) }}
 </section>
 
 {% endblock %}", "admin/add-page.html.twig", "/Users/kevinrifa/Documents/Creative_Eye_Studio/cms-projects/templates/admin/add-page.html.twig");

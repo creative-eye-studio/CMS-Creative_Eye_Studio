@@ -105,7 +105,6 @@ class __TwigTemplate_fac6402d8f3629d81b66fca8a71923ba28a93a7bd49812e14fdd9e06baa
         $this->displayBlock('body', $context, $blocks);
         // line 30
         echo "        </main>
-        <script src=\"/js/admin/functions.js\"></script>
     </body>
 </html>
 ";
@@ -206,7 +205,7 @@ class __TwigTemplate_fac6402d8f3629d81b66fca8a71923ba28a93a7bd49812e14fdd9e06baa
 
     public function getDebugInfo()
     {
-        return array (  180 => 29,  170 => 13,  168 => 12,  158 => 11,  140 => 8,  121 => 5,  107 => 30,  105 => 29,  102 => 28,  94 => 23,  90 => 22,  86 => 21,  82 => 20,  78 => 18,  76 => 17,  69 => 15,  66 => 14,  64 => 11,  60 => 9,  57 => 8,  53 => 5,  47 => 1,);
+        return array (  179 => 29,  169 => 13,  167 => 12,  157 => 11,  139 => 8,  120 => 5,  107 => 30,  105 => 29,  102 => 28,  94 => 23,  90 => 22,  86 => 21,  82 => 20,  78 => 18,  76 => 17,  69 => 15,  66 => 14,  64 => 11,  60 => 9,  57 => 8,  53 => 5,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -241,7 +240,6 @@ class __TwigTemplate_fac6402d8f3629d81b66fca8a71923ba28a93a7bd49812e14fdd9e06baa
         <main>
             {% block body %}{% endblock %}
         </main>
-        <script src=\"/js/admin/functions.js\"></script>
     </body>
 </html>
 ", "admin.html.twig", "/Users/kevinrifa/Documents/Creative_Eye_Studio/cms-projects/templates/admin.html.twig");
