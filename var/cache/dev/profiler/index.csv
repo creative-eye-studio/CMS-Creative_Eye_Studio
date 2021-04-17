@@ -410,3 +410,12 @@ d0585e,::1,GET,https://localhost:8000/favicon.ico,1618667796,,500
 3ae499,::1,GET,https://localhost:8000/admin/add-page,1618668128,,200
 82f801,::1,GET,https://localhost:8000/favicon.ico,1618668129,a65e53,500
 a65e53,::1,GET,https://localhost:8000/favicon.ico,1618668129,,500
+ec440b,::1,GET,https://localhost:8000/,1618674311,,200
+7d56ba,::1,GET,https://localhost:8000/favicon.ico,1618674311,88279e,500
+88279e,::1,GET,https://localhost:8000/favicon.ico,1618674311,,500
+1bff3f,::1,GET,https://localhost:8000/,1618674616,,200
+b97442,::1,GET,https://localhost:8000/favicon.ico,1618674616,6085af,500
+6085af,::1,GET,https://localhost:8000/favicon.ico,1618674616,,500
+6c5f91,::1,GET,https://localhost:8000/,1618674849,,200
+c56a1d,::1,GET,https://localhost:8000/favicon.ico,1618674849,a96085,500
+a96085,::1,GET,https://localhost:8000/favicon.ico,1618674849,,500

@@ -13,10 +13,7 @@
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
         {% endblock %}
-
-        {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
-        {% endblock %}
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookie-bar@1.8.3/themes/cookiebar.min.css" />
     </head>
     <body>
         <header></header>
@@ -36,5 +33,10 @@
                 {% include "front/website/#{slugs.slug}.html.twig" %}
             {% endif %}
         {% endblock %}
+
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/cookie-bar/cookiebar-latest.min.js?forceLang=fr&theme=altblack&tracking=1&thirdparty=1&always=1&hideDetailsBtn=1&showPolicyLink=1&privacyPage=%2Fpolitique-confidentialite"></script>
     </body>
 </html>
