@@ -108,11 +108,13 @@ class AdminController extends AbstractController
         $pages = $entityManager->getRepository(Pages::class)->findOneBy(["slug" => $slug]);
         $pageName = $pages->getName();
         $pageMetaTitle = $pages->getMetaTitle();
+        $pageMetaDesc = $pages->getMetaDescription();
 
         if($form->isSubmitted() && $form->isValid()){
             $data = $form->getData();
             $pages->setName($data["page_title"]);
             $pages->setMetaTitle($data["page_meta_title"]);
+            $pages->setMetaDescription($data["page_meta_desc"]);
 
             $entityManager->persist($pages);
             $entityManager->flush();
@@ -131,6 +133,7 @@ class AdminController extends AbstractController
             'pages' => $pages,
             'pageName' => $pageName,
             'pageMetaTitle' => $pageMetaTitle,
+            'pageMetaDesc' => $pageMetaDesc,
             'dataFile' => $dataFile,
             'controller_name' => 'AdminController'
         ]);

@@ -9,8 +9,9 @@
         {{ form_start(form) }}
             {{ form_row(form.page_title, { value: pageName } ) }}
             {{ form_row(form.page_nav_position) }}
-            {{ form_row(form.page_meta_title, { value: pageMetaTitle }) }}
             {{ form_row(form.page_content, { value: dataFile }) }}
+            {{ form_row(form.page_meta_title, { value: pageMetaTitle }) }}
+            {{ form_row(form.page_meta_desc, { value: pageMetaDesc }) }}
             {{ form_row(form.page_submit) }}
         {{ form_end(form) }}
 </section>

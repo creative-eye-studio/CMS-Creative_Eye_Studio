@@ -6,6 +6,7 @@ use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -25,11 +26,14 @@ class AddPagesType extends AbstractType
                 ],
                 "label" => "Menu"
             ])
+            ->add('page_content', CKEditorType::class, [
+                "label" => "Contenu de la page"
+            ])
             ->add('page_meta_title', TextType::class, [
                 "label" => "Balise Title de la page",
             ])
-            ->add('page_content', CKEditorType::class, [
-                "label" => "Contenu de la page"
+            ->add("page_meta_desc", TextareaType::class, [
+                "label" => "Balise Description de la page",
             ])
             ->add("page_submit", SubmitType::class, [
                 "label" => "Envoyer"
