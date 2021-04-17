@@ -54,33 +54,37 @@ class __TwigTemplate_75904c184d759504a069e0ab2a7e8b24186374f258723d946c47e1d9d07
         $this->displayBlock('title', $context, $blocks);
         // line 9
         echo "        </title>
+        <meta name=\"description\" content=\"";
+        // line 10
+        echo twig_escape_filter($this->env, (isset($context["meta_description"]) || array_key_exists("meta_description", $context) ? $context["meta_description"] : (function () { throw new RuntimeError('Variable "meta_description" does not exist.', 10, $this->source); })()), "html", null, true);
+        echo "\" />
         ";
-        // line 12
+        // line 13
         echo "        ";
         $this->displayBlock('stylesheets', $context, $blocks);
-        // line 15
+        // line 16
         echo "
         ";
-        // line 16
+        // line 17
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 19
+        // line 20
         echo "    </head>
     <body>
         <header></header>
         <nav>
             <ul>
                 ";
-        // line 24
+        // line 25
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["links"]) || array_key_exists("links", $context) ? $context["links"] : (function () { throw new RuntimeError('Variable "links" does not exist.', 24, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["links"]) || array_key_exists("links", $context) ? $context["links"] : (function () { throw new RuntimeError('Variable "links" does not exist.', 25, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["link"]) {
-            // line 25
+            // line 26
             echo "                <li>
                     <a href=";
-            // line 26
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("page_view", ["slug" => twig_get_attribute($this->env, $this->source, $context["link"], "slug", [], "any", false, false, false, 26)]), "html", null, true);
+            // line 27
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("page_view", ["slug" => twig_get_attribute($this->env, $this->source, $context["link"], "slug", [], "any", false, false, false, 27)]), "html", null, true);
             echo ">";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["link"], "name", [], "any", false, false, false, 26), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["link"], "name", [], "any", false, false, false, 27), "html", null, true);
             echo "</a>
                 </li>
                 ";
@@ -88,13 +92,13 @@ class __TwigTemplate_75904c184d759504a069e0ab2a7e8b24186374f258723d946c47e1d9d07
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['link'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 29
+        // line 30
         echo "            </ul>
         </nav>
         ";
-        // line 31
+        // line 32
         $this->displayBlock('body', $context, $blocks);
-        // line 38
+        // line 39
         echo "    </body>
 </html>
 ";
@@ -129,7 +133,7 @@ class __TwigTemplate_75904c184d759504a069e0ab2a7e8b24186374f258723d946c47e1d9d07
 
     }
 
-    // line 12
+    // line 13
     public function block_stylesheets($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -139,7 +143,7 @@ class __TwigTemplate_75904c184d759504a069e0ab2a7e8b24186374f258723d946c47e1d9d07
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheets"));
 
-        // line 13
+        // line 14
         echo "            ";
         echo $this->extensions['Symfony\WebpackEncoreBundle\Twig\EntryFilesTwigExtension']->renderWebpackLinkTags("app");
         echo "
@@ -152,7 +156,7 @@ class __TwigTemplate_75904c184d759504a069e0ab2a7e8b24186374f258723d946c47e1d9d07
 
     }
 
-    // line 16
+    // line 17
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -162,7 +166,7 @@ class __TwigTemplate_75904c184d759504a069e0ab2a7e8b24186374f258723d946c47e1d9d07
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 17
+        // line 18
         echo "            ";
         echo $this->extensions['Symfony\WebpackEncoreBundle\Twig\EntryFilesTwigExtension']->renderWebpackScriptTags("app");
         echo "
@@ -175,7 +179,7 @@ class __TwigTemplate_75904c184d759504a069e0ab2a7e8b24186374f258723d946c47e1d9d07
 
     }
 
-    // line 31
+    // line 32
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -185,22 +189,22 @@ class __TwigTemplate_75904c184d759504a069e0ab2a7e8b24186374f258723d946c47e1d9d07
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 32
+        // line 33
         echo "            ";
-        if ((0 === twig_compare(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 32, $this->source); })()), "request", [], "any", false, false, false, 32), "attributes", [], "any", false, false, false, 32), "get", [0 => "_route"], "method", false, false, false, 32), "home"))) {
-            // line 33
-            echo "                ";
-            $this->loadTemplate("front/website/index.html.twig", "base.html.twig", 33)->display($context);
+        if ((0 === twig_compare(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 33, $this->source); })()), "request", [], "any", false, false, false, 33), "attributes", [], "any", false, false, false, 33), "get", [0 => "_route"], "method", false, false, false, 33), "home"))) {
             // line 34
-            echo "            ";
-        } elseif ((0 !== twig_compare(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 34, $this->source); })()), "request", [], "any", false, false, false, 34), "attributes", [], "any", false, false, false, 34), "get", [0 => "_route"], "method", false, false, false, 34), "home"))) {
-            // line 35
             echo "                ";
-            $this->loadTemplate((("front/website/" . twig_get_attribute($this->env, $this->source, (isset($context["slugs"]) || array_key_exists("slugs", $context) ? $context["slugs"] : (function () { throw new RuntimeError('Variable "slugs" does not exist.', 35, $this->source); })()), "slug", [], "any", false, false, false, 35)) . ".html.twig"), "base.html.twig", 35)->display($context);
+            $this->loadTemplate("front/website/index.html.twig", "base.html.twig", 34)->display($context);
+            // line 35
+            echo "            ";
+        } elseif ((0 !== twig_compare(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 35, $this->source); })()), "request", [], "any", false, false, false, 35), "attributes", [], "any", false, false, false, 35), "get", [0 => "_route"], "method", false, false, false, 35), "home"))) {
             // line 36
+            echo "                ";
+            $this->loadTemplate((("front/website/" . twig_get_attribute($this->env, $this->source, (isset($context["slugs"]) || array_key_exists("slugs", $context) ? $context["slugs"] : (function () { throw new RuntimeError('Variable "slugs" does not exist.', 36, $this->source); })()), "slug", [], "any", false, false, false, 36)) . ".html.twig"), "base.html.twig", 36)->display($context);
+            // line 37
             echo "            ";
         }
-        // line 37
+        // line 38
         echo "        ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -222,7 +226,7 @@ class __TwigTemplate_75904c184d759504a069e0ab2a7e8b24186374f258723d946c47e1d9d07
 
     public function getDebugInfo()
     {
-        return array (  204 => 37,  201 => 36,  198 => 35,  195 => 34,  192 => 33,  189 => 32,  179 => 31,  166 => 17,  156 => 16,  143 => 13,  133 => 12,  120 => 7,  110 => 6,  98 => 38,  96 => 31,  92 => 29,  81 => 26,  78 => 25,  74 => 24,  67 => 19,  65 => 16,  62 => 15,  59 => 12,  56 => 9,  54 => 6,  47 => 1,);
+        return array (  208 => 38,  205 => 37,  202 => 36,  199 => 35,  196 => 34,  193 => 33,  183 => 32,  170 => 18,  160 => 17,  147 => 14,  137 => 13,  124 => 7,  114 => 6,  102 => 39,  100 => 32,  96 => 30,  85 => 27,  82 => 26,  78 => 25,  71 => 20,  69 => 17,  66 => 16,  63 => 13,  59 => 10,  56 => 9,  54 => 6,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -236,6 +240,7 @@ class __TwigTemplate_75904c184d759504a069e0ab2a7e8b24186374f258723d946c47e1d9d07
                 {{ meta_title }}
             {% endblock %}
         </title>
+        <meta name=\"description\" content=\"{{ meta_description }}\" />
         {# Run `composer require symfony/webpack-encore-bundle`
            and uncomment the following Encore helpers to start using Symfony UX #}
         {% block stylesheets %}
