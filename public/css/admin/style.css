@@ -127,6 +127,29 @@ main {
   background-color: #ececec;
 }
 
+.tab-button {
+  display: flex;
+  list-style-type: none;
+  padding-left: 0;
+}
+.tab-button li {
+  margin-right: 1rem;
+}
+.tab-button a {
+  display: inline-block;
+  padding: 1rem;
+  background-color: #e0e0e0;
+  color: black;
+  text-decoration: none;
+}
+
+.tab {
+  display: none;
+}
+.tab.active {
+  display: block;
+}
+
 /******************************************************/
 /********************** MIXINS ************************/
 /******************************************************/
