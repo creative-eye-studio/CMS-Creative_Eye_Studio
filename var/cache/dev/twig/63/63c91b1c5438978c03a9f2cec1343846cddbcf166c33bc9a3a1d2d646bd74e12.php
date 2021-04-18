@@ -134,6 +134,12 @@ class __TwigTemplate_feae9d7fbe4e9099f9421078a41bf63ee66784206d034fb348eb9bdbafd
     <button class=\"btn btn-lg btn-primary\" type=\"submit\">
         Se connecter
     </button>
+    <p>
+        <a href=";
+        // line 41
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_forgot_password_request");
+        echo ">Mot de passe oublié</a>
+    </p>
 </form>
 ";
         
@@ -156,7 +162,7 @@ class __TwigTemplate_feae9d7fbe4e9099f9421078a41bf63ee66784206d034fb348eb9bdbafd
 
     public function getDebugInfo()
     {
-        return array (  133 => 36,  127 => 23,  119 => 18,  115 => 16,  107 => 13,  104 => 12,  102 => 11,  99 => 10,  93 => 8,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  140 => 41,  133 => 36,  127 => 23,  119 => 18,  115 => 16,  107 => 13,  104 => 12,  102 => 11,  99 => 10,  93 => 8,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -200,6 +206,9 @@ class __TwigTemplate_feae9d7fbe4e9099f9421078a41bf63ee66784206d034fb348eb9bdbafd
     <button class=\"btn btn-lg btn-primary\" type=\"submit\">
         Se connecter
     </button>
+    <p>
+        <a href={{ path( 'app_forgot_password_request' ) }}>Mot de passe oublié</a>
+    </p>
 </form>
 {% endblock %}
 ", "security/login.html.twig", "/Users/kevinrifa/Documents/Creative_Eye_Studio/cms-projects/templates/security/login.html.twig");

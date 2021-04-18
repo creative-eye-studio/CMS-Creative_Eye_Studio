@@ -13,6 +13,20 @@ return [[
         'app' => [
             'js' => [
                 '/build/runtime.js',
+                '/build/vendors-node_modules_symfony_stimulus-bridge_dist_index_js-node_modules_core-js_modules_es_ob-7db861.js',
+                '/build/app.js',
+            ],
+            'css' => [
+                '/build/app.css',
+            ],
+        ],
+        'app_admin' => [
+            'js' => [
+                '/build/runtime.js',
+                '/build/app_admin.js',
+            ],
+            'css' => [
+                '/build/app_admin.css',
             ],
         ],
     ],

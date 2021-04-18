@@ -30,7 +30,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => '2031aa20fc50ccb78ab012e3d368ad67a147a3da',
+    'reference' => '9a1366d7bf6f91a642d7f4b0fab0287c81a041eb',
     'name' => '__root__',
   ),
   'versions' => 
@@ -42,7 +42,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => '2031aa20fc50ccb78ab012e3d368ad67a147a3da',
+      'reference' => '9a1366d7bf6f91a642d7f4b0fab0287c81a041eb',
     ),
     'cocur/slugify' => 
     array (
@@ -1140,6 +1140,15 @@ private static $installed = array (
       array (
       ),
       'reference' => '298a08ddda623485208506fcee08817807a251dd',
+    ),
+    'symfonycasts/reset-password-bundle' => 
+    array (
+      'pretty_version' => 'v1.7.0',
+      'version' => '1.7.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '368a4f64fc4f8174234fc91f9b22d5016257211b',
     ),
     'symfonycasts/verify-email-bundle' => 
     array (

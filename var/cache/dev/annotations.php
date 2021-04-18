@@ -141,6 +141,10 @@ return [[
 '%5B%5BC%5DApp%5CEntity%5CPages%23getMetaTitle%5D%5B1%5D' => 2,
 '%5BApp%5CEntity%5CPages%23setMetaTitle%5D%5B1%5D' => 1,
 '%5B%5BC%5DApp%5CEntity%5CPages%23setMetaTitle%5D%5B1%5D' => 2,
+'%5BApp%5CEntity%5CPages%23getMetaDescription%5D%5B1%5D' => 1,
+'%5B%5BC%5DApp%5CEntity%5CPages%23getMetaDescription%5D%5B1%5D' => 2,
+'%5BApp%5CEntity%5CPages%23setMetaDescription%5D%5B1%5D' => 1,
+'%5B%5BC%5DApp%5CEntity%5CPages%23setMetaDescription%5D%5B1%5D' => 2,
 '%5BApp%5CEntity%5CPages%24id%5D%5B1%5D' => 19,
 '%5B%5BC%5DApp%5CEntity%5CPages%24id%5D%5B1%5D' => 2,
 '%5BApp%5CEntity%5CPages%24name%5D%5B1%5D' => 20,
@@ -149,8 +153,10 @@ return [[
 '%5B%5BC%5DApp%5CEntity%5CPages%24slug%5D%5B1%5D' => 2,
 '%5BApp%5CEntity%5CPages%24nav_position%5D%5B1%5D' => 20,
 '%5B%5BC%5DApp%5CEntity%5CPages%24nav_position%5D%5B1%5D' => 2,
-'%5BApp%5CEntity%5CPages%24meta_title%5D%5B1%5D' => 22,
+'%5BApp%5CEntity%5CPages%24meta_title%5D%5B1%5D' => 20,
 '%5B%5BC%5DApp%5CEntity%5CPages%24meta_title%5D%5B1%5D' => 2,
+'%5BApp%5CEntity%5CPages%24meta_description%5D%5B1%5D' => 22,
+'%5B%5BC%5DApp%5CEntity%5CPages%24meta_description%5D%5B1%5D' => 2,
 '%5BApp%5CEntity%5CUsers%5D%5B1%5D' => 23,
 '%5B%5BC%5DApp%5CEntity%5CUsers%5D%5B1%5D' => 2,
 '%5BApp%5CEntity%5CUsers%23getId%5D%5B1%5D' => 1,
@@ -639,6 +645,24 @@ return [[
 '%5B%5BC%5DFM%5CElfinderBundle%5CController%5CElFinderController%23load%5D%5B1%5D' => 2,
 '%5BFM%5CElfinderBundle%5CController%5CElFinderController%23mainJS%5D%5B1%5D' => 1,
 '%5B%5BC%5DFM%5CElfinderBundle%5CController%5CElFinderController%23mainJS%5D%5B1%5D' => 2,
+'%5BSymfonyCasts%5CBundle%5CResetPassword%5CController%5CResetPasswordControllerTrait%5D%5B1%5D' => 1,
+'%5B%5BC%5DSymfonyCasts%5CBundle%5CResetPassword%5CController%5CResetPasswordControllerTrait%5D%5B1%5D' => 2,
+'%5BSymfonyCasts%5CBundle%5CResetPassword%5CController%5CResetPasswordControllerTrait%23setCanCheckEmailInSession%5D%5B1%5D' => 1,
+'%5B%5BC%5DSymfonyCasts%5CBundle%5CResetPassword%5CController%5CResetPasswordControllerTrait%23setCanCheckEmailInSession%5D%5B1%5D' => 2,
+'%5BSymfonyCasts%5CBundle%5CResetPassword%5CController%5CResetPasswordControllerTrait%23canCheckEmail%5D%5B1%5D' => 1,
+'%5B%5BC%5DSymfonyCasts%5CBundle%5CResetPassword%5CController%5CResetPasswordControllerTrait%23canCheckEmail%5D%5B1%5D' => 2,
+'%5BSymfonyCasts%5CBundle%5CResetPassword%5CController%5CResetPasswordControllerTrait%23storeTokenInSession%5D%5B1%5D' => 1,
+'%5B%5BC%5DSymfonyCasts%5CBundle%5CResetPassword%5CController%5CResetPasswordControllerTrait%23storeTokenInSession%5D%5B1%5D' => 2,
+'%5BSymfonyCasts%5CBundle%5CResetPassword%5CController%5CResetPasswordControllerTrait%23getTokenFromSession%5D%5B1%5D' => 1,
+'%5B%5BC%5DSymfonyCasts%5CBundle%5CResetPassword%5CController%5CResetPasswordControllerTrait%23getTokenFromSession%5D%5B1%5D' => 2,
+'%5BSymfonyCasts%5CBundle%5CResetPassword%5CController%5CResetPasswordControllerTrait%23setTokenObjectInSession%5D%5B1%5D' => 1,
+'%5B%5BC%5DSymfonyCasts%5CBundle%5CResetPassword%5CController%5CResetPasswordControllerTrait%23setTokenObjectInSession%5D%5B1%5D' => 2,
+'%5BSymfonyCasts%5CBundle%5CResetPassword%5CController%5CResetPasswordControllerTrait%23getTokenObjectFromSession%5D%5B1%5D' => 1,
+'%5B%5BC%5DSymfonyCasts%5CBundle%5CResetPassword%5CController%5CResetPasswordControllerTrait%23getTokenObjectFromSession%5D%5B1%5D' => 2,
+'%5BSymfonyCasts%5CBundle%5CResetPassword%5CController%5CResetPasswordControllerTrait%23cleanSessionAfterReset%5D%5B1%5D' => 1,
+'%5B%5BC%5DSymfonyCasts%5CBundle%5CResetPassword%5CController%5CResetPasswordControllerTrait%23cleanSessionAfterReset%5D%5B1%5D' => 2,
+'%5BSymfonyCasts%5CBundle%5CResetPassword%5CController%5CResetPasswordControllerTrait%23getSessionService%5D%5B1%5D' => 1,
+'%5B%5BC%5DSymfonyCasts%5CBundle%5CResetPassword%5CController%5CResetPasswordControllerTrait%23getSessionService%5D%5B1%5D' => 2,
 '%5BSymfony%5CBundle%5CFrameworkBundle%5CController%5CRedirectController%5D%5B1%5D' => 1,
 '%5B%5BC%5DSymfony%5CBundle%5CFrameworkBundle%5CController%5CRedirectController%5D%5B1%5D' => 2,
 '%5BSymfony%5CBundle%5CFrameworkBundle%5CController%5CRedirectController%23__construct%5D%5B1%5D' => 1,
@@ -750,7 +774,7 @@ return [[
 
 0 => 'N;',
 1 => [],
-2 => 1618609573,
+2 => 1618745708,
 3 => static function () {
     return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
         $o = [
@@ -1169,8 +1193,8 @@ return [[
         null,
         [
             'stdClass' => [
-                'length' => [
-                    255,
+                'type' => [
+                    'text',
                 ],
                 'nullable' => [
                     true,

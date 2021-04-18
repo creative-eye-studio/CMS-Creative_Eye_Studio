@@ -21,6 +21,8 @@ return [
         '/admin/users-list' => [[['_route' => 'users_list', '_controller' => 'App\\Controller\\Admin\\AdminController::users_list'], null, null, null, false, false, null]],
         '/admin/register' => [[['_route' => 'app_register', '_controller' => 'App\\Controller\\RegistrationController::register'], null, null, null, false, false, null]],
         '/verify/email' => [[['_route' => 'app_verify_email', '_controller' => 'App\\Controller\\RegistrationController::verifyUserEmail'], null, null, null, false, false, null]],
+        '/reset-password' => [[['_route' => 'app_forgot_password_request', '_controller' => 'App\\Controller\\ResetPasswordController::request'], null, null, null, false, false, null]],
+        '/reset-password/check-email' => [[['_route' => 'app_check_email', '_controller' => 'App\\Controller\\ResetPasswordController::checkEmail'], null, null, null, false, false, null]],
         '/login' => [[['_route' => 'app_login', '_controller' => 'App\\Controller\\SecurityController::login'], null, null, null, false, false, null]],
         '/logout' => [[['_route' => 'app_logout', '_controller' => 'App\\Controller\\SecurityController::logout'], null, null, null, false, false, null]],
         '/' => [[['_route' => 'home', '_controller' => 'App\\Controller\\ViewController::index'], null, null, null, false, false, null]],
@@ -49,12 +51,13 @@ return [
                         .'|article/([^/]++)(*:256)'
                     .')'
                 .')'
-                .'|/([^/]++)(*:275)'
+                .'|/reset\\-password/reset(?:/([^/]++))?(*:302)'
+                .'|/([^/]++)(*:319)'
                 .'|/e(?'
-                    .'|fconnect(?:/([^/]++)(?:/([^/]++))?)?(*:324)'
+                    .'|fconnect(?:/([^/]++)(?:/([^/]++))?)?(*:368)'
                     .'|lfinder(?'
-                        .'|\\.main\\.js(*:352)'
-                        .'|(?:/([^/]++)(?:/([^/]++))?)?(*:388)'
+                        .'|\\.main\\.js(*:396)'
+                        .'|(?:/([^/]++)(?:/([^/]++))?)?(*:432)'
                     .')'
                 .')'
             .')/?$}sDu',
@@ -70,10 +73,11 @@ return [
         200 => [[['_route' => 'modify_page', '_controller' => 'App\\Controller\\Admin\\AdminController::modify_page'], ['slug'], null, null, false, true, null]],
         232 => [[['_route' => 'delete_page', '_controller' => 'App\\Controller\\Admin\\AdminController::delete_page'], ['id'], null, null, false, true, null]],
         256 => [[['_route' => 'delete_article', '_controller' => 'App\\Controller\\Admin\\AdminController::delete_article'], ['id'], null, null, false, true, null]],
-        275 => [[['_route' => 'page_view', '_controller' => 'App\\Controller\\ViewController::page_view'], ['slug'], null, null, false, true, null]],
-        324 => [[['_route' => 'ef_connect', '_controller' => 'FM\\ElfinderBundle\\Controller\\ElFinderController::load', 'instance' => 'default', 'homeFolder' => ''], ['instance', 'homeFolder'], null, null, false, true, null]],
-        352 => [[['_route' => 'ef_main_js', '_controller' => 'FM\\ElfinderBundle\\Controller\\ElFinderController::mainJS'], [], null, null, false, false, null]],
-        388 => [
+        302 => [[['_route' => 'app_reset_password', 'token' => null, '_controller' => 'App\\Controller\\ResetPasswordController::reset'], ['token'], null, null, false, true, null]],
+        319 => [[['_route' => 'page_view', '_controller' => 'App\\Controller\\ViewController::page_view'], ['slug'], null, null, false, true, null]],
+        368 => [[['_route' => 'ef_connect', '_controller' => 'FM\\ElfinderBundle\\Controller\\ElFinderController::load', 'instance' => 'default', 'homeFolder' => ''], ['instance', 'homeFolder'], null, null, false, true, null]],
+        396 => [[['_route' => 'ef_main_js', '_controller' => 'FM\\ElfinderBundle\\Controller\\ElFinderController::mainJS'], [], null, null, false, false, null]],
+        432 => [
             [['_route' => 'elfinder', '_controller' => 'FM\\ElfinderBundle\\Controller\\ElFinderController::show', 'instance' => 'default', 'homeFolder' => ''], ['instance', 'homeFolder'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
