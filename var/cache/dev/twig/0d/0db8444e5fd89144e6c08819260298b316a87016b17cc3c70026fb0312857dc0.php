@@ -116,7 +116,7 @@ class __TwigTemplate_6471db299b2a818dfdfd8afcd018df1cc2c7c81c012a19ec339d10c766c
                 </small>
             </div>
 
-            <button class=\"btn btn-primary\">Envoyer la réinitialisation par E-Mail</button>
+            <button class=\"btn btn-primary margin-top\">Envoyer la réinitialisation par E-Mail</button>
         ";
         // line 21
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["requestForm"]) || array_key_exists("requestForm", $context) ? $context["requestForm"] : (function () { throw new RuntimeError('Variable "requestForm" does not exist.', 21, $this->source); })()), 'form_end');
@@ -167,7 +167,7 @@ class __TwigTemplate_6471db299b2a818dfdfd8afcd018df1cc2c7c81c012a19ec339d10c766c
                 </small>
             </div>
 
-            <button class=\"btn btn-primary\">Envoyer la réinitialisation par E-Mail</button>
+            <button class=\"btn btn-primary margin-top\">Envoyer la réinitialisation par E-Mail</button>
         {{ form_end(requestForm) }}
     </div>
 {% endblock %}", "reset_password/request.html.twig", "/Users/kevinrifa/Documents/Creative_Eye_Studio/cms-projects/templates/reset_password/request.html.twig");
