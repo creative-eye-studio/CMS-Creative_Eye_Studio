@@ -42,7 +42,9 @@ class __TwigTemplate_a2c0495db0416bc890591400148b71742a1db2b3706dabe5bf80edf96db
         // line 1
         echo "<p>&Agrave; propos</p>
 
-<p>Tu as r&eacute;ussi &agrave; modifier une page</p>";
+<p>Tu as r&eacute;ussi &agrave; modifier une page</p>
+
+<p>Excellent</p>";
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
 
@@ -65,6 +67,8 @@ class __TwigTemplate_a2c0495db0416bc890591400148b71742a1db2b3706dabe5bf80edf96db
     {
         return new Source("<p>&Agrave; propos</p>
 
-<p>Tu as r&eacute;ussi &agrave; modifier une page</p>", "front/website/a-propos.html.twig", "/Users/kevinrifa/Documents/Creative_Eye_Studio/cms-projects/templates/front/website/a-propos.html.twig");
+<p>Tu as r&eacute;ussi &agrave; modifier une page</p>
+
+<p>Excellent</p>", "front/website/a-propos.html.twig", "/Users/kevinrifa/Documents/Creative_Eye_Studio/cms-projects/templates/front/website/a-propos.html.twig");
     }
 }
