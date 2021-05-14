@@ -37,6 +37,7 @@ class ViewController extends AbstractController
     {
         $entityManager = $this->getDoctrine()->getManager();
         $linksNav = $entityManager->getRepository(Pages::class)->findBy(["nav_position" => "main"]);
+        $linksNavLegal = $entityManager->getRepository(Pages::class)->findBy(["nav_position" => "legal"], array("nav_index" => "ASC"));
         $page = $entityManager->getRepository(Pages::class)->findOneBy(['slug' => $slug]);
         $metaTitleName = $page->getMetaTitle();
         $metaDescription = $page->getMetaDescription();
@@ -48,6 +49,7 @@ class ViewController extends AbstractController
         return $this->render('base.html.twig', [
             'controller_name' => 'ViewController',
             'links' => $linksNav,
+            'linksNavLegal' => $linksNavLegal,
             'slugs' => $page,
             'meta_title' => $metaTitleName,
             'meta_description' => $metaDescription,
