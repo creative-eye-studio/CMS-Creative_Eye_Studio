@@ -240,6 +240,7 @@
       <parameter>@FMElfinder/Form/elfinder_widget.html.twig</parameter>
       <parameter>form_div_layout.html.twig</parameter>
       <parameter>@FOSCKEditor/Form/ckeditor_widget.html.twig</parameter>
+      <parameter>@FOSCKEditor/Form/ckeditor_widget.html.twig</parameter>
     </parameter>
     <parameter key="twig.default_path">/Users/kevinrifa/Documents/Creative_Eye_Studio/cms-projects/templates</parameter>
     <parameter key="web_profiler.debug_toolbar.intercept_redirects">false</parameter>

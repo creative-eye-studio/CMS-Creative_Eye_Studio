@@ -30,7 +30,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => '9a1366d7bf6f91a642d7f4b0fab0287c81a041eb',
+    'reference' => '08986003e12f96d2cbcb4606d4f55b363b4543e5',
     'name' => '__root__',
   ),
   'versions' => 
@@ -42,7 +42,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => '9a1366d7bf6f91a642d7f4b0fab0287c81a041eb',
+      'reference' => '08986003e12f96d2cbcb4606d4f55b363b4543e5',
     ),
     'cocur/slugify' => 
     array (

@@ -10,7 +10,9 @@
         {% endblock %}
     </head>
     <body class="{% if app.user %}authentified{% endif %}">
-        <header></header>
+        <header>
+            <h1><span class="bg-white">Interface d'administration</span></h1>
+        </header>
          {% if app.user %}
         <nav class="navigation">
             <ul>
@@ -25,6 +27,9 @@
         <main>
             {% block body %}{% endblock %}
         </main>
+        <footer>
+            <p>Conception et développement : Creative Eye Studio</p>
+        </footer>
 
         {% block javascripts %}
             {{ encore_entry_script_tags('app_admin') }}

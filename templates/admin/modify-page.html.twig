@@ -13,7 +13,9 @@
     {{ form_start(form) }}
         <div id="content-page" class="tab-pane active">
             {{ form_row(form.page_title, { value: pageName } ) }}
-            {{ form_row(form.page_nav_position) }}
+            {{ form_row(form.page_nav_position, { value: pageNavPosition}) }}
+            {{ form_row(form.page_nav_index, { value: pageNavIndex }) }}
+            {{ form_row(form.page_url, { value: pageSlug }) }}
             {{ form_row(form.page_content, { value: dataFile }) }}
         </div>
         <div id="content-seo" class="tab-pane">
@@ -22,6 +24,15 @@
         </div>
         {{ form_row(form.page_submit) }}
     {{ form_end(form) }}
+    <p><a href=" {{ app.request.schemeAndHttpHost }}/fr/{{ pageSlug }} " target="_blank" rel="noopener">Voir la page</a></p>
 </section>
+
+{% if (pageSlug == "index") or (pageSlug == "mentions-legales") or (pageSlug == "politique-de-confidentialite") %}
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
+    <script>
+        $("#add_pages_page_url").attr("type", "hidden");
+        $("label[for=add_pages_page_url]").addClass("hidden");
+    </script>
+{% endif %}
 
 {% endblock %}

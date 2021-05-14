@@ -8,19 +8,47 @@ $nav-width: 20rem;
 
 
 /******************************************************/
-/******************* CORPS DE SITE ********************/
+/********$********* EN-TÊTE DE SITE *******************/
 /******************************************************/
+header{
+    margin-bottom: 3rem;
+}
 
-body{
-    background-color: #1565c0;
-    margin: 0;
-    &.authentified{
-        margin-left: $nav-width;
+h1{
+    font: 300 2rem/100% "Source Sans Pro";
+    position: relative;
+    .bg-white{
+        background-color: white;
+        position: relative;
+        padding-right: 2rem;
+    }
+    &::before{
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: 0;
+        width: 100%;
+        height: .0625rem;
+        background-color: gray;
     }
 }
 
-main{
-    padding: 2rem 2rem 0;
+
+
+
+/******************************************************/
+/******************* CORPS DE SITE ********************/
+/******************************************************/
+body{
+    background-color: #fff;
+    margin: 0;
+    position: relative;
+    padding: 2rem 3rem;
+    min-height: 100vh;
+    box-sizing: border-box;
+    &.authentified{
+        margin-left: $nav-width;
+    }
 }
 
 
@@ -29,26 +57,43 @@ main{
 /******************************************************/
 /******************** NAVIGATION **********************/
 /******************************************************/
-
 .navigation{
     position: fixed;
     bottom: 0;
     left: 0;
     width: $nav-width;
     height: 100vh;
-    background-color: white;
+    background-color: #3F7690;
     ul{
         padding-left: 0;
         margin: 0;
         list-style-type: none;
     }
     a{
-        font: 300 1.2rem/100% "Lato";
+        font: 400 1rem/100% "Lato";
         text-decoration: none;
-        color: rgb(36, 36, 36);
+        color: rgb(255, 255, 255);
         display: block;
         padding: 1.1rem 1rem;
-        border-bottom: .0625rem solid rgb(65, 65, 65);
+        border-bottom: .0625rem solid rgb(218, 218, 218);
+        &:hover{
+            background-color: rgba($color: #000000, $alpha: .1)
+        }
+    }
+}
+
+
+
+
+/******************************************************/
+/******************* PIED DE PAGE *********************/
+/******************************************************/
+footer {
+    position: absolute;
+    bottom: .5rem;
+    right: 1.5rem;
+    p{
+        font: 400 .9rem/100% "Lato";
     }
 }
 
@@ -67,10 +112,9 @@ main{
 /******************************************************/
 /*********************** BLOCS ************************/
 /******************************************************/
-
 @mixin bloc {
-    background-color: white;
-    padding: .5rem 2rem 2rem;
+    border: .0625rem solid gray;
+    padding: .5rem 2rem 1rem 2rem;
     margin-bottom: 2rem;
     box-sizing: border-box;
     font-family: "Lato";
@@ -103,7 +147,7 @@ main{
     @include bloc();
     font-size: 1em;
     font-weight: 400;
-    width: 300px;
+    width: 25rem;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -114,6 +158,7 @@ main{
     display: flex;
     justify-content: space-between;
     width: 100%;
+    border-bottom: .0625rem solid gray;
     li {
         display: inline-block;
         margin-left: 1rem;
@@ -124,8 +169,11 @@ main{
             text-decoration: none;
         }
     }
+    &:last-child{
+        border-bottom: none;
+    }
     &:hover{
-        background-color: rgb(236, 236, 236);
+        background-color: rgb(238, 238, 238);
     }
 }
 
@@ -135,7 +183,6 @@ main{
 /******************************************************/
 /*********************** TABS *************************/
 /******************************************************/
-
 .nav-tabs{
     list-style-type: none;
     padding-left: 0;
@@ -168,10 +215,10 @@ main{
 /********************** MIXINS ************************/
 /******************************************************/
 @mixin btn() {
-    background-color: #1565c0;
+    background-color: #3F7690;
     padding: 1rem;
     text-decoration: none;
-    font: 300 1.2em/100% "Lato";
+    font: 300 1.1em/100% "Lato";
     color: white;
     display: inline-block;
 }
@@ -193,6 +240,13 @@ label{
     display: block;
     margin-top: 1rem;
     margin-bottom: .5rem;
+    &[for=registration_form_agreeTerms]{
+        display: inline-block;
+        margin: 1.5rem 0;
+    }
+    &.hidden{
+        display: none;
+    }
 }
 
 input{
@@ -204,6 +258,17 @@ input{
         width: 100%;
         padding: .5rem .7rem;
     }
+    &[type=checkbox]{
+        display: inline-block;
+        margin-left: 1rem;
+    }
+    &[type=number]{
+        padding: .5rem .7rem;
+    }
+}
+
+select{
+    padding: .5rem;
 }
 
 textarea{
@@ -225,5 +290,8 @@ button{
     border: none;
     &.margin-top{
         margin-top: 1.5rem;
+    }
+    &[type=submit]{
+        margin-bottom: .5rem;
     }
 }

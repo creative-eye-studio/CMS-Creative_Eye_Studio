@@ -114,7 +114,10 @@ class __TwigTemplate_bccd1b902b7fd04fcad788c33f70f935fd76c0900f218e354e620763ae7
                         <a>Modifier</a>
                     </li>
                     <li>
-                        <a>Supprimer</a>
+                        <a href=\" ";
+            // line 23
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("delete_article", ["id" => twig_get_attribute($this->env, $this->source, $context["article"], "id", [], "any", false, false, false, 23)]), "html", null, true);
+            echo " \">Supprimer</a>
                     </li>
                 </ul>
             </div>
@@ -153,7 +156,7 @@ class __TwigTemplate_bccd1b902b7fd04fcad788c33f70f935fd76c0900f218e354e620763ae7
 
     public function getDebugInfo()
     {
-        return array (  133 => 30,  126 => 28,  107 => 14,  104 => 13,  99 => 12,  93 => 9,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  136 => 30,  129 => 28,  119 => 23,  107 => 14,  104 => 13,  99 => 12,  93 => 9,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -180,7 +183,7 @@ class __TwigTemplate_bccd1b902b7fd04fcad788c33f70f935fd76c0900f218e354e620763ae7
                         <a>Modifier</a>
                     </li>
                     <li>
-                        <a>Supprimer</a>
+                        <a href=\" {{ path('delete_article', { id: article.id } )}} \">Supprimer</a>
                     </li>
                 </ul>
             </div>

@@ -10,6 +10,7 @@ use App\Form\AddPagesType;
 use App\Form\CodeCssType;
 use App\Form\CodeJsType;
 use Cocur\Slugify\Slugify;
+use Doctrine\ORM\Mapping\OrderBy;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Filesystem\Exception\IOExceptionInterface;
 use Symfony\Component\Filesystem\Filesystem;
@@ -28,7 +29,7 @@ class AdminController extends AbstractController
     public function index(): Response
     {
         $entityManager = $this->getDoctrine()->getManager();
-        $pages = $entityManager->getRepository(Pages::class)->findBy(array(), null, 5, null);
+        $pages = $entityManager->getRepository(Pages::class)->findBy(array(), array("id" => "DESC"), 5, null);
         $articles = $entityManager->getRepository(Articles::class)->findBy(array(), null, 5, null);
         $users = $entityManager->getRepository(Users::class)->findBy(array(), null, 5, null);
 
@@ -49,7 +50,12 @@ class AdminController extends AbstractController
      */
     public function pages_site(){
         $entityManager = $this->getDoctrine()->getManager();
-        $pages = $entityManager->getRepository(Pages::class)->findAll();
+        $pages = $entityManager
+                    ->getRepository(Pages::class)
+                    ->findBy(
+                        array(),
+                        array("nav_index" => "ASC")
+                    );
 
         return $this->render('admin/pages-list.html.twig', [
             'controller_name' => 'AdminController',
@@ -67,25 +73,43 @@ class AdminController extends AbstractController
 
         if($form->isSubmitted() && $form->isValid()){
             $data = $form->getData();
-            $slugPage = new Slugify();
-            $slugPageStr = $slugPage->slugify($data["page_title"]);
 
             $page = new Pages();
             $page->setName($data["page_title"]);
-            $page->setSlug($slugPageStr);
             $page->setNavPosition($data["page_nav_position"]);
-            $page->setMetaTitle($data["page_meta_title"]);
+            $page->setNavIndex($data["page_nav_index"]);
 
+            //Création de l'URL
+            if($data["page_url"] == null){
+                $slugPage = new Slugify();
+                $slugPageStr = $slugPage->slugify($data["page_title"]);
+                $page->setSlug($slugPageStr);
+            } else {
+                $page->setSlug($data["page_url"]);
+                $slugPageStr = $data["page_url"];
+            }
+
+            //Création de la Meta Title
+            if($data["page_meta_title"] == null){
+                $page->setMetaTitle($data["page_title"]);
+            } else {
+                $page->setMetaTitle($data["page_meta_title"]);
+            }
+
+            // On vérifie si l'URL existe pas et on crée la page
             $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($page);
-            $entityManager->flush();
+            $verifySlug = $entityManager->getRepository(Pages::class)->findOneBy(["slug" => $slugPageStr]);
+            if($verifySlug == null){
+                //Envoie des données de la page
+                $entityManager->persist($page);
+                $entityManager->flush();
+                //Création de la page
+                $file = fopen("../templates/front/website/" . $slugPageStr . ".html.twig", "c+b");
+                fwrite($file, $data["page_content"]);
+            }
 
-            //Création de la page
-            $file = fopen("../templates/front/website/" . $slugPageStr . ".html.twig", "c+b");
-            fwrite($file, $data["page_content"]);
-
-
-            return $this->redirectToRoute('add_page');
+            //On rediriage la page vers le formulaire d'ajout de page
+            return $this->redirectToRoute('pages_site');
         }
 
         return $this->render('admin/add-page.html.twig', [
@@ -107,14 +131,23 @@ class AdminController extends AbstractController
         $entityManager = $this->getDoctrine()->getManager();
         $pages = $entityManager->getRepository(Pages::class)->findOneBy(["slug" => $slug]);
         $pageName = $pages->getName();
+        $pageNavPosition = $pages->getNavPosition();
+        $pageNavIndex = $pages->getNavIndex();
         $pageMetaTitle = $pages->getMetaTitle();
         $pageMetaDesc = $pages->getMetaDescription();
 
         if($form->isSubmitted() && $form->isValid()){
             $data = $form->getData();
             $pages->setName($data["page_title"]);
+            $pages->setNavIndex($data["page_nav_index"]);
+            $pages->setNavPosition($data["page_nav_position"]);
             $pages->setMetaTitle($data["page_meta_title"]);
             $pages->setMetaDescription($data["page_meta_desc"]);
+
+            if($data["page_url"] != null){
+                $pages->setSlug($data["page_url"]);
+                $slug = $data["page_url"];
+            }
 
             $entityManager->persist($pages);
             $entityManager->flush();
@@ -125,13 +158,16 @@ class AdminController extends AbstractController
             $file = fopen("../templates/front/website/" . $slug . ".html.twig", "c+b");
             fwrite($file, $data["page_content"]);
 
-            return $this->redirectToRoute('pages_site');
+            return $this->redirectToRoute('modify_page', array('slug' => $slug));
         }
 
         return $this->render('admin/modify-page.html.twig', [
             'form' => $form->createView(),
             'pages' => $pages,
             'pageName' => $pageName,
+            'pageNavPosition' => $pageNavPosition,
+            'pageNavIndex' => $pageNavIndex,
+            'pageSlug' => $slug,
             'pageMetaTitle' => $pageMetaTitle,
             'pageMetaDesc' => $pageMetaDesc,
             'dataFile' => $dataFile,
@@ -232,7 +268,7 @@ class AdminController extends AbstractController
 
         $filesystem->remove(['../templates/front/blog/' . $pageFile . '.html.twig']);
 
-        return $this->redirectToRoute('pages_site');
+        return $this->redirectToRoute('articles_site');
     }
 
 

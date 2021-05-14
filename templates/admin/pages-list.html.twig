@@ -11,21 +11,21 @@
     <h2>Liste des pages</h2>
     {% for page in pages %}
     <div class="line">
-        <p>{{ page.name }}</p>
+        <p>{{ page.navindex }} - {{ page.name }}</p>
         <ul>
             {% if page.slug == "index" %}
             <li>
-                <a href=" {{ app.request.schemeAndHttpHost }}" target="_blank" rel="noopener">Voir</a>
+                <a href=" {{ app.request.schemeAndHttpHost }}/fr/" target="_blank" rel="noopener">Voir</a>
             </li>
             {% elseif page.slug != "index" %}
             <li>
-                <a href=" {{ app.request.schemeAndHttpHost }}/{{ page.slug }}" target="_blank" rel="noopener">Voir</a>
+                <a href=" {{ app.request.schemeAndHttpHost }}/fr/{{ page.slug }}" target="_blank" rel="noopener">Voir</a>
             </li>
             {% endif %}
             <li>
                 <a href=" {{ path('modify_page', { slug: page.slug } )}} ">Modifier</a>
             </li>
-            {% if page.slug != "index" %}
+            {% if (page.navindex < 100) and (page.navindex > 0) %}
             <li>
                 <a href=" {{ path('delete_page', { id: page.id } )}} ">Supprimer</a>
             </li>

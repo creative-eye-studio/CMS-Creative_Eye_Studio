@@ -25,7 +25,8 @@ return [
         '/reset-password/check-email' => [[['_route' => 'app_check_email', '_controller' => 'App\\Controller\\ResetPasswordController::checkEmail'], null, null, null, false, false, null]],
         '/login' => [[['_route' => 'app_login', '_controller' => 'App\\Controller\\SecurityController::login'], null, null, null, false, false, null]],
         '/logout' => [[['_route' => 'app_logout', '_controller' => 'App\\Controller\\SecurityController::logout'], null, null, null, false, false, null]],
-        '/' => [[['_route' => 'home', '_controller' => 'App\\Controller\\ViewController::index'], null, null, null, false, false, null]],
+        '/fr' => [[['_route' => 'home', '_controller' => 'App\\Controller\\ViewController::index'], null, null, null, true, false, null]],
+        '/elfinder.main.js' => [[['_route' => 'ef_main_js', '_controller' => 'FM\\ElfinderBundle\\Controller\\ElFinderController::mainJS'], null, null, null, false, false, null]],
     ],
     [ // $regexpList
         0 => '{^(?'
@@ -52,13 +53,10 @@ return [
                     .')'
                 .')'
                 .'|/reset\\-password/reset(?:/([^/]++))?(*:302)'
-                .'|/([^/]++)(*:319)'
+                .'|/fr/([^/]++)(*:322)'
                 .'|/e(?'
-                    .'|fconnect(?:/([^/]++)(?:/([^/]++))?)?(*:368)'
-                    .'|lfinder(?'
-                        .'|\\.main\\.js(*:396)'
-                        .'|(?:/([^/]++)(?:/([^/]++))?)?(*:432)'
-                    .')'
+                    .'|fconnect(?:/([^/]++)(?:/([^/]++))?)?(*:371)'
+                    .'|lfinder(?:/([^/]++)(?:/([^/]++))?)?(*:414)'
                 .')'
             .')/?$}sDu',
     ],
@@ -74,10 +72,9 @@ return [
         232 => [[['_route' => 'delete_page', '_controller' => 'App\\Controller\\Admin\\AdminController::delete_page'], ['id'], null, null, false, true, null]],
         256 => [[['_route' => 'delete_article', '_controller' => 'App\\Controller\\Admin\\AdminController::delete_article'], ['id'], null, null, false, true, null]],
         302 => [[['_route' => 'app_reset_password', 'token' => null, '_controller' => 'App\\Controller\\ResetPasswordController::reset'], ['token'], null, null, false, true, null]],
-        319 => [[['_route' => 'page_view', '_controller' => 'App\\Controller\\ViewController::page_view'], ['slug'], null, null, false, true, null]],
-        368 => [[['_route' => 'ef_connect', '_controller' => 'FM\\ElfinderBundle\\Controller\\ElFinderController::load', 'instance' => 'default', 'homeFolder' => ''], ['instance', 'homeFolder'], null, null, false, true, null]],
-        396 => [[['_route' => 'ef_main_js', '_controller' => 'FM\\ElfinderBundle\\Controller\\ElFinderController::mainJS'], [], null, null, false, false, null]],
-        432 => [
+        322 => [[['_route' => 'page_view', '_controller' => 'App\\Controller\\ViewController::page_view'], ['slug'], null, null, false, true, null]],
+        371 => [[['_route' => 'ef_connect', '_controller' => 'FM\\ElfinderBundle\\Controller\\ElFinderController::load', 'instance' => 'default', 'homeFolder' => ''], ['instance', 'homeFolder'], null, null, false, true, null]],
+        414 => [
             [['_route' => 'elfinder', '_controller' => 'FM\\ElfinderBundle\\Controller\\ElFinderController::show', 'instance' => 'default', 'homeFolder' => ''], ['instance', 'homeFolder'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],

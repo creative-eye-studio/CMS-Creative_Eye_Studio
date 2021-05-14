@@ -103,33 +103,60 @@ class __TwigTemplate_d1b33495be0e14ee6a7b7d0f250cd2b461c30a906ad47af69148089dc71
         echo "
             ";
         // line 16
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 16, $this->source); })()), "page_nav_position", [], "any", false, false, false, 16), 'row');
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 16, $this->source); })()), "page_nav_position", [], "any", false, false, false, 16), 'row', ["value" => (isset($context["pageNavPosition"]) || array_key_exists("pageNavPosition", $context) ? $context["pageNavPosition"] : (function () { throw new RuntimeError('Variable "pageNavPosition" does not exist.', 16, $this->source); })())]);
         echo "
             ";
         // line 17
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 17, $this->source); })()), "page_content", [], "any", false, false, false, 17), 'row', ["value" => (isset($context["dataFile"]) || array_key_exists("dataFile", $context) ? $context["dataFile"] : (function () { throw new RuntimeError('Variable "dataFile" does not exist.', 17, $this->source); })())]);
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 17, $this->source); })()), "page_nav_index", [], "any", false, false, false, 17), 'row', ["value" => (isset($context["pageNavIndex"]) || array_key_exists("pageNavIndex", $context) ? $context["pageNavIndex"] : (function () { throw new RuntimeError('Variable "pageNavIndex" does not exist.', 17, $this->source); })())]);
+        echo "
+            ";
+        // line 18
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 18, $this->source); })()), "page_url", [], "any", false, false, false, 18), 'row', ["value" => (isset($context["pageSlug"]) || array_key_exists("pageSlug", $context) ? $context["pageSlug"] : (function () { throw new RuntimeError('Variable "pageSlug" does not exist.', 18, $this->source); })())]);
+        echo "
+            ";
+        // line 19
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 19, $this->source); })()), "page_content", [], "any", false, false, false, 19), 'row', ["value" => (isset($context["dataFile"]) || array_key_exists("dataFile", $context) ? $context["dataFile"] : (function () { throw new RuntimeError('Variable "dataFile" does not exist.', 19, $this->source); })())]);
         echo "
         </div>
         <div id=\"content-seo\" class=\"tab-pane\">
             ";
-        // line 20
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 20, $this->source); })()), "page_meta_title", [], "any", false, false, false, 20), 'row', ["value" => (isset($context["pageMetaTitle"]) || array_key_exists("pageMetaTitle", $context) ? $context["pageMetaTitle"] : (function () { throw new RuntimeError('Variable "pageMetaTitle" does not exist.', 20, $this->source); })())]);
+        // line 22
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 22, $this->source); })()), "page_meta_title", [], "any", false, false, false, 22), 'row', ["value" => (isset($context["pageMetaTitle"]) || array_key_exists("pageMetaTitle", $context) ? $context["pageMetaTitle"] : (function () { throw new RuntimeError('Variable "pageMetaTitle" does not exist.', 22, $this->source); })())]);
         echo "
             ";
-        // line 21
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 21, $this->source); })()), "page_meta_desc", [], "any", false, false, false, 21), 'row', ["value" => (isset($context["pageMetaDesc"]) || array_key_exists("pageMetaDesc", $context) ? $context["pageMetaDesc"] : (function () { throw new RuntimeError('Variable "pageMetaDesc" does not exist.', 21, $this->source); })())]);
+        // line 23
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 23, $this->source); })()), "page_meta_desc", [], "any", false, false, false, 23), 'row', ["value" => (isset($context["pageMetaDesc"]) || array_key_exists("pageMetaDesc", $context) ? $context["pageMetaDesc"] : (function () { throw new RuntimeError('Variable "pageMetaDesc" does not exist.', 23, $this->source); })())]);
         echo "
         </div>
         ";
-        // line 23
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 23, $this->source); })()), "page_submit", [], "any", false, false, false, 23), 'row');
+        // line 25
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 25, $this->source); })()), "page_submit", [], "any", false, false, false, 25), 'row');
         echo "
     ";
-        // line 24
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 24, $this->source); })()), 'form_end');
+        // line 26
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 26, $this->source); })()), 'form_end');
         echo "
+    <p><a href=\" ";
+        // line 27
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 27, $this->source); })()), "request", [], "any", false, false, false, 27), "schemeAndHttpHost", [], "any", false, false, false, 27), "html", null, true);
+        echo "/fr/";
+        echo twig_escape_filter($this->env, (isset($context["pageSlug"]) || array_key_exists("pageSlug", $context) ? $context["pageSlug"] : (function () { throw new RuntimeError('Variable "pageSlug" does not exist.', 27, $this->source); })()), "html", null, true);
+        echo " \" target=\"_blank\" rel=\"noopener\">Voir la page</a></p>
 </section>
 
+";
+        // line 30
+        if ((((0 === twig_compare((isset($context["pageSlug"]) || array_key_exists("pageSlug", $context) ? $context["pageSlug"] : (function () { throw new RuntimeError('Variable "pageSlug" does not exist.', 30, $this->source); })()), "index")) || (0 === twig_compare((isset($context["pageSlug"]) || array_key_exists("pageSlug", $context) ? $context["pageSlug"] : (function () { throw new RuntimeError('Variable "pageSlug" does not exist.', 30, $this->source); })()), "mentions-legales"))) || (0 === twig_compare((isset($context["pageSlug"]) || array_key_exists("pageSlug", $context) ? $context["pageSlug"] : (function () { throw new RuntimeError('Variable "pageSlug" does not exist.', 30, $this->source); })()), "politique-de-confidentialite")))) {
+            // line 31
+            echo "    <script src=\"https://code.jquery.com/jquery-3.6.0.slim.min.js\"></script>
+    <script>
+        \$(\"#add_pages_page_url\").attr(\"type\", \"hidden\");
+        \$(\"label[for=add_pages_page_url]\").addClass(\"hidden\");
+    </script>
+";
+        }
+        // line 37
+        echo "
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -151,7 +178,7 @@ class __TwigTemplate_d1b33495be0e14ee6a7b7d0f250cd2b461c30a906ad47af69148089dc71
 
     public function getDebugInfo()
     {
-        return array (  129 => 24,  125 => 23,  120 => 21,  116 => 20,  110 => 17,  106 => 16,  102 => 15,  97 => 13,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  159 => 37,  151 => 31,  149 => 30,  141 => 27,  137 => 26,  133 => 25,  128 => 23,  124 => 22,  118 => 19,  114 => 18,  110 => 17,  106 => 16,  102 => 15,  97 => 13,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -171,7 +198,9 @@ class __TwigTemplate_d1b33495be0e14ee6a7b7d0f250cd2b461c30a906ad47af69148089dc71
     {{ form_start(form) }}
         <div id=\"content-page\" class=\"tab-pane active\">
             {{ form_row(form.page_title, { value: pageName } ) }}
-            {{ form_row(form.page_nav_position) }}
+            {{ form_row(form.page_nav_position, { value: pageNavPosition}) }}
+            {{ form_row(form.page_nav_index, { value: pageNavIndex }) }}
+            {{ form_row(form.page_url, { value: pageSlug }) }}
             {{ form_row(form.page_content, { value: dataFile }) }}
         </div>
         <div id=\"content-seo\" class=\"tab-pane\">
@@ -180,7 +209,16 @@ class __TwigTemplate_d1b33495be0e14ee6a7b7d0f250cd2b461c30a906ad47af69148089dc71
         </div>
         {{ form_row(form.page_submit) }}
     {{ form_end(form) }}
+    <p><a href=\" {{ app.request.schemeAndHttpHost }}/fr/{{ pageSlug }} \" target=\"_blank\" rel=\"noopener\">Voir la page</a></p>
 </section>
+
+{% if (pageSlug == \"index\") or (pageSlug == \"mentions-legales\") or (pageSlug == \"politique-de-confidentialite\") %}
+    <script src=\"https://code.jquery.com/jquery-3.6.0.slim.min.js\"></script>
+    <script>
+        \$(\"#add_pages_page_url\").attr(\"type\", \"hidden\");
+        \$(\"label[for=add_pages_page_url]\").addClass(\"hidden\");
+    </script>
+{% endif %}
 
 {% endblock %}", "admin/modify-page.html.twig", "/Users/kevinrifa/Documents/Creative_Eye_Studio/cms-projects/templates/admin/modify-page.html.twig");
     }
