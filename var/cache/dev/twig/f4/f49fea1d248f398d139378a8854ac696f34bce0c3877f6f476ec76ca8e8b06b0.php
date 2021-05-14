@@ -104,6 +104,8 @@ class __TwigTemplate_fc1be931e66e4e3d1151e2caffd157f164dd3ea473a0221b950b81e76ff
             echo "    <div class=\"line\">
         <p>";
             // line 14
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["page"], "navindex", [], "any", false, false, false, 14), "html", null, true);
+            echo " - ";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["page"], "name", [], "any", false, false, false, 14), "html", null, true);
             echo "</p>
         <ul>
@@ -115,7 +117,7 @@ class __TwigTemplate_fc1be931e66e4e3d1151e2caffd157f164dd3ea473a0221b950b81e76ff
                 <a href=\" ";
                 // line 18
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 18, $this->source); })()), "request", [], "any", false, false, false, 18), "schemeAndHttpHost", [], "any", false, false, false, 18), "html", null, true);
-                echo "\" target=\"_blank\" rel=\"noopener\">Voir</a>
+                echo "/fr/\" target=\"_blank\" rel=\"noopener\">Voir</a>
             </li>
             ";
             } elseif ((0 !== twig_compare(twig_get_attribute($this->env, $this->source,             // line 20
@@ -125,7 +127,7 @@ $context["page"], "slug", [], "any", false, false, false, 20), "index"))) {
                 <a href=\" ";
                 // line 22
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 22, $this->source); })()), "request", [], "any", false, false, false, 22), "schemeAndHttpHost", [], "any", false, false, false, 22), "html", null, true);
-                echo "/";
+                echo "/fr/";
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["page"], "slug", [], "any", false, false, false, 22), "html", null, true);
                 echo "\" target=\"_blank\" rel=\"noopener\">Voir</a>
             </li>
@@ -140,7 +142,7 @@ $context["page"], "slug", [], "any", false, false, false, 20), "index"))) {
             </li>
             ";
             // line 28
-            if ((0 !== twig_compare(twig_get_attribute($this->env, $this->source, $context["page"], "slug", [], "any", false, false, false, 28), "index"))) {
+            if (((-1 === twig_compare(twig_get_attribute($this->env, $this->source, $context["page"], "navindex", [], "any", false, false, false, 28), 100)) && (1 === twig_compare(twig_get_attribute($this->env, $this->source, $context["page"], "navindex", [], "any", false, false, false, 28), 0)))) {
                 // line 29
                 echo "            <li>
                 <a href=\" ";
@@ -188,7 +190,7 @@ $context["page"], "slug", [], "any", false, false, false, 20), "index"))) {
 
     public function getDebugInfo()
     {
-        return array (  168 => 38,  161 => 36,  154 => 33,  148 => 30,  145 => 29,  143 => 28,  138 => 26,  135 => 25,  127 => 22,  124 => 21,  122 => 20,  117 => 18,  114 => 17,  112 => 16,  107 => 14,  104 => 13,  99 => 12,  93 => 9,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  170 => 38,  163 => 36,  156 => 33,  150 => 30,  147 => 29,  145 => 28,  140 => 26,  137 => 25,  129 => 22,  126 => 21,  124 => 20,  119 => 18,  116 => 17,  114 => 16,  107 => 14,  104 => 13,  99 => 12,  93 => 9,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -206,21 +208,21 @@ $context["page"], "slug", [], "any", false, false, false, 20), "index"))) {
     <h2>Liste des pages</h2>
     {% for page in pages %}
     <div class=\"line\">
-        <p>{{ page.name }}</p>
+        <p>{{ page.navindex }} - {{ page.name }}</p>
         <ul>
             {% if page.slug == \"index\" %}
             <li>
-                <a href=\" {{ app.request.schemeAndHttpHost }}\" target=\"_blank\" rel=\"noopener\">Voir</a>
+                <a href=\" {{ app.request.schemeAndHttpHost }}/fr/\" target=\"_blank\" rel=\"noopener\">Voir</a>
             </li>
             {% elseif page.slug != \"index\" %}
             <li>
-                <a href=\" {{ app.request.schemeAndHttpHost }}/{{ page.slug }}\" target=\"_blank\" rel=\"noopener\">Voir</a>
+                <a href=\" {{ app.request.schemeAndHttpHost }}/fr/{{ page.slug }}\" target=\"_blank\" rel=\"noopener\">Voir</a>
             </li>
             {% endif %}
             <li>
                 <a href=\" {{ path('modify_page', { slug: page.slug } )}} \">Modifier</a>
             </li>
-            {% if page.slug != \"index\" %}
+            {% if (page.navindex < 100) and (page.navindex > 0) %}
             <li>
                 <a href=\" {{ path('delete_page', { id: page.id } )}} \">Supprimer</a>
             </li>

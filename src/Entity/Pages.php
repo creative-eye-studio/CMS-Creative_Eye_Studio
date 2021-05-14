@@ -33,7 +33,7 @@ class Pages
     private $nav_position;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $meta_title;
 
@@ -41,6 +41,11 @@ class Pages
      * @ORM\Column(type="text", nullable=true)
      */
     private $meta_description;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $nav_index;
 
     public function getId(): ?int
     {
@@ -103,6 +108,18 @@ class Pages
     public function setMetaDescription(?string $meta_description): self
     {
         $this->meta_description = $meta_description;
+
+        return $this;
+    }
+
+    public function getNavIndex(): ?int
+    {
+        return $this->nav_index;
+    }
+
+    public function setNavIndex(int $nav_index): self
+    {
+        $this->nav_index = $nav_index;
 
         return $this;
     }

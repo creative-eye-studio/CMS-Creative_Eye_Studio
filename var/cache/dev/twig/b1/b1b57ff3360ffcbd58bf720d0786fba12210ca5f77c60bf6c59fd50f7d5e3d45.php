@@ -64,27 +64,29 @@ class __TwigTemplate_fac6402d8f3629d81b66fca8a71923ba28a93a7bd49812e14fdd9e06baa
             echo "authentified";
         }
         echo "\">
-        <header></header>
+        <header>
+            <h1><span class=\"bg-white\">Interface d'administration</span></h1>
+        </header>
          ";
-        // line 14
-        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 14, $this->source); })()), "user", [], "any", false, false, false, 14)) {
-            // line 15
+        // line 16
+        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 16, $this->source); })()), "user", [], "any", false, false, false, 16)) {
+            // line 17
             echo "        <nav class=\"navigation\">
             <ul>
                 <li><a href=\"";
-            // line 17
+            // line 19
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin");
             echo "\">Accueil</a></li>
                 <li><a href=\"";
-            // line 18
+            // line 20
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("pages_site");
             echo "\">Pages du site</a></li>
                 <li><a href=\"";
-            // line 19
+            // line 21
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("articles_site");
             echo "\">Articles</a></li>
                 <li><a href=\"";
-            // line 20
+            // line 22
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("users_list");
             echo "\">Utilisateurs</a></li>
                 <li><a href=\"/logout\">Se déconnecter</a></li>
@@ -92,18 +94,21 @@ class __TwigTemplate_fac6402d8f3629d81b66fca8a71923ba28a93a7bd49812e14fdd9e06baa
         </nav>
          ";
         }
-        // line 25
+        // line 27
         echo "        <main>
             ";
-        // line 26
+        // line 28
         $this->displayBlock('body', $context, $blocks);
-        // line 27
+        // line 29
         echo "        </main>
+        <footer>
+            <p>Conception et développement : Creative Eye Studio</p>
+        </footer>
 
         ";
-        // line 29
+        // line 34
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 32
+        // line 37
         echo "    </body>
 </html>
 ";
@@ -157,7 +162,7 @@ class __TwigTemplate_fac6402d8f3629d81b66fca8a71923ba28a93a7bd49812e14fdd9e06baa
 
     }
 
-    // line 26
+    // line 28
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -175,7 +180,7 @@ class __TwigTemplate_fac6402d8f3629d81b66fca8a71923ba28a93a7bd49812e14fdd9e06baa
 
     }
 
-    // line 29
+    // line 34
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -185,7 +190,7 @@ class __TwigTemplate_fac6402d8f3629d81b66fca8a71923ba28a93a7bd49812e14fdd9e06baa
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 30
+        // line 35
         echo "            ";
         echo $this->extensions['Symfony\WebpackEncoreBundle\Twig\EntryFilesTwigExtension']->renderWebpackScriptTags("app_admin");
         echo "
@@ -210,7 +215,7 @@ class __TwigTemplate_fac6402d8f3629d81b66fca8a71923ba28a93a7bd49812e14fdd9e06baa
 
     public function getDebugInfo()
     {
-        return array (  189 => 30,  179 => 29,  161 => 26,  148 => 9,  138 => 8,  119 => 5,  107 => 32,  105 => 29,  101 => 27,  99 => 26,  96 => 25,  88 => 20,  84 => 19,  80 => 18,  76 => 17,  72 => 15,  70 => 14,  63 => 12,  60 => 11,  57 => 8,  53 => 5,  47 => 1,);
+        return array (  194 => 35,  184 => 34,  166 => 28,  153 => 9,  143 => 8,  124 => 5,  112 => 37,  110 => 34,  103 => 29,  101 => 28,  98 => 27,  90 => 22,  86 => 21,  82 => 20,  78 => 19,  74 => 17,  72 => 16,  63 => 12,  60 => 11,  57 => 8,  53 => 5,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -227,7 +232,9 @@ class __TwigTemplate_fac6402d8f3629d81b66fca8a71923ba28a93a7bd49812e14fdd9e06baa
         {% endblock %}
     </head>
     <body class=\"{% if app.user %}authentified{% endif %}\">
-        <header></header>
+        <header>
+            <h1><span class=\"bg-white\">Interface d'administration</span></h1>
+        </header>
          {% if app.user %}
         <nav class=\"navigation\">
             <ul>
@@ -242,6 +249,9 @@ class __TwigTemplate_fac6402d8f3629d81b66fca8a71923ba28a93a7bd49812e14fdd9e06baa
         <main>
             {% block body %}{% endblock %}
         </main>
+        <footer>
+            <p>Conception et développement : Creative Eye Studio</p>
+        </footer>
 
         {% block javascripts %}
             {{ encore_entry_script_tags('app_admin') }}

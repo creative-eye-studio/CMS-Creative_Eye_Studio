@@ -107,26 +107,34 @@ class __TwigTemplate_9a3a610dd2897de93f355b15ab45ffe29d9019664d128518ba55d1d3b97
         echo "
             ";
         // line 17
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 17, $this->source); })()), "page_content", [], "any", false, false, false, 17), 'row');
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 17, $this->source); })()), "page_nav_index", [], "any", false, false, false, 17), 'row', ["value" => 1]);
+        echo "
+            ";
+        // line 18
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 18, $this->source); })()), "page_url", [], "any", false, false, false, 18), 'row');
+        echo "
+            ";
+        // line 19
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 19, $this->source); })()), "page_content", [], "any", false, false, false, 19), 'row');
         echo "
         </div>
         <div id=\"content-seo\" class=\"tab-pane\">
             ";
-        // line 20
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 20, $this->source); })()), "page_meta_title", [], "any", false, false, false, 20), 'row');
+        // line 22
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 22, $this->source); })()), "page_meta_title", [], "any", false, false, false, 22), 'row');
         echo "
             ";
-        // line 21
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 21, $this->source); })()), "page_meta_desc", [], "any", false, false, false, 21), 'row');
+        // line 23
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 23, $this->source); })()), "page_meta_desc", [], "any", false, false, false, 23), 'row');
         echo "
         </div>
         ";
-        // line 23
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 23, $this->source); })()), "page_submit", [], "any", false, false, false, 23), 'row');
+        // line 25
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 25, $this->source); })()), "page_submit", [], "any", false, false, false, 25), 'row');
         echo "
     ";
-        // line 24
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 24, $this->source); })()), 'form_end');
+        // line 26
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 26, $this->source); })()), 'form_end');
         echo "
 </section>
 
@@ -151,7 +159,7 @@ class __TwigTemplate_9a3a610dd2897de93f355b15ab45ffe29d9019664d128518ba55d1d3b97
 
     public function getDebugInfo()
     {
-        return array (  129 => 24,  125 => 23,  120 => 21,  116 => 20,  110 => 17,  106 => 16,  102 => 15,  97 => 13,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  137 => 26,  133 => 25,  128 => 23,  124 => 22,  118 => 19,  114 => 18,  110 => 17,  106 => 16,  102 => 15,  97 => 13,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -172,6 +180,8 @@ class __TwigTemplate_9a3a610dd2897de93f355b15ab45ffe29d9019664d128518ba55d1d3b97
         <div id=\"content-page\" class=\"tab-pane active\">
             {{ form_row(form.page_title) }}
             {{ form_row(form.page_nav_position) }}
+            {{ form_row(form.page_nav_index, { value: 1 }) }}
+            {{ form_row(form.page_url) }}
             {{ form_row(form.page_content) }}
         </div>
         <div id=\"content-seo\" class=\"tab-pane\">
