@@ -33,7 +33,15 @@
                 {% include "front/website/#{slugs.slug}.html.twig" %}
             {% endif %}
         {% endblock %}
-
+        <footer>
+            <ul>
+                {% for link in linksNavLegal %}
+                <li>
+                    <a href={{ path('page_view', { slug: link.slug }) }}>{{link.name}}</a>
+                </li>
+                {% endfor %}
+            </ul>
+        </footer>
         {% block javascripts %}
             {{ encore_entry_script_tags('app') }}
         {% endblock %}

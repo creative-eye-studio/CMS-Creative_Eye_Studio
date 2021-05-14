@@ -15,7 +15,8 @@ class ViewController extends AbstractController
     public function index(): Response
     {
         $entityManager = $this->getDoctrine()->getManager();
-        $linksNav = $entityManager->getRepository(Pages::class)->findBy(["nav_position" => "main"]);
+        $linksNav = $entityManager->getRepository(Pages::class)->findBy(["nav_position" => "main"], array("nav_index" => "ASC"));
+        $linksNavLegal = $entityManager->getRepository(Pages::class)->findBy(["nav_position" => "legal"], array("nav_index" => "ASC"));
         $page = $entityManager->getRepository(Pages::class)->findOneBy(['slug' => "index"]);
         $metaTitleName = $page->getMetaTitle();
         $metaDescription = $page->getMetaDescription();
@@ -23,6 +24,7 @@ class ViewController extends AbstractController
         return $this->render('base.html.twig', [
             'controller_name' => 'ViewController',
             'links' => $linksNav,
+            'linksNavLegal' => $linksNavLegal,
             'meta_title' => $metaTitleName,
             'meta_description' => $metaDescription,
         ]);
