@@ -28,7 +28,8 @@ class AddPagesType extends AbstractType
             ->add("page_nav_position", ChoiceType::class, [
                 "choices" => [
                     "Menu principal" => "main",
-                    "Menu légal" => "legal"
+                    "Menu légal" => "legal",
+                    "Pas de menu" => "no-nav",
                 ],
                 "label" => "Menu",
             ])

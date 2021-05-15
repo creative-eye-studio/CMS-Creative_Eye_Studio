@@ -279,27 +279,23 @@ class AdminController extends AbstractController
 
         if($form->isSubmitted() && $form->isValid()){
             $data = $form->getData();
-            $slugPage = new Slugify();
-            $slugPageStr = $slugPage->slugify($data["article_title"]);
+            $article->setName($data["article_title"]);
+            $article->setMetaTitle($data["article_metatitle"]);
+            $article->setMetaDesc($data["article_metadesc"]);
 
-            $page = new Articles();
-            $page->setName($data["article_title"]);
             //Contrôle du champ URL
-            if($data["article_slug"] == null){
-                $slugPage = new Slugify();
-                $slugPageStr = $slugPage->slugify($data["article_title"]);
-                $page->setSlug($slugPageStr);
-            } else {
-                $slugPageStr = $data["article_slug"];
-                $page->setSlug($data["article_slug"]);
+            if($data["article_slug"] != null){
+                $article->setSlug($data["article_slug"]);
+                $slug = $data["page_url"];
             }
 
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($page);
+            $entityManager->persist($article);
             $entityManager->flush();
 
             //Création de la page
-            $file = fopen("../templates/front/blog/" . $slugPageStr . ".html.twig", "c+b");
+            $filesystem = new Filesystem();
+            $filesystem->remove(['../templates/front/blog/' . $slug . '.html.twig']);
+            $file = fopen("../templates/front/blog/" . $slug . ".html.twig", "c+b");
             fwrite($file, $data["article_content"]);
 
             return $this->redirectToRoute('modify_article', array('slug' => $slug));
