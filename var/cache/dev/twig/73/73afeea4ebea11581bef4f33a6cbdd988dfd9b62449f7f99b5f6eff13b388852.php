@@ -111,7 +111,10 @@ class __TwigTemplate_bccd1b902b7fd04fcad788c33f70f935fd76c0900f218e354e620763ae7
                         <a>Voir</a>
                     </li>
                     <li>
-                        <a>Modifier</a>
+                        <a href=\" ";
+            // line 20
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("modify_article", ["slug" => twig_get_attribute($this->env, $this->source, $context["article"], "slug", [], "any", false, false, false, 20)]), "html", null, true);
+            echo " \">Modifier</a>
                     </li>
                     <li>
                         <a href=\" ";
@@ -156,7 +159,7 @@ class __TwigTemplate_bccd1b902b7fd04fcad788c33f70f935fd76c0900f218e354e620763ae7
 
     public function getDebugInfo()
     {
-        return array (  136 => 30,  129 => 28,  119 => 23,  107 => 14,  104 => 13,  99 => 12,  93 => 9,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  139 => 30,  132 => 28,  122 => 23,  116 => 20,  107 => 14,  104 => 13,  99 => 12,  93 => 9,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -180,7 +183,7 @@ class __TwigTemplate_bccd1b902b7fd04fcad788c33f70f935fd76c0900f218e354e620763ae7
                         <a>Voir</a>
                     </li>
                     <li>
-                        <a>Modifier</a>
+                        <a href=\" {{ path('modify_article', { slug: article.slug } )}} \">Modifier</a>
                     </li>
                     <li>
                         <a href=\" {{ path('delete_article', { id: article.id } )}} \">Supprimer</a>

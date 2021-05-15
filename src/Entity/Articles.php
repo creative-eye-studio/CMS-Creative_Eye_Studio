@@ -27,6 +27,16 @@ class Articles
      */
     private $slug;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $meta_title;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $meta_desc;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -52,6 +62,30 @@ class Articles
     public function setSlug(string $slug): self
     {
         $this->slug = $slug;
+
+        return $this;
+    }
+
+    public function getMetaTitle(): ?string
+    {
+        return $this->meta_title;
+    }
+
+    public function setMetaTitle(?string $meta_title): self
+    {
+        $this->meta_title = $meta_title;
+
+        return $this;
+    }
+
+    public function getMetaDesc(): ?string
+    {
+        return $this->meta_desc;
+    }
+
+    public function setMetaDesc(?string $meta_desc): self
+    {
+        $this->meta_desc = $meta_desc;
 
         return $this;
     }

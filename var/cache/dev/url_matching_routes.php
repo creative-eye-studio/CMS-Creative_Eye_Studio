@@ -46,17 +46,20 @@ return [
                     .')'
                 .')'
                 .'|/admin/(?'
-                    .'|modify\\-page/([^/]++)(*:200)'
+                    .'|modify\\-(?'
+                        .'|page/([^/]++)(*:203)'
+                        .'|article/([^/]++)(*:227)'
+                    .')'
                     .'|delete\\-(?'
-                        .'|page/([^/]++)(*:232)'
-                        .'|article/([^/]++)(*:256)'
+                        .'|page/([^/]++)(*:260)'
+                        .'|article/([^/]++)(*:284)'
                     .')'
                 .')'
-                .'|/reset\\-password/reset(?:/([^/]++))?(*:302)'
-                .'|/fr/([^/]++)(*:322)'
+                .'|/reset\\-password/reset(?:/([^/]++))?(*:330)'
+                .'|/fr/([^/]++)(*:350)'
                 .'|/e(?'
-                    .'|fconnect(?:/([^/]++)(?:/([^/]++))?)?(*:371)'
-                    .'|lfinder(?:/([^/]++)(?:/([^/]++))?)?(*:414)'
+                    .'|fconnect(?:/([^/]++)(?:/([^/]++))?)?(*:399)'
+                    .'|lfinder(?:/([^/]++)(?:/([^/]++))?)?(*:442)'
                 .')'
             .')/?$}sDu',
     ],
@@ -68,13 +71,14 @@ return [
         136 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception_panel::body'], ['token'], null, null, false, false, null]],
         149 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
         159 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
-        200 => [[['_route' => 'modify_page', '_controller' => 'App\\Controller\\Admin\\AdminController::modify_page'], ['slug'], null, null, false, true, null]],
-        232 => [[['_route' => 'delete_page', '_controller' => 'App\\Controller\\Admin\\AdminController::delete_page'], ['id'], null, null, false, true, null]],
-        256 => [[['_route' => 'delete_article', '_controller' => 'App\\Controller\\Admin\\AdminController::delete_article'], ['id'], null, null, false, true, null]],
-        302 => [[['_route' => 'app_reset_password', 'token' => null, '_controller' => 'App\\Controller\\ResetPasswordController::reset'], ['token'], null, null, false, true, null]],
-        322 => [[['_route' => 'page_view', '_controller' => 'App\\Controller\\ViewController::page_view'], ['slug'], null, null, false, true, null]],
-        371 => [[['_route' => 'ef_connect', '_controller' => 'FM\\ElfinderBundle\\Controller\\ElFinderController::load', 'instance' => 'default', 'homeFolder' => ''], ['instance', 'homeFolder'], null, null, false, true, null]],
-        414 => [
+        203 => [[['_route' => 'modify_page', '_controller' => 'App\\Controller\\Admin\\AdminController::modify_page'], ['slug'], null, null, false, true, null]],
+        227 => [[['_route' => 'modify_article', '_controller' => 'App\\Controller\\Admin\\AdminController::modify_article'], ['slug'], null, null, false, true, null]],
+        260 => [[['_route' => 'delete_page', '_controller' => 'App\\Controller\\Admin\\AdminController::delete_page'], ['id'], null, null, false, true, null]],
+        284 => [[['_route' => 'delete_article', '_controller' => 'App\\Controller\\Admin\\AdminController::delete_article'], ['id'], null, null, false, true, null]],
+        330 => [[['_route' => 'app_reset_password', 'token' => null, '_controller' => 'App\\Controller\\ResetPasswordController::reset'], ['token'], null, null, false, true, null]],
+        350 => [[['_route' => 'page_view', '_controller' => 'App\\Controller\\ViewController::page_view'], ['slug'], null, null, false, true, null]],
+        399 => [[['_route' => 'ef_connect', '_controller' => 'FM\\ElfinderBundle\\Controller\\ElFinderController::load', 'instance' => 'default', 'homeFolder' => ''], ['instance', 'homeFolder'], null, null, false, true, null]],
+        442 => [
             [['_route' => 'elfinder', '_controller' => 'FM\\ElfinderBundle\\Controller\\ElFinderController::show', 'instance' => 'default', 'homeFolder' => ''], ['instance', 'homeFolder'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],

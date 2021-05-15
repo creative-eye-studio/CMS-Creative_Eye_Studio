@@ -17,7 +17,7 @@
                         <a>Voir</a>
                     </li>
                     <li>
-                        <a>Modifier</a>
+                        <a href=" {{ path('modify_article', { slug: article.slug } )}} ">Modifier</a>
                     </li>
                     <li>
                         <a href=" {{ path('delete_article', { id: article.id } )}} ">Supprimer</a>

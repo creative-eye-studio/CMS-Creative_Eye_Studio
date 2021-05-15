@@ -222,13 +222,26 @@ class AdminController extends AbstractController
 
         if($form->isSubmitted() && $form->isValid()){
             $data = $form->getData();
-            $slugPage = new Slugify();
-            $slugPageStr = $slugPage->slugify($data["article_title"]);
-            //$slugPageStr = strval($slugPage);
 
             $page = new Articles();
             $page->setName($data["article_title"]);
-            $page->setSlug($slugPageStr);
+            //Contrôle du champ URL
+            if($data["article_slug"] == null){
+                $slugPage = new Slugify();
+                $slugPageStr = $slugPage->slugify($data["article_title"]);
+                $page->setSlug($slugPageStr);
+            } else {
+                $slugPageStr = $data["article_slug"];
+                $page->setSlug($data["article_slug"]);
+            }
+            //Contrôle du champ Meta Title
+            if($data["article_metatitle"] == null){
+                $page->setMetaTitle($data["article_title"]);
+            } else {
+                $page->setMetaTitle($data["article_metatitle"]);
+            }
+            
+            $page->setMetaDesc($data["article_metadesc"]);
 
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($page);
@@ -236,19 +249,69 @@ class AdminController extends AbstractController
 
             //Création de la page
             $file = fopen("../templates/front/blog/" . $slugPageStr . ".html.twig", "c+b");
-            fwrite($file, "
-            {% extends 'base.html.twig' %}
-            {% block title %}".$data["article_title"]."{% endblock %}
-            {% block body %}
-                ".$data["article_content"]."
-            {% endblock %}"
-        );
+            fwrite($file, $data["article_content"]);
 
-            return $this->redirectToRoute('add_article');
+            return $this->redirectToRoute('articles_site');
         }
 
         return $this->render('admin/add-article.html.twig', [
             'form' => $form->createView(),
+            'controller_name' => 'AdminController'
+        ]);
+    }
+
+    /**
+     * @Route("/admin/modify-article/{slug}", name="modify_article")
+     */
+    public function modify_article(Request $request, String $slug): Response
+    {
+        $dataFile = file_get_contents("../templates/front/blog/".$slug.".html.twig");
+
+        $form = $this->createForm(AddArticleType::class);
+        $form->handleRequest($request);
+
+        $entityManager = $this->getDoctrine()->getManager();
+        $article = $entityManager->getRepository(Articles::class)->findOneBy(["slug" => $slug]);
+        $articleName = $article->getName();
+        $articleSlug = $article->getSlug();
+        $articleMetaTitle = $article->getMetaTitle();
+        $articleMetaDesc = $article->getMetaDesc();
+
+        if($form->isSubmitted() && $form->isValid()){
+            $data = $form->getData();
+            $slugPage = new Slugify();
+            $slugPageStr = $slugPage->slugify($data["article_title"]);
+
+            $page = new Articles();
+            $page->setName($data["article_title"]);
+            //Contrôle du champ URL
+            if($data["article_slug"] == null){
+                $slugPage = new Slugify();
+                $slugPageStr = $slugPage->slugify($data["article_title"]);
+                $page->setSlug($slugPageStr);
+            } else {
+                $slugPageStr = $data["article_slug"];
+                $page->setSlug($data["article_slug"]);
+            }
+
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($page);
+            $entityManager->flush();
+
+            //Création de la page
+            $file = fopen("../templates/front/blog/" . $slugPageStr . ".html.twig", "c+b");
+            fwrite($file, $data["article_content"]);
+
+            return $this->redirectToRoute('modify_article', array('slug' => $slug));
+        }
+
+        return $this->render('admin/modify-article.html.twig', [
+            'form' => $form->createView(),
+            'dataFile' => $dataFile,
+            'articleName' => $articleName,
+            'articleSlug' => $articleSlug,
+            'articleMetaTitle' => $articleMetaTitle,
+            'articleMetaDesc' => $articleMetaDesc,
             'controller_name' => 'AdminController'
         ]);
     }
