@@ -22,11 +22,11 @@ class ViewController extends AbstractController
         $metaDescription = $page->getMetaDescription();
 
         return $this->render('base.html.twig', [
-            'controller_name' => 'ViewController',
             'links' => $linksNav,
             'linksNavLegal' => $linksNavLegal,
             'meta_title' => $metaTitleName,
             'meta_description' => $metaDescription,
+            'controller_name' => 'ViewController',
         ]);
     }
 
