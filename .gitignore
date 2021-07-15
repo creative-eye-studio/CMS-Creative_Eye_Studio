@@ -62,3 +62,4 @@
 /node_module/*
 
 # End of https://www.toptal.com/developers/gitignore/api/symfony
+bin/console

@@ -15,17 +15,17 @@
         <ul>
             {% if page.slug == "index" %}
             <li>
-                <a href=" {{ app.request.schemeAndHttpHost }}/fr/" target="_blank" rel="noopener">Voir</a>
+                <a href=" {{ app.request.schemeAndHttpHost }}/" target="_blank" rel="noopener">Voir</a>
             </li>
             {% elseif page.slug != "index" %}
             <li>
-                <a href=" {{ app.request.schemeAndHttpHost }}/fr/{{ page.slug }}" target="_blank" rel="noopener">Voir</a>
+                <a href=" {{ app.request.schemeAndHttpHost }}/{{ page.slug }}" target="_blank" rel="noopener">Voir</a>
             </li>
             {% endif %}
             <li>
                 <a href=" {{ path('modify_page', { slug: page.slug } )}} ">Modifier</a>
             </li>
-            {% if (page.navindex < 100) and (page.navindex > 0) %}
+            {% if (page.blockedpage == 0) %}
             <li>
                 <a href=" {{ path('delete_page', { id: page.id } )}} ">Supprimer</a>
             </li>
