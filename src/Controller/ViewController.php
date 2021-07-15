@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Articles;
 use App\Entity\Pages;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -31,7 +32,7 @@ class ViewController extends AbstractController
     }
 
     /**
-     * @Route("/fr/{slug}", name="page_view")
+     * @Route("/{slug}", name="page_view")
      */
     public function page_view(String $slug)
     {
@@ -39,20 +40,64 @@ class ViewController extends AbstractController
         $linksNav = $entityManager->getRepository(Pages::class)->findBy(["nav_position" => "main"]);
         $linksNavLegal = $entityManager->getRepository(Pages::class)->findBy(["nav_position" => "legal"], array("nav_index" => "ASC"));
         $page = $entityManager->getRepository(Pages::class)->findOneBy(['slug' => $slug]);
-        $metaTitleName = $page->getMetaTitle();
-        $metaDescription = $page->getMetaDescription();
 
+        /* Rendu Page d'accueil 
+        -----------------------------*/
         if($slug == "index"){
             return $this->redirectToRoute('home');
         }
 
-        return $this->render('base.html.twig', [
+        if($slug != "blog"){
+            /* Rendu Page
+            -----------------------------*/
+            $metaTitleName = $page->getMetaTitle();
+            $metaDescription = $page->getMetaDescription();
+            return $this->render('base.html.twig', [
+                'controller_name' => 'ViewController',
+                'links' => $linksNav,
+                'linksNavLegal' => $linksNavLegal,
+                'slugs' => $page,
+                'meta_title' => $metaTitleName,
+                'meta_description' => $metaDescription,
+            ]);
+        } else {
+            /* Rendu Blog 
+            -----------------------------*/
+            $articles = $entityManager->getRepository(Articles::class)->findAll();
+            $metaTitleName = "Actualités";
+            $metaDescription = "";
+            return $this->render('blog.html.twig', [
+                'controller_name' => 'ViewController',
+                'links' => $linksNav,
+                'linksNavLegal' => $linksNavLegal,
+                'slugs' => $page,
+                'articles' => $articles,
+                'meta_title' => $metaTitleName,
+                'meta_description' => $metaDescription,
+            ]); 
+        }
+    }
+
+    /**
+     * @Route("/blog/{post}", name="post_view")
+     */
+    public function post_view(String $post){
+        $entityManager = $this->getDoctrine()->getManager();
+        $linksNav = $entityManager->getRepository(Pages::class)->findBy(["nav_position" => "main"]);
+        $linksNavLegal = $entityManager->getRepository(Pages::class)->findBy(["nav_position" => "legal"], array("nav_index" => "ASC"));
+
+        $page = $entityManager->getRepository(Articles::class)->findOneBy(["slug" => $post]);
+        $metaTitleName = $page->getMetaTitle();
+        $metaDescription = $page->getMetaDesc();
+        
+
+        return $this->render('post.html.twig', [
             'controller_name' => 'ViewController',
             'links' => $linksNav,
             'linksNavLegal' => $linksNavLegal,
-            'slugs' => $page,
             'meta_title' => $metaTitleName,
             'meta_description' => $metaDescription,
+            'article' => $page,
         ]);
     }
 }

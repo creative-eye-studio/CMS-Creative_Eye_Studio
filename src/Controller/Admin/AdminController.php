@@ -286,7 +286,7 @@ class AdminController extends AbstractController
             //Contrôle du champ URL
             if($data["article_slug"] != null){
                 $article->setSlug($data["article_slug"]);
-                $slug = $data["page_url"];
+                $slug = $data["article_slug"];
             }
 
             $entityManager->persist($article);
