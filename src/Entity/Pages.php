@@ -47,6 +47,11 @@ class Pages
      */
     private $nav_index;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $blocked_page;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -120,6 +125,18 @@ class Pages
     public function setNavIndex(int $nav_index): self
     {
         $this->nav_index = $nav_index;
+
+        return $this;
+    }
+
+    public function getBlockedPage(): ?bool
+    {
+        return $this->blocked_page;
+    }
+
+    public function setBlockedPage(bool $blocked_page): self
+    {
+        $this->blocked_page = $blocked_page;
 
         return $this;
     }
