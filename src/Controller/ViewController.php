@@ -39,8 +39,10 @@ class ViewController extends AbstractController
         $entityManager = $this->getDoctrine()->getManager();
         $linksNav = $entityManager->getRepository(Pages::class)->findBy(["nav_position" => "main"]);
         $linksNavLegal = $entityManager->getRepository(Pages::class)->findBy(["nav_position" => "legal"], array("nav_index" => "ASC"));
+        $page = $entityManager->getRepository(Pages::class)->findOneBy(['slug' => $slug]);
 
-        // Rendu Page d'accueil
+        /* Rendu Page d'accueil 
+        -----------------------------*/
         if($slug == "index"){
             return $this->redirectToRoute('home');
         }
@@ -48,7 +50,6 @@ class ViewController extends AbstractController
         if($slug != "blog"){
             /* Rendu Page
             -----------------------------*/
-            $page = $entityManager->getRepository(Pages::class)->findOneBy(['slug' => $slug]);
             $metaTitleName = $page->getMetaTitle();
             $metaDescription = $page->getMetaDescription();
             return $this->render('base.html.twig', [
@@ -62,7 +63,6 @@ class ViewController extends AbstractController
         } else {
             /* Rendu Blog 
             -----------------------------*/
-            $page = $entityManager->getRepository(Pages::class)->findOneBy(['slug' => $slug]);
             $articles = $entityManager->getRepository(Articles::class)->findAll();
             $metaTitleName = "Actualités";
             $metaDescription = "";
