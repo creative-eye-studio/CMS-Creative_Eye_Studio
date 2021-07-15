@@ -76,7 +76,28 @@ class ViewController extends AbstractController
                 'meta_description' => $metaDescription,
             ]); 
         }
+    }
 
+    /**
+     * @Route("/blog/{post}", name="post_view")
+     */
+    public function post_view(String $post){
+        $entityManager = $this->getDoctrine()->getManager();
+        $linksNav = $entityManager->getRepository(Pages::class)->findBy(["nav_position" => "main"]);
+        $linksNavLegal = $entityManager->getRepository(Pages::class)->findBy(["nav_position" => "legal"], array("nav_index" => "ASC"));
+
+        $page = $entityManager->getRepository(Articles::class)->findOneBy(["slug" => $post]);
+        $metaTitleName = $page->getMetaTitle();
+        $metaDescription = $page->getMetaDesc();
         
+
+        return $this->render('post.html.twig', [
+            'controller_name' => 'ViewController',
+            'links' => $linksNav,
+            'linksNavLegal' => $linksNavLegal,
+            'meta_title' => $metaTitleName,
+            'meta_description' => $metaDescription,
+            'article' => $page,
+        ]);
     }
 }

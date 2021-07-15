@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <title>
             {% block title %}
-                Actualités
+                {{ meta_title }}
             {% endblock %}
         </title>
         <meta name="description" content="{{ meta_description }}" />
@@ -27,14 +27,11 @@
             </ul>
         </nav>
         {% block body %}
-            {% for article in articles %}
-                <p>
-                    {{ article.name }}<br>
-                    <a href={{ path('post_view', { post: article.slug }) }}>Voir l'article</a>
-                </p>
-            {% else %}
-                <p>Il n'y a pas encore d'articles publiés !</p>
-            {% endfor %}
+            <h1>{{ article.name }}</h1>
+            {% include "front/blog/#{article.slug}.html.twig" %}
+            <p>
+                <a href={{ path('page_view', { slug: "blog" }) }}>Retour aux articles</a>
+            </p>
         {% endblock %}
         <!-- Footer -->
         <footer>
