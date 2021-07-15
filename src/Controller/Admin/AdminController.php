@@ -108,7 +108,7 @@ class AdminController extends AbstractController
                 fwrite($file, $data["page_content"]);
             }
 
-            //On rediriage la page vers le formulaire d'ajout de page
+            //On redirige la page vers le formulaire d'ajout de page
             return $this->redirectToRoute('pages_site');
         }
 
