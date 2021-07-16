@@ -19,10 +19,11 @@
         <header></header>
         <nav>
             <ul>
+                <!-- Menu de navigation Main -->
                 {% for link in links %}
-                <li>
-                    <a href={{ path('page_view', { slug: link.slug }) }}>{{link.name}}</a>
-                </li>
+                    <li>
+                        <a href="{{ path('page_view', { slug: link.name.slug }) }}">{{ link.name.name }}</a>
+                    </li>
                 {% endfor %}
             </ul>
         </nav>
@@ -39,11 +40,7 @@
         <!-- Footer -->
         <footer>
             <ul>
-                {% for link in linksNavLegal %}
-                <li>
-                    <a href={{ path('page_view', { slug: link.slug }) }}>{{link.name}}</a>
-                </li>
-                {% endfor %}
+                <!-- Menu de navigation Legal -->
             </ul>
         </footer>
         {% block javascripts %}

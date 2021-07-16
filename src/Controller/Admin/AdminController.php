@@ -3,12 +3,14 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Articles;
+use App\Entity\Navigation;
 use App\Entity\Pages;
 use App\Entity\Users;
 use App\Form\AddArticleType;
 use App\Form\AddPagesType;
 use App\Form\CodeCssType;
 use App\Form\CodeJsType;
+use App\Form\PagesListType;
 use Cocur\Slugify\Slugify;
 use Doctrine\ORM\Mapping\OrderBy;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -346,6 +348,42 @@ class AdminController extends AbstractController
         return $this->render('admin/users-list.html.twig', [
             'controller_name' => 'AdminController',
             'users' => $users
+        ]);
+    }
+
+
+
+    /******************************* NAVIGATION *******************************/
+    /**
+     * @Route("/admin/navsite-manage", name="navsite_manage")
+     */
+    public function navsite_manage(Request $request){
+
+        $entityManager = $this->getDoctrine()->getManager();
+        $pages = $entityManager->getRepository(Navigation::class)->findAll();
+
+        $form = $this->createForm(PagesListType::class);
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid()){
+            $data = $form->getData();
+            $link = new Navigation();
+            $link->setName($data["pages_list"]);
+            $link->setLink($data["pages_list"]);
+            $link->setParentLevel(0);
+            $link->setLocationNav($data["nav_location"]);
+
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($link);
+            $entityManager->flush();
+
+            return $this->redirectToRoute('navsite_manage');
+        }
+
+        return $this->render('admin/navsite-manage.html.twig', [
+            'controller_name' => 'AdminController',
+            'form' => $form->createView(),
+            'pages' => $pages,
         ]);
     }
 }

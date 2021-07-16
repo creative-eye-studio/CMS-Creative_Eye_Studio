@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Articles;
 use App\Entity\Pages;
+use App\Entity\Navigation;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -16,8 +17,8 @@ class ViewController extends AbstractController
     public function index(): Response
     {
         $entityManager = $this->getDoctrine()->getManager();
-        $linksNav = $entityManager->getRepository(Pages::class)->findBy(["nav_position" => "main"], array("nav_index" => "ASC"));
-        $linksNavLegal = $entityManager->getRepository(Pages::class)->findBy(["nav_position" => "legal"], array("nav_index" => "ASC"));
+        $linksNav = $entityManager->getRepository(Navigation::class)->findBy(["location_nav" => "0"], array("id" => "ASC"));
+        $linksNavLegal = $entityManager->getRepository(Navigation::class)->findBy(["location_nav" => "1"], array("id" => "ASC"));
         $page = $entityManager->getRepository(Pages::class)->findOneBy(['slug' => "index"]);
         $metaTitleName = $page->getMetaTitle();
         $metaDescription = $page->getMetaDescription();
@@ -37,8 +38,8 @@ class ViewController extends AbstractController
     public function page_view(String $slug)
     {
         $entityManager = $this->getDoctrine()->getManager();
-        $linksNav = $entityManager->getRepository(Pages::class)->findBy(["nav_position" => "main"]);
-        $linksNavLegal = $entityManager->getRepository(Pages::class)->findBy(["nav_position" => "legal"], array("nav_index" => "ASC"));
+        $linksNav = $entityManager->getRepository(Navigation::class)->findBy(["location_nav" => "0"], array("id" => "ASC"));
+        $linksNavLegal = $entityManager->getRepository(Navigation::class)->findBy(["location_nav" => "1"], array("id" => "ASC"));
         $page = $entityManager->getRepository(Pages::class)->findOneBy(['slug' => $slug]);
 
         /* Rendu Page d'accueil 
@@ -83,8 +84,8 @@ class ViewController extends AbstractController
      */
     public function post_view(String $post){
         $entityManager = $this->getDoctrine()->getManager();
-        $linksNav = $entityManager->getRepository(Pages::class)->findBy(["nav_position" => "main"]);
-        $linksNavLegal = $entityManager->getRepository(Pages::class)->findBy(["nav_position" => "legal"], array("nav_index" => "ASC"));
+        $linksNav = $entityManager->getRepository(Navigation::class)->findBy(["location_nav" => "0"], array("id" => "ASC"));
+        $linksNavLegal = $entityManager->getRepository(Navigation::class)->findBy(["location_nav" => "1"], array("id" => "ASC"));
 
         $page = $entityManager->getRepository(Articles::class)->findOneBy(["slug" => $post]);
         $metaTitleName = $page->getMetaTitle();
