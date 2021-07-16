@@ -295,3 +295,35 @@ button{
         margin-bottom: .5rem;
     }
 }
+
+.manage-nav-content{
+    display: flex;
+}
+
+.nav-list{
+    width: 100%;
+}
+
+.pages-list{
+    width: 18rem;
+    border-right: 1px solid gray;
+    margin-right: 1.5rem;
+    .nav-location-list{
+        margin: 0 0 1rem 0;
+    }
+    input{
+        margin: 0 1rem 0 0;
+    }
+    label{
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    .inline{
+        display: flex;
+        align-items: center;
+        margin-bottom: .5rem;
+    }
+    button{
+        margin-top: 1rem;
+    }
+}
