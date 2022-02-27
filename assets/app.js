@@ -10,3 +10,15 @@ import './styles/app.scss';
 
 // start the Stimulus application
 import './bootstrap';
+
+// ScrollBar
+import Scrollbar from 'smooth-scrollbar';
+Scrollbar.init(
+    document.querySelector('#my-scrollbar'), 
+    options
+);
+
+// Parallax
+import simpleParallax from 'simple-parallax-js';
+var image = document.getElementsByClassName('parallax');
+new simpleParallax(image);

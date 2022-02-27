@@ -1,7 +1,6 @@
 /******************************************************/
 /********************* VARIABLES **********************/
 /******************************************************/
-
 $nav-width: 20rem;
 
 
@@ -112,12 +111,14 @@ footer {
 /******************************************************/
 /*********************** BLOCS ************************/
 /******************************************************/
-@mixin bloc {
+@mixin bloc($widthBlock) {
     border: .0625rem solid gray;
     padding: .5rem 2rem 1rem 2rem;
     margin-bottom: 2rem;
     box-sizing: border-box;
     font-family: "Lato";
+    line-height: 1.5em;
+    width: $widthBlock;
     h2{
         font: 300 1.75em/120% "Source Sans Pro";
     }
@@ -129,25 +130,21 @@ footer {
 }
 
 .bloc1{
-    @include bloc();
-    width: 100%;
+    @include bloc(100%);
 }
 
 .bloc2{
-    @include bloc();
-    width: calc(50% - 1rem);
+    @include bloc(calc(50% - 1rem));
 }
 
 .bloc3{
-    @include bloc();
-    width: calc(33.33% - 1rem);
+    @include bloc(calc(33.33% - 1rem));
 }
 
 .bloc-login{
-    @include bloc();
+    @include bloc(25rem);
     font-size: 1em;
     font-weight: 400;
-    width: 25rem;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -257,6 +254,7 @@ input{
         box-sizing: border-box;
         width: 100%;
         padding: .5rem .7rem;
+        font: 400 .9em/1.5em "Lato";
     }
     &[type=checkbox]{
         display: inline-block;
@@ -278,6 +276,12 @@ textarea{
     height: 10rem;
     margin-bottom: 1rem;
     padding: .5rem .7rem;
+    font: 400 .9em/1.5em "Lato";
+}
+
+.tox-tinymce{
+    min-height: 350px;
+    margin-bottom: 1.2rem;
 }
 
 .cke{

@@ -2,55 +2,66 @@
 
 namespace App\Entity;
 
-use App\Repository\PagesRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass=PagesRepository::class)
+ * Pages
+ *
+ * @ORM\Table(name="pages")
+ * @ORM\Entity
  */
 class Pages
 {
     /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
      * @ORM\Id
-     * @ORM\GeneratedValue
-     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=255, nullable=false)
      */
     private $name;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @var string
+     *
+     * @ORM\Column(name="slug", type="string", length=255, nullable=false)
      */
     private $slug;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @var string|null
+     *
+     * @ORM\Column(name="meta_title", type="string", length=255, nullable=true)
      */
-    private $nav_position;
+    private $metaTitle;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @var string|null
+     *
+     * @ORM\Column(name="meta_description", type="text", length=0, nullable=true)
      */
-    private $meta_title;
+    private $metaDescription;
 
     /**
-     * @ORM\Column(type="text", nullable=true)
+     * @var bool
+     *
+     * @ORM\Column(name="blocked_page", type="boolean", nullable=false)
      */
-    private $meta_description;
+    private $blockedPage;
 
     /**
-     * @ORM\Column(type="integer")
+     * @var string
+     *
+     * @ORM\Column(name="file_name", type="string", length=255, nullable=false)
      */
-    private $nav_index;
-
-    /**
-     * @ORM\Column(type="boolean")
-     */
-    private $blocked_page;
+    private $fileName;
 
     public function getId(): ?int
     {
@@ -81,63 +92,53 @@ class Pages
         return $this;
     }
 
-    public function getNavPosition(): ?string
-    {
-        return $this->nav_position;
-    }
-
-    public function setNavPosition(string $nav_position): self
-    {
-        $this->nav_position = $nav_position;
-
-        return $this;
-    }
-
     public function getMetaTitle(): ?string
     {
-        return $this->meta_title;
+        return $this->metaTitle;
     }
 
-    public function setMetaTitle(string $meta_title): self
+    public function setMetaTitle(?string $metaTitle): self
     {
-        $this->meta_title = $meta_title;
+        $this->metaTitle = $metaTitle;
 
         return $this;
     }
 
     public function getMetaDescription(): ?string
     {
-        return $this->meta_description;
+        return $this->metaDescription;
     }
 
-    public function setMetaDescription(?string $meta_description): self
+    public function setMetaDescription(?string $metaDescription): self
     {
-        $this->meta_description = $meta_description;
-
-        return $this;
-    }
-
-    public function getNavIndex(): ?int
-    {
-        return $this->nav_index;
-    }
-
-    public function setNavIndex(int $nav_index): self
-    {
-        $this->nav_index = $nav_index;
+        $this->metaDescription = $metaDescription;
 
         return $this;
     }
 
     public function getBlockedPage(): ?bool
     {
-        return $this->blocked_page;
+        return $this->blockedPage;
     }
 
-    public function setBlockedPage(bool $blocked_page): self
+    public function setBlockedPage(bool $blockedPage): self
     {
-        $this->blocked_page = $blocked_page;
+        $this->blockedPage = $blockedPage;
 
         return $this;
     }
+
+    public function getFileName(): ?string
+    {
+        return $this->fileName;
+    }
+
+    public function setFileName(string $fileName): self
+    {
+        $this->fileName = $fileName;
+
+        return $this;
+    }
+
+
 }

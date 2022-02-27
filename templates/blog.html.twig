@@ -16,17 +16,7 @@
         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookie-bar@1.8.3/themes/cookiebar.min.css" />
     </head>
     <body>
-        <header></header>
-        <nav>
-            <ul>
-                <!-- Menu de navigation Main -->
-                {% for link in links %}
-                    <li>
-                        <a href="{{ path('page_view', { slug: link.name.slug }) }}">{{ link.name.name }}</a>
-                    </li>
-                {% endfor %}
-            </ul>
-        </nav>
+        {% include "front/blocks/header.html.twig" %}
         {% block body %}
             {% for article in articles %}
                 <p>
@@ -38,11 +28,7 @@
             {% endfor %}
         {% endblock %}
         <!-- Footer -->
-        <footer>
-            <ul>
-                <!-- Menu de navigation Legal -->
-            </ul>
-        </footer>
+        {% include "front/blocks/footer.html.twig" %}
         {% block javascripts %}
             {{ encore_entry_script_tags('app') }}
         {% endblock %}

@@ -13,37 +13,24 @@
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
         {% endblock %}
-        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookie-bar@1.8.3/themes/cookiebar.min.css" />
     </head>
     <body>
-        <header>
-        </header>
-        <nav>
-            <ul>
-                <!-- Menu de navigation Main -->
-                {% for link in links %}
-                    <li>
-                        <a href="{{ path('page_view', { slug: link.name.slug }) }}">{{ link.name.name }}</a>
-                    </li>
-                {% endfor %}
-            </ul>
-        </nav>
+        <!-- En-tête du site -->
+        {% include "front/blocks/header.html.twig" %}
+        <!-- Contenu du site -->
+        <main>
         {% block body %}
             {% if app.request.attributes.get('_route') == 'home' %}
                 {% include "front/website/index.html.twig" %}
             {% elseif app.request.attributes.get('_route') != 'home' %}
-                {% include "front/website/#{slugs.slug}.html.twig" %}
+                {% include "front/website/#{slugs.filename}.html.twig" %}
             {% endif %}
         {% endblock %}
-        <!-- Footer -->
-        <footer>
-            <ul>
-                <!-- Menu de navigation Legal -->
-            </ul>
-        </footer>
+        </main>
+        <!-- Pied de page du site -->
+        {% include "front/blocks/footer.html.twig" %}
         {% block javascripts %}
             {{ encore_entry_script_tags('app') }}
         {% endblock %}
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/cookie-bar/cookiebar-latest.min.js?forceLang=fr&theme=altblack&tracking=1&thirdparty=1&always=1&hideDetailsBtn=1&showPolicyLink=1&privacyPage=%2Fpolitique-confidentialite"></script>
     </body>
 </html>

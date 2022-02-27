@@ -2,40 +2,66 @@
 
 namespace App\Entity;
 
-use App\Repository\ArticlesRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass=ArticlesRepository::class)
+ * Articles
+ *
+ * @ORM\Table(name="articles")
+ * @ORM\Entity
  */
 class Articles
 {
     /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
      * @ORM\Id
-     * @ORM\GeneratedValue
-     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=255, nullable=false)
      */
     private $name;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @var string
+     *
+     * @ORM\Column(name="slug", type="string", length=255, nullable=false)
      */
     private $slug;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @var string|null
+     *
+     * @ORM\Column(name="meta_title", type="string", length=255, nullable=true)
      */
-    private $meta_title;
+    private $metaTitle;
 
     /**
-     * @ORM\Column(type="text", nullable=true)
+     * @var string|null
+     *
+     * @ORM\Column(name="meta_desc", type="text", length=0, nullable=true)
      */
-    private $meta_desc;
+    private $metaDesc;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="file_name", type="string", length=255, nullable=false)
+     */
+    private $fileName;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="image", type="string", length=255, nullable=false)
+     */
+    private $image;
 
     public function getId(): ?int
     {
@@ -68,25 +94,51 @@ class Articles
 
     public function getMetaTitle(): ?string
     {
-        return $this->meta_title;
+        return $this->metaTitle;
     }
 
-    public function setMetaTitle(?string $meta_title): self
+    public function setMetaTitle(?string $metaTitle): self
     {
-        $this->meta_title = $meta_title;
+        $this->metaTitle = $metaTitle;
 
         return $this;
     }
 
     public function getMetaDesc(): ?string
     {
-        return $this->meta_desc;
+        return $this->metaDesc;
     }
 
-    public function setMetaDesc(?string $meta_desc): self
+    public function setMetaDesc(?string $metaDesc): self
     {
-        $this->meta_desc = $meta_desc;
+        $this->metaDesc = $metaDesc;
 
         return $this;
     }
+
+    public function getFileName(): ?string
+    {
+        return $this->fileName;
+    }
+
+    public function setFileName(string $fileName): self
+    {
+        $this->fileName = $fileName;
+
+        return $this;
+    }
+
+    public function getImage(): ?string
+    {
+        return $this->image;
+    }
+
+    public function setImage(string $image): self
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
+
 }

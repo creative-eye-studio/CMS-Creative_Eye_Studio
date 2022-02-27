@@ -16,15 +16,6 @@ class PagesListType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('nav_location', ChoiceType::class, [
-                'choices'  => [
-                    'Menu principal' => 0,
-                    'Confidentialité' => 1,
-                    'Contact' => 2,
-                ],
-                "label" => false,
-                'attr' => ['class' => 'nav-location-list']
-            ])
             ->add('pages_list', EntityType::class, [
                 "label" => false,
                 'class' => Pages::class,

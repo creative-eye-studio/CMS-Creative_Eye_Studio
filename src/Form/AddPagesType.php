@@ -25,20 +25,9 @@ class AddPagesType extends AbstractType
             ->add('page_title', TextType::class, [
                 "label" => "Nom de la page",
             ])
-            ->add("page_nav_index", NumberType::class, [
-                "label" => "Emplacement sur le menu",
-                "html5" => true,
-            ])
-            ->add("page_nav_position", ChoiceType::class, [
-                "choices" => [
-                    "Menu principal" => "main",
-                    "Menu légal" => "legal",
-                    "Pas de menu" => "no-nav",
-                ],
-                "label" => "Menu",
-            ])
             ->add('page_content', CKEditorType::class, [
-                "label" => "Contenu de la page"
+                "label" => "Contenu de la page",
+                "required" => false,
             ])
             ->add('page_url', TextType::class, [
                 "label" => "URL de la page",

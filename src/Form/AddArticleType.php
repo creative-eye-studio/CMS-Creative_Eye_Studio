@@ -23,7 +23,10 @@ class AddArticleType extends AbstractType
                     'placeholder' => 'Peut être généré automatiquement'
                 )
             ])
-            ->add('article_content', CKEditorType::class, ["label" => "Contenu de l'article"])
+            ->add('article_content', CKEditorType::class, [
+                "label" => "Contenu de l'article",
+                "required" => false,
+            ])
             ->add('article_metatitle', TextType::class, [
                 "label" => "Balise Title de l'article",
                 "required" => false,

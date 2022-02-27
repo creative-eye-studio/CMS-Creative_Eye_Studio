@@ -3,22 +3,27 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Articles;
-use App\Entity\Navigation;
 use App\Entity\Pages;
 use App\Entity\Users;
 use App\Form\AddArticleType;
 use App\Form\AddPagesType;
-use App\Form\CodeCssType;
-use App\Form\CodeJsType;
-use App\Form\PagesListType;
+use App\Form\CommonBlockType;
 use Cocur\Slugify\Slugify;
-use Doctrine\ORM\Mapping\OrderBy;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\Filesystem\Exception\IOExceptionInterface;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Leafo\ScssPhp\Compiler;
+
+/*
+    * ADMINISTRATION
+    * PAGES
+    * ARTICLES
+    * UTILISATEURS
+    * EN-TÊTE DU SITE
+    * PIED DE PAGE DU SITE
+*/
 
 class AdminController extends AbstractController
 {
@@ -56,7 +61,7 @@ class AdminController extends AbstractController
                     ->getRepository(Pages::class)
                     ->findBy(
                         array(),
-                        array("nav_index" => "ASC")
+                        array("id" => "ASC")
                     );
 
         return $this->render('admin/pages-list.html.twig', [
@@ -77,18 +82,17 @@ class AdminController extends AbstractController
             $data = $form->getData();
 
             $page = new Pages();
+            $slugPage = new Slugify();
+            $slugPageStr = $slugPage->slugify($data["page_title"]);
             $page->setName($data["page_title"]);
-            $page->setNavPosition($data["page_nav_position"]);
-            $page->setNavIndex($data["page_nav_index"]);
+            $page->setFileName($slugPageStr);
+            $page->setBlockedPage(0);
 
             //Création de l'URL
             if($data["page_url"] == null){
-                $slugPage = new Slugify();
-                $slugPageStr = $slugPage->slugify($data["page_title"]);
                 $page->setSlug($slugPageStr);
             } else {
                 $page->setSlug($data["page_url"]);
-                $slugPageStr = $data["page_url"];
             }
 
             //Création de la Meta Title
@@ -111,7 +115,7 @@ class AdminController extends AbstractController
             }
 
             //On redirige la page vers le formulaire d'ajout de page
-            return $this->redirectToRoute('pages_site');
+            return $this->redirectToRoute('modify_page', array('slug' => $slugPageStr));
         }
 
         return $this->render('admin/add-page.html.twig', [
@@ -131,24 +135,20 @@ class AdminController extends AbstractController
         $form->handleRequest($request);
 
         $entityManager = $this->getDoctrine()->getManager();
-        $pages = $entityManager->getRepository(Pages::class)->findOneBy(["slug" => $slug]);
+        $pages = $entityManager->getRepository(Pages::class)->findOneBy(["fileName" => $slug]);
         $pageName = $pages->getName();
-        $pageNavPosition = $pages->getNavPosition();
-        $pageNavIndex = $pages->getNavIndex();
+        $pageSlug = $pages->getSlug();
         $pageMetaTitle = $pages->getMetaTitle();
         $pageMetaDesc = $pages->getMetaDescription();
 
         if($form->isSubmitted() && $form->isValid()){
             $data = $form->getData();
             $pages->setName($data["page_title"]);
-            $pages->setNavIndex($data["page_nav_index"]);
-            $pages->setNavPosition($data["page_nav_position"]);
             $pages->setMetaTitle($data["page_meta_title"]);
             $pages->setMetaDescription($data["page_meta_desc"]);
 
             if($data["page_url"] != null){
                 $pages->setSlug($data["page_url"]);
-                $slug = $data["page_url"];
             }
 
             $entityManager->persist($pages);
@@ -167,9 +167,7 @@ class AdminController extends AbstractController
             'form' => $form->createView(),
             'pages' => $pages,
             'pageName' => $pageName,
-            'pageNavPosition' => $pageNavPosition,
-            'pageNavIndex' => $pageNavIndex,
-            'pageSlug' => $slug,
+            'pageSlug' => $pageSlug,
             'pageMetaTitle' => $pageMetaTitle,
             'pageMetaDesc' => $pageMetaDesc,
             'dataFile' => $dataFile,
@@ -185,7 +183,7 @@ class AdminController extends AbstractController
         $filesystem = new Filesystem();
         $entityManager = $this->getDoctrine()->getManager();
         $page = $entityManager->getRepository(Pages::class)->find($id);
-        $pageFile = $page->getSlug();
+        $pageFile = $page->getFileName();
 
         $entityManager->remove($page);
         $entityManager->flush();
@@ -225,34 +223,39 @@ class AdminController extends AbstractController
         if($form->isSubmitted() && $form->isValid()){
             $data = $form->getData();
 
-            $page = new Articles();
-            $page->setName($data["article_title"]);
-            //Contrôle du champ URL
-            if($data["article_slug"] == null){
-                $slugPage = new Slugify();
-                $slugPageStr = $slugPage->slugify($data["article_title"]);
-                $page->setSlug($slugPageStr);
-            } else {
-                $slugPageStr = $data["article_slug"];
-                $page->setSlug($data["article_slug"]);
-            }
-            //Contrôle du champ Meta Title
-            if($data["article_metatitle"] == null){
-                $page->setMetaTitle($data["article_title"]);
-            } else {
-                $page->setMetaTitle($data["article_metatitle"]);
-            }
-            
-            $page->setMetaDesc($data["article_metadesc"]);
+            // Initialisation des informations
+            $slugify = new Slugify();
+            $fileName = $slugify->slugify($data['article_title']);
 
+            // Envoi des données vers MySQL
+            $article = new Articles();
+            $article->setName($data['article_title']);
+            if($data['article_slug'] == null){
+                $article->setSlug($fileName);
+            } else {
+                $article->setSlug($data['article_slug']);
+            }
+            if($data['article_metatitle'] == null){
+                $article->setMetaTitle($data['article_title']);
+            } else {
+                $article->setMetaTitle($data['article_metatitle']);
+            }
+            $article->setMetaDesc($data['article_metadesc']);
+            $article->setFileName($fileName);
+
+            // Création du fichier
             $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($page);
-            $entityManager->flush();
+            $verifySlug = $entityManager->getRepository(Pages::class)->findOneBy(["slug" => $data['article_slug']]);
+            if($verifySlug == null){
+                //Envoie des données de la page
+                $entityManager->persist($article);
+                $entityManager->flush();
+                //Création de la page
+                $file = fopen("../templates/front/blog/" . $fileName . ".html.twig", "c+b");
+                fwrite($file, $data["article_content"]);
+            }
 
-            //Création de la page
-            $file = fopen("../templates/front/blog/" . $slugPageStr . ".html.twig", "c+b");
-            fwrite($file, $data["article_content"]);
-
+            // Redirection à la liste des articles
             return $this->redirectToRoute('articles_site');
         }
 
@@ -321,13 +324,13 @@ class AdminController extends AbstractController
     {
         $filesystem = new Filesystem();
         $entityManager = $this->getDoctrine()->getManager();
-        $page = $entityManager->getRepository(Articles::class)->find($id);
-        $pageFile = $page->getSlug();
+        $article = $entityManager->getRepository(Articles::class)->find($id);
+        $articleFile = $article->getFileName();
 
-        $entityManager->remove($page);
+        $entityManager->remove($article);
         $entityManager->flush();
 
-        $filesystem->remove(['../templates/front/blog/' . $pageFile . '.html.twig']);
+        $filesystem->remove(['../templates/front/blog/' . $articleFile . '.html.twig']);
 
         return $this->redirectToRoute('articles_site');
     }
@@ -353,37 +356,63 @@ class AdminController extends AbstractController
 
 
 
-    /******************************* NAVIGATION *******************************/
+    /******************************* EN-TÊTE DU SITE *******************************/
     /**
-     * @Route("/admin/navsite-manage", name="navsite_manage")
+     * @Route("/admin/header-manage", name="header_manage")
      */
-    public function navsite_manage(Request $request){
+    public function header_manage(Request $request){
 
-        $entityManager = $this->getDoctrine()->getManager();
-        $pages = $entityManager->getRepository(Navigation::class)->findAll();
+        $dataFile = file_get_contents("../templates/front/blocks/header.html.twig");
 
-        $form = $this->createForm(PagesListType::class);
+        $form = $this->createForm(CommonBlockType::class);
         $form->handleRequest($request);
 
         if($form->isSubmitted() && $form->isValid()){
             $data = $form->getData();
-            $link = new Navigation();
-            $link->setName($data["pages_list"]);
-            $link->setLink($data["pages_list"]);
-            $link->setParentLevel(0);
-            $link->setLocationNav($data["nav_location"]);
+            
+            $filesystem = new Filesystem();
+            $filesystem->remove(['../templates/front/blocks/header.html.twig']);
+            $file = fopen("../templates/front/blocks/header.html.twig", "c+b");
+            fwrite($file, $data["block_content"]);
 
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($link);
-            $entityManager->flush();
-
-            return $this->redirectToRoute('navsite_manage');
+            return $this->redirectToRoute('header_manage');
         }
 
-        return $this->render('admin/navsite-manage.html.twig', [
-            'controller_name' => 'AdminController',
+        return $this->render('admin/manage-header.html.twig', [
             'form' => $form->createView(),
-            'pages' => $pages,
+            'dataFile' => $dataFile,
+            'controller_name' => 'AdminController',
+        ]);
+    }
+
+    
+
+    /******************************* PIED DE PAGE DU SITE *******************************/
+    /**
+     * @Route("/admin/footer-manage", name="footer_manage")
+     */
+    public function footer_manage(Request $request){
+
+        $dataFile = file_get_contents("../templates/front/blocks/footer.html.twig");
+
+        $form = $this->createForm(CommonBlockType::class);
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid()){
+            $data = $form->getData();
+            
+            $filesystem = new Filesystem();
+            $filesystem->remove(['../templates/front/blocks/footer.html.twig']);
+            $file = fopen("../templates/front/blocks/footer.html.twig", "c+b");
+            fwrite($file, $data["block_content"]);
+
+            return $this->redirectToRoute('footer_manage');
+        }
+
+        return $this->render('admin/manage-footer.html.twig', [
+            'form' => $form->createView(),
+            'dataFile' => $dataFile,
+            'controller_name' => 'AdminController',
         ]);
     }
 }
