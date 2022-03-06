@@ -17,6 +17,7 @@
     <body>
         <!-- En-tête du site -->
         {% include "front/blocks/header.html.twig" %}
+
         <!-- Contenu du site -->
         <main>
         {% block body %}
@@ -27,8 +28,10 @@
             {% endif %}
         {% endblock %}
         </main>
+
         <!-- Pied de page du site -->
         {% include "front/blocks/footer.html.twig" %}
+        
         {% block javascripts %}
             {{ encore_entry_script_tags('app') }}
         {% endblock %}

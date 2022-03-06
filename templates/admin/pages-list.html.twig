@@ -22,7 +22,7 @@
                 </li>
                 {% elseif page.slug != "index" %}
                 <li>
-                    <a href=" {{ app.request.schemeAndHttpHost }}/{{ page.slug }}" target="_blank" rel="noopener">Voir</a>
+                    <a href="  {{ path('page_view', { slug: page.slug } )}} " target="_blank" rel="noopener">Voir</a>
                 </li>
                 {% endif %}
                 <li>

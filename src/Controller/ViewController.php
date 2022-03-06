@@ -12,18 +12,26 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 class ViewController extends AbstractController
 {
     /**
+     * @Route("/fr/{route}", requirements={"slug"=".*"}, name="vue")
+     */
+    /*public function index(): Response
+    {
+        return $this->render('vue/index.html.twig', [
+            'controller_name' => 'VueController',
+        ]);
+    }*/
+
+    /**
      * @Route("/fr", name="home")
      */
     public function index(): Response
     {
         $entityManager = $this->getDoctrine()->getManager();
         $page = $entityManager->getRepository(Pages::class)->findOneBy(['slug' => "index"]);
-        $metaTitleName = $page->getMetaTitle();
-        $metaDescription = $page->getMetaDescription();
 
         return $this->render('base.html.twig', [
-            'meta_title' => $metaTitleName,
-            'meta_description' => $metaDescription,
+            'meta_title' => $page->getMetaTitle(),
+            'meta_description' => $page->getMetaDescription(),
             'controller_name' => 'ViewController',
         ]);
     }
@@ -35,44 +43,29 @@ class ViewController extends AbstractController
     {
         $entityManager = $this->getDoctrine()->getManager();
         $page = $entityManager->getRepository(Pages::class)->findOneBy(['slug' => $slug]);
+
         $message = "Not Found";
         $previous = null;
 
-        /* Rendu Page d'accueil 
-        -----------------------------*/
+        // Rendu Page d'accueil 
+        // -----------------------------/
         if($slug == "index"){
             return $this->redirectToRoute('home');
         }
 
-        if($slug != "blog"){
-            /* Rendu Page
-            -----------------------------*/
-            if($page == null){
-                return new NotFoundHttpException($message, $previous);
-                return false;
-            }
-            $metaTitleName = $page->getMetaTitle();
-            $metaDescription = $page->getMetaDescription();
-            return $this->render('base.html.twig', [
-                'controller_name' => 'ViewController',
-                'slugs' => $page,
-                'meta_title' => $metaTitleName,
-                'meta_description' => $metaDescription,
-            ]);
-        } else {
-            /* Rendu Blog 
-            -----------------------------*/
-            $articles = $entityManager->getRepository(Articles::class)->findAll();
-            $metaTitleName = "Actualités";
-            $metaDescription = "";
-            return $this->render('blog.html.twig', [
-                'controller_name' => 'ViewController',
-                'slugs' => $page,
-                'articles' => $articles,
-                'meta_title' => $metaTitleName,
-                'meta_description' => $metaDescription,
-            ]); 
+        // Rendu Page
+        // -----------------------------/
+        if($page == null){
+            return new NotFoundHttpException($message, $previous);
+            return false;
         }
+
+        return $this->render('base.html.twig', [
+            'controller_name' => 'ViewController',
+            'slugs' => $page,
+            'meta_title' => $page->getMetaTitle(),
+            'meta_description' => $page->getMetaDescription(),
+        ]);
     }
 
     /**
@@ -81,14 +74,12 @@ class ViewController extends AbstractController
     public function post_view(String $post){
         $entityManager = $this->getDoctrine()->getManager();
         $page = $entityManager->getRepository(Articles::class)->findOneBy(["slug" => $post]);
-        $metaTitleName = $page->getMetaTitle();
-        $metaDescription = $page->getMetaDesc();
         
         return $this->render('post.html.twig', [
             'controller_name' => 'ViewController',
-            'meta_title' => $metaTitleName,
-            'meta_description' => $metaDescription,
             'article' => $page,
+            'meta_title' => $page->getMetaTitle(),
+            'meta_description' => $page->getMetaDescription(),
         ]);
     }
 
