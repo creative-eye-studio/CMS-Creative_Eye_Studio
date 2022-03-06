@@ -10,7 +10,7 @@
         "sass-loader": "^12.6.0",
         "stimulus": "^2.0.0",
         "uglifyjs-webpack-plugin": "^1.0.0-beta",
-        "vue": "^2.5",
+        "vue": "2.6.14",
         "vue-loader": "^15.9.5",
         "vue-template-compiler": "^2.6.14",
         "webpack-notifier": "^1.6.0"
@@ -26,6 +26,7 @@
     "dependencies": {
         "@ckeditor/ckeditor5-build-balloon": "^27.1.0",
         "ansi-regex": "^6.0.1",
+        "cacache": "^15.3.0",
         "json-schema": "^0.4.0",
         "prop-types": "^15.7.2",
         "react": "^17.0.2",
