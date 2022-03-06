@@ -6,5 +6,5 @@ return array (
   'APP_ENV' => 'dev',
   'APP_SECRET' => '4cb8cf13099e13b9e20fa1d0c1865179',
   'MAILER_DSN' => 'gmail://rifakev@gmail.com:GoKu_26@@default?',
-  'DATABASE_URL' => 'mysql://root:root@127.0.0.1:3306/cms-projects?serverVersion=5.7',
+  'DATABASE_URL' => 'mysql://root:root@127.0.0.1:8889/cms-projects?serverVersion=5.7',
 );
