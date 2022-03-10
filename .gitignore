@@ -1,27 +1,9 @@
-
 # Created by https://www.toptal.com/developers/gitignore/api/symfony
 # Edit at https://www.toptal.com/developers/gitignore?templates=symfony
 
-### Symfony ###
-# Cache and logs (Symfony2)
-/app/cache/*
-/app/logs/*
-!app/cache/.gitkeep
-!app/logs/.gitkeep
-
-# Email spool folder
-/app/spool/*
-
-# Cache, session files and logs (Symfony3)
-/var/cache/*
-/var/logs/*
-/var/sessions/*
-!var/cache/.gitkeep
-!var/logs/.gitkeep
-!var/sessions/.gitkeep
-
 # Logs (Symfony4)
 /var/log/*
+/var/cache/*
 !var/log/.gitkeep
 
 # Parameters
@@ -37,15 +19,12 @@
 /vendor/
 
 # Assets and user uploads
-/web/bundles/
-/web/uploads/
+/public/bundles/
+/public/uploads/
 
 # PHPUnit
 /app/phpunit.xml
 /phpunit.xml
-
-# Build data
-/build/
 
 # Composer PHAR
 /composer.phar
@@ -59,7 +38,6 @@
 ### Symfony Patch ###
 /web/css/
 /web/js/
-/node_modules/*
+/node_modules
 
 # End of https://www.toptal.com/developers/gitignore/api/symfony
-bin/console
