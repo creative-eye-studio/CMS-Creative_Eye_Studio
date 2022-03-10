@@ -59,7 +59,7 @@
 ### Symfony Patch ###
 /web/css/
 /web/js/
-/node_module/*
+/node_modules/*
 
 # End of https://www.toptal.com/developers/gitignore/api/symfony
 bin/console
