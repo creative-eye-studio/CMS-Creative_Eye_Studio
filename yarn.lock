@@ -2565,7 +2565,11 @@
   dependencies:
     "timsort" "^0.3.0"
 
+<<<<<<< HEAD
 "css-loader@^5.2.4":
+=======
+"css-loader@*", "css-loader@^5.2.4":
+>>>>>>> master
   "integrity" "sha512-Q7mOvpBNBG7YrVGMxRxcBJZFL75o+cH2abNASdibkj/fffYD8qWbInZrD0S9ccI6vZclF3DsHE7njGlLtaHbhg=="
   "resolved" "https://registry.npmjs.org/css-loader/-/css-loader-5.2.7.tgz"
   "version" "5.2.7"
@@ -5222,7 +5226,11 @@
     "picocolors" "^0.2.1"
     "source-map" "^0.6.1"
 
+<<<<<<< HEAD
 "postcss@^8.2.15", "postcss@^8.2.9":
+=======
+"postcss@^8.0.9", "postcss@^8.1.0", "postcss@^8.2.15", "postcss@^8.2.2", "postcss@^8.2.9":
+>>>>>>> master
   "integrity" "sha512-L9Ye3r6hkkCeOETQX6iOaWZgjp3LL6Lpqm6EtgbKrgqGGteRMNb9vzBfRL96YOSu8o7x3MfIH9Mo5cPJFGrW6A=="
   "resolved" "https://registry.npmjs.org/postcss/-/postcss-8.4.7.tgz"
   "version" "8.4.7"
@@ -6700,7 +6708,11 @@
   "resolved" "https://registry.npmjs.org/vue-template-es2015-compiler/-/vue-template-es2015-compiler-1.9.1.tgz"
   "version" "1.9.1"
 
+<<<<<<< HEAD
 "vue@2.6.14":
+=======
+"vue@^2.6.4", "vue@^3.2.0", "vue@2.6.14":
+>>>>>>> master
   "integrity" "sha512-x2284lgYvjOMj3Za7kqzRcUSxBboHqtgRE2zlos1qWaOye5yUmHn42LB1250NJBLRwEcdrB0JRwyPTEPhfQjiQ=="
   "resolved" "https://registry.npmjs.org/vue/-/vue-2.6.14.tgz"
   "version" "2.6.14"
