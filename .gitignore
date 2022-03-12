@@ -62,4 +62,11 @@
 /node_module/*
 
 # End of https://www.toptal.com/developers/gitignore/api/symfony
+<<<<<<< Updated upstream
 bin/console
+=======
+###> phpunit/phpunit ###
+/phpunit.xml
+.phpunit.result.cache
+###< phpunit/phpunit ###
+>>>>>>> Stashed changes
