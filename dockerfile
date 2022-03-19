@@ -18,3 +18,5 @@ COPY . /var/www
 WORKDIR /var/www
  
 CMD ["apache2-foreground"]
+ 
+ENTRYPOINT ["/entrypoint.sh"]
