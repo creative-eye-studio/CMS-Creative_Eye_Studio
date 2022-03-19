@@ -19,4 +19,4 @@ WORKDIR /var/www
  
 CMD ["apache2-foreground"]
  
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["entrypoint.sh"]
