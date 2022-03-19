@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+    db:
+      image: mysql:8.0
+      environment:
+        - MYSQL_ROOT_PASSWORD=docker
+        - MYSQL_DATABASE=cms-database
+        - MYSQL_USER=symfony
+        - MYSQL_PASSWORD=symfony
+    
+    web:
+      build: .
+      ports:
+          - 8080:80
