@@ -14,8 +14,11 @@ RUN wget https://getcomposer.org/download/2.0.9/composer.phar \
  
 COPY apache.conf /etc/apache2/sites-enabled/000-default.conf
 COPY . /var/www
+COPY entrypoint.sh /entrypoint.sh
  
 WORKDIR /var/www
+
+RUN chmod +x entrypoint.sh
  
 CMD ["apache2-foreground"]
  
