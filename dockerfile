@@ -1,24 +1,19 @@
 FROM php:7.4-apache
- 
-RUN a2enmod rewrite
- 
-RUN apt-get update \
-  && apt-get install -y libzip-dev git wget --no-install-recommends \
-  && apt-get clean \
-  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
- 
-RUN docker-php-ext-install pdo mysqli pdo_mysql zip;
- 
-RUN wget https://getcomposer.org/download/2.0.9/composer.phar \
-    && mv composer.phar /usr/bin/composer && chmod +x /usr/bin/composer
- 
-COPY docker/apache.conf /etc/apache2/sites-enabled/000-default.conf
-COPY docker/entrypoint.sh /entrypoint.sh
- 
-WORKDIR /var/www
 
-RUN chmod +x /entrypoint.sh
- 
-CMD ["apache2-foreground"]
- 
-ENTRYPOINT ["/entrypoint.sh"]
+RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
+
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends locales apt-utils git libicu-dev g++ libpng-dev libxml2-dev libzip-dev libonig-dev libxslt-dev;
+
+RUN echo "en_US.UTF-8 UTF-8" > /etc/locale.gen && \
+    echo "fr_FR.UTF-8 UTF-8" >> /etc/locale.gen && \
+    locale-gen
+
+RUN curl -sSk https://getcomposer.org/installer | php -- --disable-tls && \
+   mv composer.phar /usr/local/bin/composer
+
+RUN docker-php-ext-configure intl
+RUN docker-php-ext-install pdo pdo_mysql gd opcache intl zip calendar dom mbstring zip gd xsl
+RUN pecl install apcu && docker-php-ext-enable apcu
+
+WORKDIR /var/www/
