@@ -19,7 +19,6 @@
 /vendor/
 
 # Assets and user uploads
-/public/bundles/
 /public/uploads/
 
 # PHPUnit
