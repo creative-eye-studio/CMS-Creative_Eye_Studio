@@ -8,11 +8,16 @@ services:
         environment:
             - APP_ENV=${APP_ENV}
             - APP_SECRET=${APP_SECRET}
+            - DATABASE_URL=${DATABASE_URL}
+        ports:
+            - '9000:9000'
         volumes:
             - ${APP_FOLDER}:/var/www
+        depends_on:
+            - database
 
     nginx:
-        container_name: "nginx"
+        container_name: "nginx" 
         build:
             context: ./nginx
         volumes:
@@ -21,5 +26,34 @@ services:
             - ./logs:/var/log
         depends_on:
             - php
+            - database
         ports:
             - "80:80"
+
+    database:
+        image: mysql:8.0.19
+        container_name: "database"
+        restart: always
+        environment:
+            MYSQL_ROOT_PASSWORD: secret
+            MYSQL_DATABASE: database
+            MYSQL_USER: symfony
+            MYSQL_PASSWORD: symfony
+        volumes:
+            - mysql-data:/var/lib/mysql
+        ports:
+            - "3306:3306"
+   
+    phpmyadmin:
+        image: phpmyadmin/phpmyadmin
+        container_name: "phpmyadmin"
+        restart: always
+        ports:
+            - "8080:80"
+        environment:
+            PMA_HOST: database
+        depends_on:
+            - database
+
+volumes:
+    mysql-data:
