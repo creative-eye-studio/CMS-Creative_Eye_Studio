@@ -7,7 +7,7 @@ CKEDITOR.editorConfig = function( config ) {
 	// Define changes to default configuration here. For example:
 	config.language = 'fr';
 	// config.uiColor = '#AADC6E';
-	config.extraPlugins = 'codemirror,image2,imageresponsive';
+	config.extraPlugins = 'codemirror,image2';
 	config.allowedContent = true;
 	config.startupMode = 'source';
 };
