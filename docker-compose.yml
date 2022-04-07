@@ -5,9 +5,9 @@ services:
     image: mysql:5.7
     environment:
       - MYSQL_ROOT_PASSWORD=secret
-      - MYSQL_PASSWORD=cms_project
-      - MYSQL_DATABASE=symfony
+      - MYSQL_DATABASE=cms_project
       - MYSQL_USER=symfony
+      - MYSQL_PASSWORD=symfony
 
   web:
     build: .
