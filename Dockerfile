@@ -1,25 +1,17 @@
-FROM php:8.0.2-apache
- 
-RUN a2enmod rewrite
- 
+FROM php:7.4-apache
+
 RUN apt-get update \
-  && apt-get install -y libzip-dev git wget --no-install-recommends \
-  && apt-get clean \
-  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
- 
-RUN docker-php-ext-install pdo mysqli pdo_mysql zip;
- 
-RUN wget https://getcomposer.org/download/2.0.9/composer.phar \
-    && mv composer.phar /usr/bin/composer && chmod +x /usr/bin/composer
- 
-COPY docker/apache.conf /etc/apache2/sites-enabled/000-default.conf
-COPY docker/entrypoint.sh /entrypoint.sh
-COPY . /var/www
+&& apt-get install -y \
+&& apt-get autoremove -y \
+&& docker-php-ext-install mysqli pdo pdo_mysql \
+&& apt-get install curl -y \
+&& apt-get install git -y\
+&& apt-get install zip -y\
+&& curl -sS https://get.symfony.com/cli/installer | bash \
+&& mv /root/.symfony/bin/symfony /usr/local/bin/symfony
 
-WORKDIR /var/www
+COPY --from=composer /usr/bin/composer /usr/bin/composer
 
-RUN chmod +x /entrypoint.sh
+WORKDIR . /
 
-CMD ["apache2-foreground"]
-
-ENTRYPOINT ["/entrypoint.sh"]
+EXPOSE 8050
