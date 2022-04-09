@@ -9,6 +9,7 @@ services:
         environment:
             - APP_ENV=${APP_ENV}
             - APP_SECRET=${APP_SECRET}
+            - DATABASE_URL=${DATABASE_URL}
         volumes:
             - ./infra/${APP_FOLDER}:/var/www
 
@@ -24,3 +25,32 @@ services:
             - php
         ports:
             - "80:80"
+    
+    database:
+        image: mysql:5.7
+        container_name: database
+        environment:
+            MYSQL_ROOT_PASSWORD: docker
+            MYSQL_DATABASE: cms_db
+            MYSQL_USER: symfony
+            MYSQL_PASSWORD: symfony
+        ports:
+            - "6033:3306"
+        volumes:
+            - dbdata:/var/lib/mysql
+
+    phpmyadmin:
+        image: phpmyadmin/phpmyadmin
+        container_name: phpmyadmin
+        links:
+            - database
+        environment:
+            PMA_HOST: database
+            PMA_PORT: 3306
+            PMA_ARBITRARY: 1
+        restart: always
+        ports:
+            - 8081:80
+
+volumes:
+    dbdata:
