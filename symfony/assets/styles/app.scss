@@ -1,3 +1,15 @@
-body {
-    background-color: rgb(255, 255, 255);
-}
+// Abstracts
+@import "./abstracts/variables";
+@import "./abstracts/mixins";
+
+// Base
+@import "./base/typography";
+
+// Layout
+@import "./layout/header";
+@import "./layout/navigation";
+@import "./layout/footer";
+@import "./layout/navigation";
+
+// Components
+@import "./components/buttons";
