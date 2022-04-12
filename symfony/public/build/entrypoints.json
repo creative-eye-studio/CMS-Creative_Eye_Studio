@@ -12,7 +12,8 @@
     },
     "custom_app": {
       "js": [
-        "/build/runtime.js"
+        "/build/runtime.js",
+        "/build/custom_app.js"
       ]
     },
     "app_admin": {
