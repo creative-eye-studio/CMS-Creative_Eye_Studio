@@ -12,9 +12,13 @@ import './styles/app.scss';
 import './bootstrap';
 
 
-// ScrollBar
+// VueJS
+new Vue({
+    el: '#content-website',
+})
 
 // Parallax
 import simpleParallax from 'simple-parallax-js';
+import Vue from 'vue';
 var image = document.getElementsByClassName('parallax');
 new simpleParallax(image);
