@@ -10,12 +10,6 @@
         "/build/app.css"
       ]
     },
-    "custom_app": {
-      "js": [
-        "/build/runtime.js",
-        "/build/custom_app.js"
-      ]
-    },
     "app_admin": {
       "js": [
         "/build/runtime.js",

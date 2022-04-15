@@ -7,18 +7,22 @@
 
 // any CSS you import will output into a single css file (app.css in this case)
 import './styles/app.scss';
+import './custom-app';
 
 // start the Stimulus application
 import './bootstrap';
 
-
-// VueJS
-new Vue({
-    el: '#content-website',
-})
-
 // Parallax
 import simpleParallax from 'simple-parallax-js';
-import Vue from 'vue';
 var image = document.getElementsByClassName('parallax');
+import Vue from 'vue';
 new simpleParallax(image);
+
+new Vue({
+    el: "#content-website",
+
+    data: {
+        navVisible: false,
+        btnNavToggled: false,
+    }
+})
