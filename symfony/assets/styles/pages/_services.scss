@@ -1,0 +1,105 @@
+.intro-service{
+    padding: 2rem;
+    @media screen and (min-width: 768px) {
+        padding: 7vw;
+    }
+    @media screen and (min-width: 1024px) {
+        display: flex;
+        .title{
+            flex: 30%;
+            padding-right: 7vw;
+            box-sizing: border-box;
+        }
+        h2{
+            font-size: 2.3em;
+        }
+        .text{
+            flex: 60%;
+        }
+    }
+}
+
+.citation{
+    background: #102027;
+    padding: 2rem;
+    text-align: center;
+    font-style: italic;
+    .content{
+        max-width: 800px;
+        margin: auto;
+    }
+    @media screen and (min-width: 768px) {
+        padding: 7vw;
+    }
+}
+
+.details-service{
+    .details-service-cover{
+        margin-top: 0;
+        &.cover-image-2{
+            display: none;
+        }
+    }
+    .details-service-text{
+        padding: 2rem;
+        box-sizing: border-box;
+    }
+    .details-service-list{
+        border-left: .0625rem solid white;
+        margin-top: 2rem;
+        padding: 2rem;
+        background: rgba(0,0,0,.3);
+        ul{
+            list-style-type: none;
+            padding-left: 0;
+            margin-bottom: 0;
+        }
+        li{
+            position: relative;
+            padding-left: 2rem;
+            &::before{
+                content: ">>";
+                position: absolute;
+                left: 0;
+            }
+        }
+    }
+    .details-service-list-title{
+        font: 300 1.2rem/1.5rem "Montserrat";
+        text-transform: uppercase;
+    }
+    @media screen and (min-width: 768px) {
+        display: flex;
+        .details-service-cover,
+        .details-service-text{
+            flex-basis: 50%;
+        }
+        .details-service-cover{
+            padding-top: inherit;
+        }
+        .details-service-text{
+            padding: 7vw;
+        }
+    }
+    @media screen and (min-width: 1024px) {
+        padding: 7vw 0;
+    }
+    @media screen and (min-width: 1200px) {
+        padding: 7vw 0 7vw 7vw;
+        justify-content: space-between;
+        gap: 7vw;
+        .details-service-cover{
+            flex-basis: 30%;
+            &.cover-image-2{
+                display: block;
+            }
+        }
+        .details-service-text{
+            flex-basis: 30%;
+            padding: 0;
+        }
+        .details-service-list{
+            padding: 2rem 4rem;
+        }
+    }
+}
